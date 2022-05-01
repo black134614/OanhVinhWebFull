@@ -1,10 +1,12 @@
 
+using API._Repositories.Interfaces;
+
 namespace API._Repositories
 {
     public interface IRepositoryAccessor
     {
-        // IProductRespository productRespository { get; }
-        
+        ICustomerRepository Customer { get; }
+        IUserRepository User { get; }
         Task<bool> SaveChangesAsync();
     }
 }

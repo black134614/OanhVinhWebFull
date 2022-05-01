@@ -1,3 +1,5 @@
+using API._Repositories.Interfaces;
+using API._Repositories.Repositories;
 using API.Data;
 
 namespace API._Repositories
@@ -8,13 +10,14 @@ namespace API._Repositories
         public RepositoryAccessor(DBContext context)
         {
             _context = context;
-            //BLAttachmentType = new BLAttachmentTypeRepository(_context);
-            // productRespository = new ProductRespository(_context);
+            Customer = new CustomerRepository(_context);
+            User = new UserRepository(_context);
         }
 
-        //public IBLAttachmentTypeRepository BLAttachmentType { get; private set; }
 
-        // public IProductRespository productRespository { get; private set; }
+        public ICustomerRepository Customer { get; private set; }
+        public IUserRepository User { get; private set; }
+
 
         public async Task<bool> SaveChangesAsync()
         {

@@ -1,5 +1,7 @@
 using System.Text;
 using API._Repositories;
+using API._Services.Interfaces;
+using API._Services.Services;
 using API.Data;
 using API.Helpers.AutoMapper;
 using API.Helpers.Utilities;
@@ -39,9 +41,12 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IMapper>(sp => new Mapper(AutoMapperConfig.RegisterMappings()));
 builder.Services.AddSingleton(AutoMapperConfig.RegisterMappings());
 
-builder.Services.AddScoped<IRepositoryAccessor,RepositoryAccessor>();
+builder.Services.AddScoped<IRepositoryAccessor, RepositoryAccessor>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
-
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
