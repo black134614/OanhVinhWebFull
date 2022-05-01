@@ -16,6 +16,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
 function Sidenav({ color }) {
+  
   const { pathname } = useLocation();
   const page = pathname.replace("/", "");
 

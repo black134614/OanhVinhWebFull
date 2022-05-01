@@ -280,7 +280,7 @@ function Header({
               <NavLink to="/">Pages</NavLink>
             </Breadcrumb.Item>
             <Breadcrumb.Item style={{ textTransform: "capitalize" }}>
-              {name.replace("/", "")}
+              {name}
             </Breadcrumb.Item>
           </Breadcrumb>
           <div className="ant-page-header-heading">
@@ -288,7 +288,7 @@ function Header({
               className="ant-page-header-heading-title"
               style={{ textTransform: "capitalize" }}
             >
-              {subName.replace("/", "")}
+              {subName}
             </span>
           </div>
         </Col>
