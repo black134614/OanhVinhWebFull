@@ -12,11 +12,14 @@ namespace API._Repositories
             _context = context;
             Customer = new CustomerRepository(_context);
             User = new UserRepository(_context);
+            ProductCategory = new ProductCategoryRepository(_context);
         }
 
 
         public ICustomerRepository Customer { get; private set; }
         public IUserRepository User { get; private set; }
+        public IProductCategoryRepository ProductCategory { get; private set; }
+
 
 
         public async Task<bool> SaveChangesAsync()

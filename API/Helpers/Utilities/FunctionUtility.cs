@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace SD3_API.Helpers.Utilities
+namespace API.Helpers.Utilities
 {
     public interface IFunctionUtility
     {

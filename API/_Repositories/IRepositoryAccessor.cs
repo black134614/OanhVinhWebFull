@@ -7,6 +7,7 @@ namespace API._Repositories
     {
         ICustomerRepository Customer { get; }
         IUserRepository User { get; }
+        IProductCategoryRepository ProductCategory { get; }
         Task<bool> SaveChangesAsync();
     }
 }

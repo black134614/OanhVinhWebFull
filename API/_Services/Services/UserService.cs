@@ -2,6 +2,7 @@ using API._Repositories;
 using API._Services.Interfaces;
 using API.Dtos;
 using API.Helpers;
+using API.Helpers.Utilities;
 using API.Models;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -12,9 +13,10 @@ namespace API._Services.Services
     {
         private readonly IRepositoryAccessor _repositoryAccessor;
         private readonly IMapper _mapper;
-        public UserService(IRepositoryAccessor repositoryAccessor)
+        public UserService(IRepositoryAccessor repositoryAccessor, IMapper mapper)
         {
             _repositoryAccessor = repositoryAccessor;
+            _mapper = mapper;
         }
 
         public async Task<List<UserDTO>> GetUserList(string username)
@@ -27,6 +29,8 @@ namespace API._Services.Services
                             FullName = x.FullName,
                             CreateTime = x.CreateTime,
                             IsDelete = x.IsDelete,
+                            Avatar = x.Avatar,
+                            UserDetail = x.UserDetail,
                             PhoneNumber = x.PhoneNumber
                         }).ToListAsync();
             if (!string.IsNullOrEmpty(username))
@@ -37,25 +41,34 @@ namespace API._Services.Services
         }
         public async Task<OperationResult> Update(UserDTO userDTO)
         {
-            // var check = _repositoryAccessor.User.FindAll(x => x.UserName == userDTO.UserName).FirstOrDefault();
-
-            // if (check == null)
-            //     return new OperationResult(false, "Không sửa được");
-
-            var user = new User()
+            userDTO.CreateTime = DateTime.Now;
+            if (!string.IsNullOrEmpty(userDTO.AvatarParam))
             {
-                FullName = userDTO.FullName,
-                Password = userDTO.Password,
-                IsDelete = true,
-                CreateTime = true
-            };
-            if (user != null)
+                string folderPath = $"uploaded/Users/";
+
+                string fileName = $"{userDTO.FullName}";
+
+                FunctionUtility fc = new FunctionUtility();
+
+                userDTO.Avatar = await fc.UploadAsync(userDTO.AvatarParam, folderPath, fileName);
+            }
+            else
             {
-                _repositoryAccessor.User.Update(user);
+                userDTO.Avatar = "images/no-image.jpg";
+            }
+
+            var userMapping = _mapper.Map<User>(userDTO);
+
+            try
+            {
+                _repositoryAccessor.User.Update(userMapping);
                 await _repositoryAccessor.SaveChangesAsync();
                 return new OperationResult(true, "Sửa Thông Tin Thành Công");
             }
-            return new OperationResult(false, "Sửa Thông Tin Thất bại");
+            catch (System.Exception ex)
+            {
+                return new OperationResult(false, "Sửa Thông Tin Thất bại");
+            }
         }
     }
 }

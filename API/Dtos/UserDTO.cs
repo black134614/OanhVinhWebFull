@@ -13,6 +13,10 @@ namespace API.Dtos
         public string FullName { get; set; }
         public string PhoneNumber { get; set; }
         public bool? IsDelete { get; set; }
-        public bool? CreateTime { get; set; }
+        public DateTime? CreateTime { get; set; }
+        public string UserDetail { get; set; }
+        public string Avatar { get; set; }
+        public string AvatarParam { get; set; }
+
     }
 }
