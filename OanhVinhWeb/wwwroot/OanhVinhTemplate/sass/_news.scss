@@ -1,0 +1,78 @@
+.news{
+    .single_blog_item {
+        .single_blog_img img{
+        }
+        @media #{$small_mobile} {
+        }
+        @media #{$large_mobile} {
+        }
+        @media #{$tab_device} {
+        }
+        @media #{$medium_device} {
+        }
+        .btn_3 {
+            img {
+                
+            }
+            &::after{
+                right: 13.5rem;
+            }
+        }
+        &:hover {
+            .single_blog_text {
+            }
+            .btn_3 {
+                a {
+                }
+                img {
+                    margin-bottom: 0;
+                }
+                &::after{
+                    right: 11rem
+                }
+            }
+        }
+    }
+    .single_blog_img {
+        img {
+        }
+    }
+    .single_blog_text {
+        @media #{$small_mobile} {
+        }
+        @media #{$large_mobile} {
+        }
+        @media #{$tab_device} {
+        }
+        @media #{$medium_device} {
+        }
+        h3 {
+            @media #{$small_mobile} {
+            }
+            @media #{$large_mobile} {
+            }
+            @media #{$tab_device} {
+            }
+            @media #{$medium_device} {
+            }
+        }
+        btn_3 {
+            
+            img{
+            }
+            ::after{
+
+            }
+        }
+        p {
+            @media #{$small_mobile} {
+            }
+            @media #{$large_mobile} {
+            }
+            @media #{$tab_device} {
+            }
+            @media #{$medium_device} {
+            }
+        }
+    }
+}
