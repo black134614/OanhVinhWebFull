@@ -28,12 +28,13 @@ namespace API.Controllers
         }
 
         [HttpPut("Update")]
-        public async Task<IActionResult> Update([FromBody] ProductCategoryDTO productCategoryDTO, string createBy)
+        public async Task<IActionResult> Update([FromBody] ProductCategoryDTO productCategoryDTO)
         {
             productCategoryDTO.CreateBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var data = await _productCategoryService.Update(productCategoryDTO);
             return Ok(data);
         }
+
         [HttpDelete("Delete")]
         public async Task<IActionResult> Delete([FromForm] int productCategoryID)
         {

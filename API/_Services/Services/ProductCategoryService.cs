@@ -38,7 +38,7 @@ namespace API._Services.Services
 
         public async Task<OperationResult> Delete(int productCategoryID)
         {
-            var productCategory = _repositoryAccessor.ProductCategory.FindAll(x => x.ProductCategoryID == productCategoryID).FirstOrDefault();
+            var productCategory = _repositoryAccessor.ProductCategory.FindAll(x => x.ProductCategoryID == Convert.ToInt32(productCategoryID)).FirstOrDefault();
             if (productCategory != null)
             {
                 _repositoryAccessor.ProductCategory.Remove(productCategory);

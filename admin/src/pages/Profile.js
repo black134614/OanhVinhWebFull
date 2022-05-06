@@ -1,16 +1,9 @@
-/*!
-  =========================================================
-  * Muse Ant Design Dashboard - v1.0.0
-  =========================================================
-  * Product Page: https://www.creative-tim.com/product/muse-ant-design-dashboard
-  * Copyright 2021 Creative Tim (https://www.creative-tim.com)
-  * Licensed under MIT (https://github.com/creativetimofficial/muse-ant-design-dashboard/blob/main/LICENSE.md)
-  * Coded by Creative Tim
-  =========================================================
-  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 import { useState } from "react";
+import EditUserForm from "../components/forms/EditUserForm";
 
+import { useEffect, useState } from "react";
+import EditUserForm from "../components/forms/EditUserForm";
+import { USER_LOGIN } from '../util/constants/settingSystem'
 import {
   Row,
   Col,
@@ -32,7 +25,7 @@ import {
   VerticalAlignTopOutlined,
 } from "@ant-design/icons";
 
-import BgProfile from "../assets/images/bg-profile.jpg";
+import BgProfile from "../assets/images/bg-signup.jpg";
 import profilavatar from "../assets/images/face-1.jpg";
 import convesionImg from "../assets/images/face-3.jpg";
 import convesionImg2 from "../assets/images/face-4.jpg";
@@ -42,40 +35,22 @@ import convesionImg5 from "../assets/images/face-2.jpg";
 import project1 from "../assets/images/home-decor-1.jpeg";
 import project2 from "../assets/images/home-decor-2.jpeg";
 import project3 from "../assets/images/home-decor-3.jpeg";
+import { useDispatch, useSelector } from "react-redux";
+import { getFormUpdateUser } from "../redux/actions/UserActions/UserActions";
+import { useDispatch } from "react-redux";
+import { getFormUpdateUser } from "../redux/actions/UserActions/UserActions";
 
 function Profile() {
-  const [imageURL, setImageURL] = useState(false);
-  const [, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  
+  const userInfo = JSON.parse(localStorage.getItem(USER_LOGIN));
 
-  const getBase64 = (img, callback) => {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => callback(reader.result));
-    reader.readAsDataURL(img);
-  };
+  useEffect(() => {
+    console.log(userInfo);
+  }, []);
 
-  const beforeUpload = (file) => {
-    const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
-    if (!isJpgOrPng) {
-      message.error("You can only upload JPG/PNG file!");
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-      message.error("Image must smaller than 2MB!");
-    }
-    return isJpgOrPng && isLt2M;
-  };
-
-  const handleChange = (info) => {
-    if (info.file.status === "uploading") {
-      setLoading(false);
-      return;
-    }
-    if (info.file.status === "done") {
-      getBase64(info.file.originFileObj, (imageUrl) => {
-        setLoading(false);
-        setImageURL(false);
-      });
-    }
+  const showDrawer = () => {
+    dispatch(getFormUpdateUser("Sửa thông tin", <EditUserForm />));
   };
 
   const pencil = [
@@ -97,7 +72,6 @@ function Profile() {
       ></path>
     </svg>,
   ];
-
   const uploadButton = (
     <div className="ant-upload-text font-semibold text-dark">
       {<VerticalAlignTopOutlined style={{ width: 20, color: "#000" }} />}
@@ -159,6 +133,8 @@ function Profile() {
 
   return (
     <>
+      <button onClick={showDrawer}>showdrawer</button>
+
       <div
         className="profile-nav-bg"
         style={{ backgroundImage: "url(" + BgProfile + ")" }}
@@ -199,177 +175,35 @@ function Profile() {
       ></Card>
 
       <Row gutter={[24, 0]}>
-        <Col span={24} md={8} className="mb-24 ">
-          <Card
-            bordered={false}
-            className="header-solid h-full"
-            title={<h6 className="font-semibold m-0">Platform Settings</h6>}
-          >
-            <ul className="list settings-list">
-              <li>
-                <h6 className="list-header text-sm text-muted">ACCOUNT</h6>
-              </li>
-              <li>
-                <Switch defaultChecked />
-
-                <span>Email me when someone follows me</span>
-              </li>
-              <li>
-                <Switch />
-                <span>Email me when someone answers me</span>
-              </li>
-              <li>
-                <Switch defaultChecked />
-                <span>Email me when someone mentions me</span>
-              </li>
-              <li>
-                <h6 className="list-header text-sm text-muted m-0">
-                  APPLICATION
-                </h6>
-              </li>
-              <li>
-                <Switch defaultChecked />
-                <span>New launches and projects</span>
-              </li>
-              <li>
-                <Switch defaultChecked />
-                <span>Monthly product updates</span>
-              </li>
-              <li>
-                <Switch defaultChecked />
-                <span>Subscribe to newsletter</span>
-              </li>
-            </ul>
-          </Card>
-        </Col>
         <Col span={24} md={8} className="mb-24">
           <Card
             bordered={false}
-            title={<h6 className="font-semibold m-0">Profile Information</h6>}
+            title={<h6 className="font-semibold m-0">Giới Thiệu</h6>}
             className="header-solid h-full card-profile-information"
             extra={<Button type="link">{pencil}</Button>}
             bodyStyle={{ paddingTop: 0, paddingBottom: 16 }}
           >
             <p className="text-dark">
               {" "}
-              Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer
-              is no. If two equally difficult paths, choose the one more painful
-              in the short term (pain avoidance is creating an illusion of
-              equality).{" "}
+              Tôi đã theo học và tốt nghiệp loại giỏi chuyên ngành Kế toán của Đại học Kinh tế Quốc dân. Trong quá trình học tập tại trường, tôi đã từng giành giải Nhất cuộc thi “The Audit Race 2019” do tập đoàn FAC tổ chức. Tôi có nhiều kinh nghiệm làm việc với công ty xuất khẩu: Công ty CPTM HBS Vietnam; Công ty Xuất nhập khẩu Trung Quốc Đại Dương.
+              {" "}
             </p>
             <hr className="my-25" />
-            <Descriptions title="Oliver Liam">
-              <Descriptions.Item label="Full Name" span={3}>
+            <Descriptions title="Thông Tin Cá Nhân">
+              <Descriptions.Item label="Tên" span={3}>
                 Sarah Emily Jacob
               </Descriptions.Item>
-              <Descriptions.Item label="Mobile" span={3}>
+              <Descriptions.Item label="Số điện thoại" span={3}>
                 (44) 123 1234 123
               </Descriptions.Item>
-              <Descriptions.Item label="Email" span={3}>
+              <Descriptions.Item label="Ngày tạo" span={3}>
                 sarahjacob@mail.com
-              </Descriptions.Item>
-              <Descriptions.Item label="Location" span={3}>
-                USA
-              </Descriptions.Item>
-              <Descriptions.Item label="Social" span={3}>
-                <a href="#pablo" className="mx-5 px-5">
-                  {<TwitterOutlined />}
-                </a>
-                <a href="#pablo" className="mx-5 px-5">
-                  {<FacebookOutlined style={{ color: "#344e86" }} />}
-                </a>
-                <a href="#pablo" className="mx-5 px-5">
-                  {<InstagramOutlined style={{ color: "#e1306c" }} />}
-                </a>
               </Descriptions.Item>
             </Descriptions>
           </Card>
         </Col>
-        <Col span={24} md={8} className="mb-24">
-          <Card
-            bordered={false}
-            title={<h6 className="font-semibold m-0">Conversations</h6>}
-            className="header-solid h-full"
-            bodyStyle={{ paddingTop: 0, paddingBottom: 16 }}
-          >
-            <List
-              itemLayout="horizontal"
-              dataSource={data}
-              split={false}
-              className="conversations-list"
-              renderItem={(item) => (
-                <List.Item actions={[<Button type="link">REPLY</Button>]}>
-                  <List.Item.Meta
-                    avatar={
-                      <Avatar shape="square" size={48} src={item.avatar} />
-                    }
-                    title={item.title}
-                    description={item.description}
-                  />
-                </List.Item>
-              )}
-            />
-          </Card>
-        </Col>
       </Row>
-      <Card
-        bordered={false}
-        className="header-solid mb-24"
-        title={
-          <>
-            <h6 className="font-semibold">Projects</h6>
-            <p>Architects design houses</p>
-          </>
-        }
-      >
-        <Row gutter={[24, 24]}>
-          {project.map((p, index) => (
-            <Col span={24} md={12} xl={6} key={index}>
-              <Card
-                bordered={false}
-                className="card-project"
-                cover={<img alt="example" src={p.img} />}
-              >
-                <div className="card-tag">{p.titlesub}</div>
-                <h5>{p.titile}</h5>
-                <p>{p.disciption}</p>
-                <Row gutter={[6, 0]} className="card-footer">
-                  <Col span={12}>
-                    <Button type="button">VIEW PROJECT</Button>
-                  </Col>
-                  <Col span={12} className="text-right">
-                    <Avatar.Group className="avatar-chips">
-                      <Avatar size="small" src={profilavatar} />
-                      <Avatar size="small" src={convesionImg} />
-                      <Avatar size="small" src={convesionImg2} />
-                      <Avatar size="small" src={convesionImg3} />
-                    </Avatar.Group>
-                  </Col>
-                </Row>
-              </Card>
-            </Col>
-          ))}
-          <Col span={24} md={12} xl={6}>
-            <Upload
-              name="avatar"
-              listType="picture-card"
-              className="avatar-uploader projects-uploader"
-              showUploadList={false}
-              action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-              beforeUpload={beforeUpload}
-              onChange={handleChange}
-            >
-              {imageURL ? (
-                <img src={imageURL} alt="avatar" style={{ width: "100%" }} />
-              ) : (
-                uploadButton
-              )}
-            </Upload>
-          </Col>
-        </Row>
-      </Card>
     </>
   );
 }
-
 export default Profile;

@@ -1,0 +1,12 @@
+.nav-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-item .label {
+    margin-left: 5px;
+}
+.ant-menu-submenu-title {
+    display: flex!important;
+}
