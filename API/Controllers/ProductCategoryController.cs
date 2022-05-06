@@ -35,7 +35,7 @@ namespace API.Controllers
             return Ok(data);
         }
         [HttpDelete("Delete")]
-        public async Task<IActionResult> Update([FromForm] int productCategoryID)
+        public async Task<IActionResult> Delete([FromForm] int productCategoryID)
         {
             var data = await _productCategoryService.Delete(productCategoryID);
             return Ok(data);
