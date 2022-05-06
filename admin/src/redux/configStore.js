@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import { applyMiddleware, combineReducers } from 'redux';
 import { legacy_createStore as createStore } from 'redux';
 
@@ -25,4 +23,3 @@ const store = createStore(rootReducer, applyMiddleware(middleWareSaga));
 middleWareSaga.run(rootSaga);
 
 export default store;
->>>>>>> Stashed changes
