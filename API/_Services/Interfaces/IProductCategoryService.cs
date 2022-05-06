@@ -7,8 +7,8 @@ namespace API._Services.Interfaces
     {
         Task<List<ProductCategoryDTO>> GetProductCategores();
 
-        Task<OperationResult> Add(ProductCategoryDTO productCategoryDTO, string createBy);
-        Task<OperationResult> Update(ProductCategoryDTO productCategoryDTO, string createBy);
+        Task<OperationResult> Add(ProductCategoryDTO productCategoryDTO);
+        Task<OperationResult> Update(ProductCategoryDTO productCategoryDTO);
         Task<OperationResult> Delete(int productCategoryID);
 
     }

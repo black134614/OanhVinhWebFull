@@ -18,9 +18,8 @@ namespace API._Services.Services
             _mapper = mapper;
         }
 
-        public async Task<OperationResult> Add(ProductCategoryDTO productCategoryDTO, string createBy)
+        public async Task<OperationResult> Add(ProductCategoryDTO productCategoryDTO)
         {
-            productCategoryDTO.CreateBy = createBy;
             productCategoryDTO.CreateTime = DateTime.Now;
             var productCategory = _mapper.Map<ProductCategory>(productCategoryDTO);
             try
@@ -39,7 +38,7 @@ namespace API._Services.Services
 
         public async Task<OperationResult> Delete(int productCategoryID)
         {
-            var productCategory = _repositoryAccessor.ProductCategory.FindAll(x => x.ProductCategoryID == productCategoryID).FirstOrDefault();
+            var productCategory = _repositoryAccessor.ProductCategory.FindAll(x => x.ProductCategoryID == Convert.ToInt32(productCategoryID)).FirstOrDefault();
             if (productCategory != null)
             {
                 _repositoryAccessor.ProductCategory.Remove(productCategory);
@@ -69,9 +68,8 @@ namespace API._Services.Services
             return data;
         }
 
-        public async Task<OperationResult> Update(ProductCategoryDTO productCategoryDTO, string createBy)
+        public async Task<OperationResult> Update(ProductCategoryDTO productCategoryDTO)
         {
-            productCategoryDTO.CreateBy = createBy;
             var productCategory = _mapper.Map<ProductCategory>(productCategoryDTO);
             try
             {

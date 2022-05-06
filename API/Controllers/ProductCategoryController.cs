@@ -20,24 +20,22 @@ namespace API.Controllers
         public async Task<IActionResult> GetAllProductCategories() => Ok(await _productCategoryService.GetProductCategores());
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] ProductCategoryDTO productCategoryDTO, string createBy)
+        public async Task<IActionResult> Add([FromBody] ProductCategoryDTO productCategoryDTO)
         {
-            // createBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            createBy = "admin";
-            var data = await _productCategoryService.Add(productCategoryDTO, createBy);
+            productCategoryDTO.CreateBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var data = await _productCategoryService.Add(productCategoryDTO);
             return Ok(data);
         }
 
         [HttpPut("Update")]
-        public async Task<IActionResult> Update([FromBody] ProductCategoryDTO productCategoryDTO, string createBy)
+        public async Task<IActionResult> Update([FromBody] ProductCategoryDTO productCategoryDTO)
         {
-            // createBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            createBy = "admin";
-            var data = await _productCategoryService.Update(productCategoryDTO, createBy);
+            productCategoryDTO.CreateBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var data = await _productCategoryService.Update(productCategoryDTO);
             return Ok(data);
         }
-        [HttpDelete("Delete")]
-        public async Task<IActionResult> Update([FromForm] int productCategoryID)
+        [HttpDelete("Delete/{productCategoryID}")]
+        public async Task<IActionResult> Delete([FromForm] int productCategoryID)
         {
             var data = await _productCategoryService.Delete(productCategoryID);
             return Ok(data);
