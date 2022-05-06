@@ -24,23 +24,6 @@ D:\WebOanhVinh\WebOanhVinh\obj\Debug\net6.0\refint\WebOanhVinh.dll
 D:\WebOanhVinh\WebOanhVinh\obj\Debug\net6.0\WebOanhVinh.pdb
 D:\WebOanhVinh\WebOanhVinh\obj\Debug\net6.0\WebOanhVinh.genruntimeconfig.cache
 D:\WebOanhVinh\WebOanhVinh\obj\Debug\net6.0\ref\WebOanhVinh.dll
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> 998ecbb68f5f59d06499490e368dd55e472e4c99
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> admin-react
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\appsettings.json
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.staticwebassets.runtime.json
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.exe
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.deps.json
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.runtimeconfig.json
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.pdb
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.csproj.AssemblyReference.cache
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.AssemblyInfoInputs.cache
@@ -49,54 +32,21 @@ C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\Web
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.RazorAssemblyInfo.cache
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.RazorAssemblyInfo.cs
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\refint\WebOanhVinh.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.pdb
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\appsettings.json
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.staticwebassets.runtime.json
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.exe
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.deps.json
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.runtimeconfig.json
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\WebOanhVinh.pdb
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\scopedcss\bundle\WebOanhVinh.styles.css
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\scopedcss\projectbundle\WebOanhVinh.bundle.scp.css
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\refint\WebOanhVinh.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.pdb
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.genruntimeconfig.cache
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\ref\WebOanhVinh.dll
-<<<<<<< HEAD
-=======
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\efpt.config.json
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\System.Drawing.Common.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\System.Runtime.Caching.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\System.Security.Permissions.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.csproj.CopyComplete
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> 998ecbb68f5f59d06499490e368dd55e472e4c99
->>>>>>> admin-react
