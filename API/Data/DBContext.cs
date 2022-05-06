@@ -25,7 +25,6 @@ namespace API.Data
         {
         }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>(entity =>
@@ -75,6 +74,8 @@ namespace API.Data
             modelBuilder.Entity<User>(entity =>
             {
                 entity.Property(e => e.UserName).IsUnicode(false);
+
+                entity.Property(e => e.Avatar).IsUnicode(false);
 
                 entity.Property(e => e.Password).IsUnicode(false);
 

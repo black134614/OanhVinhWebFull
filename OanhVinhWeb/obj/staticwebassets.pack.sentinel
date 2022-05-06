@@ -1,5 +1,10 @@
 2.0
 2.0
+<<<<<<< HEAD
+2.0
+2.0
+2.0
+=======
 <<<<<<< Updated upstream
 =======
 2.0
@@ -34,6 +39,7 @@
 2.0
 2.0
 >>>>>>> Stashed changes
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 >>>>>>> 998ecbb68f5f59d06499490e368dd55e472e4c99
@@ -42,3 +48,6 @@
 2.0
 2.0
 >>>>>>> Stashed changes
+=======
+>>>>>>> 998ecbb68f5f59d06499490e368dd55e472e4c99
+>>>>>>> admin-react

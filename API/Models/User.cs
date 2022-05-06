@@ -22,6 +22,12 @@ namespace API.Models
         [Unicode(false)]
         public string PhoneNumber { get; set; }
         public bool? IsDelete { get; set; }
-        public bool? CreateTime { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime? CreateTime { get; set; }
+        [StringLength(1000)]
+        public string UserDetail { get; set; }
+        [StringLength(2048)]
+        [Unicode(false)]
+        public string Avatar { get; set; }
     }
 }
