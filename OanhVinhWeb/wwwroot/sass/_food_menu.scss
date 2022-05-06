@@ -1,17 +1,17 @@
 /**************** food_menu css start ****************/
 .food_menu {
-    padding: 140px 0px 90px;
+    padding: 50px 0px 90px;
     @media #{$small_mobile} {
         padding: 70px 0px 50px;
     }
     @media #{$large_mobile} {
-        padding: 70px 0px 50px;
+        padding: 40px 0px 50px;
     }
     @media #{$tab_device} {
-        padding: 70px 0px 50px;
+        padding: 40px 0px 50px;
     }
     @media #{$medium_device} {
-        padding: 70px 0px 40px;
+        padding: 30px 0px 40px;
     }
     .nav-tabs {
         border-bottom: 0px solid #dee2e6;

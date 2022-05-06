@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <!-- Required meta tags -->
@@ -252,7 +252,7 @@
         </div>
     </section>
     <!--::exclusive_item_part end::-->
-    
+
     <!--modal for product list-->
     <section class="list-modal">
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -439,47 +439,25 @@
             <di class="row">
                 <div class="col-lg-6">
                     <div class="regervation_part_iner">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" placeholder="Tên của bạn *">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" id="pnone" placeholder="Số điện thoại *">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <div class="input-group date">
-                                        <input id="datepicker" type="text" class="form-control"
-                                            placeholder="Đặt lịch hẹn *" />
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <select class="form-control" id="Select2">
-                                        <option value="" selected>Thời gian *</option>
-                                        <option value="1">8 AM TO 10AM</option>
-                                        <option value="1">10 AM TO 12PM</option>
-                                        <option value="1">12PM TO 2PM</option>
-                                        <option value="1">2PM TO 4PM</option>
-                                        <option value="1">4PM TO 6PM</option>
-                                        <option value="1">6PM TO 8PM</option>
-                                        <option value="1">4PM TO 10PM</option>
-                                        <option value="1">10PM TO 12PM</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <textarea class="form-control" id="Textarea" rows="4"
-                                        placeholder="Lời nhắn của bạn *"></textarea>
-                                </div>
+                        <div class="item d-flex align-items-center">
+                            <span class="ti-map-alt fa-3x mr-3"></span>
+                            <div>
+                                Ấp 7, Suối Dây, huyện Tân Châu, tỉnh Tây Ninh, Việt Nam
+                                <a href="#google-map" class="genric-btn primary circle small">Xem trên bản đồ</a>
                             </div>
-
-
-                            <div class="regerv_btn">
-                                <a href="#" class="btn_4">Gửi</a>
+                        </div>
+                        <div class="item d-flex align-items-center">
+                            <span class="fa fa-phone fa-3x mr-3"></span>
+                            <div>
+                                0985.566.673
                             </div>
-                        </form>
+                        </div>
+                        <div class="item d-flex align-items-center">
+                            <span class="ti-calendar fa-3x mr-3"></span>
+                            <div>
+                                Thứ 2 - Chủ nhật: 9h00 - 16h00
+                            </div>
+                        </div>
                     </div>
                 </div>
         </div>
@@ -622,7 +600,7 @@
     </section>
     <!--::exclusive_item_part end::-->
     <!--::review_part start::-->
-    <section class="map review_part gray_bg section_padding">
+    <section class="map review_part gray_bg section_padding" data-spy="scroll" id="google-map" data-offset="0">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5">

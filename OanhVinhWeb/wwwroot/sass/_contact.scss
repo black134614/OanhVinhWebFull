@@ -54,6 +54,7 @@
     .btn_4{
       margin-bottom: 0px !important;
     }
+  
   }
   .form-control{
     border: 1px solid #f0e9ff;
@@ -126,4 +127,11 @@
             }
         }
     }
+}
+
+.contact-section{
+  iframe{
+    width: 100%;
+    height: 60vh;
+  }
 }

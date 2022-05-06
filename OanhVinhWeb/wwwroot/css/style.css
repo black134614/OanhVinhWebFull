@@ -3054,7 +3054,7 @@ ul {
 
 /**************** food_menu css start ****************/
 .food_menu {
-  padding: 140px 0px 90px;
+  padding: 50px 0px 90px;
 }
 
 @media (max-width: 576px) {
@@ -3065,19 +3065,19 @@ ul {
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .food_menu {
-    padding: 70px 0px 50px;
+    padding: 40px 0px 50px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .food_menu {
-    padding: 70px 0px 50px;
+    padding: 40px 0px 50px;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .food_menu {
-    padding: 70px 0px 40px;
+    padding: 30px 0px 40px;
   }
 }
 
@@ -3451,10 +3451,14 @@ ul {
   border-bottom: 1px solid #a1a5a5;
 }
 
-.regervation_part .ti-calendar {
-  color: #a1a5a5 !important;
-  font-size: 12px;
-  margin-top: 8px;
+.regervation_part .regervation_part_iner .item {
+  line-height: 25px;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.regervation_part .regervation_part_iner .item .genric-btn:hover, .regervation_part .regervation_part_iner .item .genric-btn:focus {
+  color: #000 !important;
 }
 
 .regervation_part .nice-select {
@@ -5238,6 +5242,11 @@ h6 {
   display: block;
 }
 
+.contact-section iframe {
+  width: 100%;
+  height: 60vh;
+}
+
 .sample-text-area {
   background: #fff;
   padding: 100px 0 70px 0;
@@ -6476,14 +6485,14 @@ h6 {
 }
 
 .breadcrumb .breadcrumb_iner {
-  height: 300px;
+  height: 170px;
   width: 100%;
   display: table;
 }
 
 .breadcrumb .breadcrumb_iner .breadcrumb_iner_item {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: bottom;
 }
 
 .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {

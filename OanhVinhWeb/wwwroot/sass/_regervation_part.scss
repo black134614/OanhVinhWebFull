@@ -30,12 +30,16 @@
             height: 100px !important;
             border-bottom: 1px solid #a1a5a5;
         }
-        
-    }
-    .ti-calendar{
-        color: #a1a5a5 !important;
-        font-size: 12px;
-        margin-top: 8px;
+        .item{
+            line-height: 25px;
+            color: $white_color;
+            margin-bottom: 1rem;
+            .genric-btn{
+                &:hover, &:focus{
+                    color: $black_color!important;
+                }
+            }
+        }
     }
     .nice-select {
         width: 100%;
@@ -59,4 +63,5 @@
     .form-group{
         margin-bottom: 0;
     }
+ 
 }
