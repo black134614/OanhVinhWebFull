@@ -35,7 +35,7 @@ namespace API._Services.Services
                         }).ToListAsync();
             if (!string.IsNullOrEmpty(username))
             {
-                data = data.Where(x => x.UserName == username).ToList();
+                data = data.Where(x => x.UserName.Contains(username)).ToList();
             }
             return data;
         }
@@ -44,7 +44,7 @@ namespace API._Services.Services
             userDTO.CreateTime = DateTime.Now;
             if (!string.IsNullOrEmpty(userDTO.AvatarParam))
             {
-                string folderPath = $"uploaded/Users/";
+                string folderPath = $"uploaded/";
 
                 string fileName = $"{userDTO.FullName}";
 

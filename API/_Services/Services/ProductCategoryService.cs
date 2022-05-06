@@ -18,9 +18,8 @@ namespace API._Services.Services
             _mapper = mapper;
         }
 
-        public async Task<OperationResult> Add(ProductCategoryDTO productCategoryDTO, string createBy)
+        public async Task<OperationResult> Add(ProductCategoryDTO productCategoryDTO)
         {
-            productCategoryDTO.CreateBy = createBy;
             productCategoryDTO.CreateTime = DateTime.Now;
             var productCategory = _mapper.Map<ProductCategory>(productCategoryDTO);
             try
@@ -63,15 +62,13 @@ namespace API._Services.Services
                                 IsDelete = x.IsDelete,
                                 Positon = x.Positon
                             })
-                            .Where(x => x.Status == true)
                             .OrderBy(x => x.Positon)
                             .ToListAsync();
             return data;
         }
 
-        public async Task<OperationResult> Update(ProductCategoryDTO productCategoryDTO, string createBy)
+        public async Task<OperationResult> Update(ProductCategoryDTO productCategoryDTO)
         {
-            productCategoryDTO.CreateBy = createBy;
             var productCategory = _mapper.Map<ProductCategory>(productCategoryDTO);
             try
             {
