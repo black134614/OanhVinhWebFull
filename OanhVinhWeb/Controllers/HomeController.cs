@@ -15,6 +15,19 @@ namespace WebOanhVinh.Controllers
 
         public IActionResult Index()
         {
+<<<<<<< Updated upstream
+=======
+            ViewData["Title"] = "Trang Chủ | OanhVinh";
+            DBContext db = new DBContext(); 
+
+            List<ProductCategory> data = db.ProductCategories.ToList();
+            return View(data);
+        }
+        [Route("gioi-thieu")]
+        public IActionResult about()
+        {
+            ViewData["Title"] = "Giới thiệu | TraiDeOanhVinh";
+>>>>>>> Stashed changes
             return View();
         }
 
