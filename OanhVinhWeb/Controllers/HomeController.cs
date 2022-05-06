@@ -12,7 +12,13 @@ namespace WebOanhVinh.Controllers
         [Route("home/index")]
         public IActionResult Index()
         {
-            ViewData["Title"] = "Trang Chủ | TauThuyenViet";
+            ViewData["Title"] = "Trang Chủ | OanhVinh";
+            return View();
+        }
+        [Route("gioi-thieu")]
+        public IActionResult about()
+        {
+            ViewData["Title"] = "Giới thiệu | TraiDeOanhVinh";
             return View();
         }
         [Route("lien-he")]
