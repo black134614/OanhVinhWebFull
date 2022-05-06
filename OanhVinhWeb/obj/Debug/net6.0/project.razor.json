@@ -16308,8 +16308,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Post\\Detail.cshtml",
+      "TargetPath": "Views\\Post\\Detail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Home\\About.cshtml",
+      "TargetPath": "Views\\Home\\About.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Post\\Index.cshtml",
+      "TargetPath": "Views\\Post\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16328,8 +16343,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Product\\Index.cshtml",
+      "TargetPath": "Views\\Product\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Home\\Contact.cshtml",
+      "TargetPath": "Views\\Home\\Contact.cshtml",
       "FileKind": "mvc"
     }
   ],
