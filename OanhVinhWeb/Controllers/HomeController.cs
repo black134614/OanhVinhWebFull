@@ -12,25 +12,27 @@ namespace WebOanhVinh.Controllers
         {
             _logger = logger;
         }
-
+        [Route("trang-chu")]
+        [Route("home")]
+        [Route("home/index")]
         public IActionResult Index()
         {
 
             ViewData["Title"] = "Trang Chủ | OanhVinh";
-            DBContext db = new DBContext(); 
-
-            List<ProductCategory> data = db.ProductCategories.ToList();
-            return View(data);
+            return View();
         }
         [Route("gioi-thieu")]
-        public IActionResult about()
+        [Route("about")]
+        public IActionResult About()
         {
             ViewData["Title"] = "Giới thiệu | TraiDeOanhVinh";
             return View();
         }
-
-        public IActionResult Privacy()
+        [Route("lien-he")]
+        [Route("contact")]
+        public IActionResult Contact()
         {
+            ViewData["Title"] = "Giới thiệu | TraiDeOanhVinh";
             return View();
         }
 
