@@ -15,8 +15,7 @@ namespace WebOanhVinh.Controllers
 
         public IActionResult Index()
         {
-<<<<<<< Updated upstream
-=======
+
             ViewData["Title"] = "Trang Chủ | OanhVinh";
             DBContext db = new DBContext(); 
 
@@ -27,7 +26,6 @@ namespace WebOanhVinh.Controllers
         public IActionResult about()
         {
             ViewData["Title"] = "Giới thiệu | TraiDeOanhVinh";
->>>>>>> Stashed changes
             return View();
         }
 
