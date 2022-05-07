@@ -24,8 +24,6 @@ import UpLoad from "./components/layout/UpLoad";
 import DrawerHOC from "./HOC/Drawer/DrawerHOC";
 import ProductCategory from "./pages/ProductCategory/ProductCategory";
 import { MainTemplate } from './templates/MainTemplate/MainTemplate';
-import UpLoad from "./components/layout/UpLoad";
-import DrawerHOC from "./HOC/Drawer/DrawerHOC";
 
 function App() {
   return (
