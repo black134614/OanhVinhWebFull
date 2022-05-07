@@ -36,9 +36,9 @@ namespace API._Services.Services
             }
         }
 
-        public async Task<OperationResult> Delete(int productCategoryID)
+        public async Task<OperationResult> Delete(ProductCategoryDTO productCategoryDTO)
         {
-            var productCategory = _repositoryAccessor.ProductCategory.FindAll(x => x.ProductCategoryID == Convert.ToInt32(productCategoryID)).FirstOrDefault();
+            var productCategory = _mapper.Map<ProductCategory>(productCategoryDTO);
             if (productCategory != null)
             {
                 _repositoryAccessor.ProductCategory.Remove(productCategory);
@@ -62,7 +62,6 @@ namespace API._Services.Services
                                 IsDelete = x.IsDelete,
                                 Positon = x.Positon
                             })
-                            .Where(x => x.Status == true)
                             .OrderBy(x => x.Positon)
                             .ToListAsync();
             return data;

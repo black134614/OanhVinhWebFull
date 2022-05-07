@@ -34,10 +34,11 @@ namespace API.Controllers
             var data = await _productCategoryService.Update(productCategoryDTO);
             return Ok(data);
         }
-        [HttpDelete("Delete/{productCategoryID}")]
-        public async Task<IActionResult> Delete([FromForm] int productCategoryID)
+
+        [HttpDelete("Delete")]
+        public async Task<IActionResult> Delete([FromBody] ProductCategoryDTO productCategoryDTO)
         {
-            var data = await _productCategoryService.Delete(productCategoryID);
+            var data = await _productCategoryService.Delete(productCategoryDTO);
             return Ok(data);
         }
     }
