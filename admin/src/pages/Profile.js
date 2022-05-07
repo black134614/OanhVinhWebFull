@@ -1,6 +1,3 @@
-import { useState } from "react";
-import EditUserForm from "../components/forms/EditUserForm";
-
 import { useEffect, useState } from "react";
 import EditUserForm from "../components/forms/EditUserForm";
 import { USER_LOGIN } from '../util/constants/settingSystem'
@@ -36,8 +33,6 @@ import project1 from "../assets/images/home-decor-1.jpeg";
 import project2 from "../assets/images/home-decor-2.jpeg";
 import project3 from "../assets/images/home-decor-3.jpeg";
 import { useDispatch, useSelector } from "react-redux";
-import { getFormUpdateUser } from "../redux/actions/UserActions/UserActions";
-import { useDispatch } from "react-redux";
 import { getFormUpdateUser } from "../redux/actions/UserActions/UserActions";
 
 function Profile() {

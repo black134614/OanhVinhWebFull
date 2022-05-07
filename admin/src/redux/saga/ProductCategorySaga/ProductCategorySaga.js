@@ -13,13 +13,12 @@ function* addProductCategorySaga(action) {
     try {
         const { data, status } = yield call(() => productCategoryServices.addProductCategory(userName, ProductCategory))
         if (status === STATUS_CODE.SUCCESS) {
-            console.log(data)
             yield put(closeDrawer());
             notifiFunction('success', 'Thêm mới danh mục sản phẩm ' + ProductCategory.tittle + ' thành công!')
             yield put(getAllProductCategorySagaAction());
         }
     } catch (error) {
-        console.log(error.response.data);
+        console.log(error);
     }
 }
 export function* theoDoiAddProductCategorySaga() {

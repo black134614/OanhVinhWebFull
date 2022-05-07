@@ -168,16 +168,9 @@ function Sidenav({ color }) {
             <span className="label">Trang chủ</span>
           </NavLink>
         </Menu.Item>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
         <Menu.Item className="menu-item-header" key="9">
           Quản Lý Sản Phẩm
         </Menu.Item>
->>>>>>> Stashed changes
-=======
-        {/*
->>>>>>> b6faab528b47448bee95e258f30121869985ca41
         <Menu.Item key="2">
           <NavLink to="/danh-muc-san-pham">
             <span
@@ -192,7 +185,7 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
         {/*
-        <Menu.Item key="3">
+              <Menu.Item key="3">
           <NavLink to="/billing">
             <span
               className="icon"
