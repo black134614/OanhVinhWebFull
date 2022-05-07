@@ -8,7 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebOanhVinh
 build_property.RootNamespace = WebOanhVinh
-<<<<<<< HEAD
 build_property.ProjectDir = d:\Project\OanhVinhWebFull\OanhVinhWeb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
@@ -41,39 +40,5 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/Project/OanhVinhWebFull/OanhVinhWeb/Views/Shared/_Layout.cshtml]
-=======
-build_property.ProjectDir = c:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb
-build_property._RazorSourceGeneratorDebug = 
-
-[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/_Layout.cshtml]
->>>>>>> admin-react
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ig0n7kxlfb

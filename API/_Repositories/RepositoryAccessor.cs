@@ -13,6 +13,7 @@ namespace API._Repositories
             Customer = new CustomerRepository(_context);
             User = new UserRepository(_context);
             ProductCategory = new ProductCategoryRepository(_context);
+            Product = new ProductRepository(_context);
         }
 
 
@@ -20,7 +21,7 @@ namespace API._Repositories
         public IUserRepository User { get; private set; }
         public IProductCategoryRepository ProductCategory { get; private set; }
 
-
+        public IProductRepository Product { get; private set; }
 
         public async Task<bool> SaveChangesAsync()
         {
