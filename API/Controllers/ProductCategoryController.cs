@@ -22,7 +22,6 @@ namespace API.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> Add([FromBody] ProductCategoryDTO productCategoryDTO)
         {
-            // productCategoryDTO.CreateBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var data = await _productCategoryService.Add(productCategoryDTO);
             return Ok(data);
         }
@@ -30,7 +29,6 @@ namespace API.Controllers
         [HttpPut("Update")]
         public async Task<IActionResult> Update([FromBody] ProductCategoryDTO productCategoryDTO)
         {
-            // productCategoryDTO.CreateBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var data = await _productCategoryService.Update(productCategoryDTO);
             return Ok(data);
         }

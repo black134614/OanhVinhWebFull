@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+﻿
 
 namespace API.Dtos
 {
@@ -22,7 +18,5 @@ namespace API.Dtos
         public int? PostCategoryID { get; set; }
         public int? TagConnectID { get; set; }
         public string PostCategoryName { get; set; }
-
-
     }
 }

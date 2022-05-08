@@ -10,7 +10,7 @@ namespace API._Repositories
         IProductCategoryRepository ProductCategory { get; }
         IProductRepository Product { get; }
         IPostCategoryRepository PostCategory { get; }
-        IPostRepository Post { get; }
+        IPostRepository Posts { get; }
 
         Task<bool> SaveChangesAsync();
     }
