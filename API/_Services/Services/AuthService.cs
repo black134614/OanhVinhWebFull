@@ -28,6 +28,7 @@ namespace API._Services.Services
                             {
                                 UserName = x.UserName,
                                 Password = x.Password,
+                                Avatar = x.Avatar
                             })
                             .FirstOrDefaultAsync();
             return user;
