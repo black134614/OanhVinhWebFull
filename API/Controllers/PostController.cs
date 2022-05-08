@@ -24,7 +24,6 @@ namespace API.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> Add([FromBody] PostDTO postDTO)
         {
-            postDTO.CreateBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var data = await _postService.Add(postDTO);
             return Ok(data);
         }
@@ -32,7 +31,6 @@ namespace API.Controllers
         [HttpPut("Update")]
         public async Task<IActionResult> Update([FromBody] PostDTO postDTO)
         {
-            postDTO.CreateBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var data = await _postService.Update(postDTO);
             return Ok(data);
         }

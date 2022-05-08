@@ -16,7 +16,7 @@ namespace API.Helpers.AutoMapper
             CreateMap<TagConnect, TagConnectDTO>();
             CreateMap<Product, ProductDTO>();
             CreateMap<ProductCategory, ProductCategoryDTO>();
-            CreateMap<Post, PostCategoryDTO>();
+            CreateMap<Post, PostDTO>();
             CreateMap<PostCategory, PostCategoryDTO>();
             CreateMap<Owner, OwnerDTO>();
             CreateMap<Customer, CustomerDTO>();

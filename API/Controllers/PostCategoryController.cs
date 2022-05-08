@@ -22,7 +22,6 @@ namespace API.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> Add([FromBody] PostCategoryDTO postCategoryDTO)
         {
-            postCategoryDTO.CreateBy = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var data = await _postCategoryService.Add(postCategoryDTO);
             return Ok(data);
         }
