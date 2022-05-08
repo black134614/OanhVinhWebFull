@@ -1,11 +1,21 @@
 import { Editor } from '@tinymce/tinymce-react'
 import { withFormik } from 'formik';
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { connect } from 'react-redux';
 import * as Yup from 'yup';
+import { updateUserAPI } from '../../redux/actions/UserActions/UserActions';
+import { SET_SUBMIT_EDIT_USER_FORM } from '../../redux/constants/AuthConstants/AuthConstants';
 
-function EditUserForm(props) {
+let avatarParam = '';
+let userDetail = '';
+function Form(props) {
+  const [avatarImg, setAvatarImg] = useState("https://picsum.photos/200/300");
+  const dispatch = useDispatch();
+  const editorRef = useRef(null);
+  useEffect(() => {
+    dispatch({ type: SET_SUBMIT_EDIT_USER_FORM, submitFunction: handleSubmit })
+  }, [])
   const {
     values,
     touched,
@@ -16,45 +26,56 @@ function EditUserForm(props) {
     setValues,
     setFieldValue
   } = props;
+  const onSelectFile = (event) => {
+    let reader = new FileReader(); // HTML5 FileReader API
+    if (event.target.files && event.target.files[0]) {
+      reader.readAsDataURL(event.target.files[0]);
+
+      //When file uploads set it to file formcontrol
+      reader.onload = (e) => {
+        // called once readAsDataURL is completed
+        setAvatarImg(e.target.result.toString());
+
+        avatarParam = e.target.result.toString();
+      };
+    }
+  }
+  const log = () => {
+    if (editorRef.current) {
+      userDetail = editorRef.current.getContent();
+    }
+  };
   const handleEditorChange = (content, editor) => {
     setFieldValue('description', content)
   }
   return (
     <form className="container-fuild" onSubmit={handleSubmit}>
       <div className="row">
-        <div className="col-4">
-
+        <div className="col-6 mb-3">
           <div className="form-group">
-            <p className="font-weight-bold">Project id</p>
-            <input value={values.id} disabled className="form-control" name="id" />
-          </div>
-
-
-        </div>
-        <div className="col-4">
-          <div className="form-group">
-            <p className="font-weight-bold">Project name</p>
-            <input value={values.projectName} className="form-control" name="projectName" onChange={handleChange} />
+            <p className="font-weight-bold">Tên</p>
+            <input value={values.fullName} className="form-control" name="fullName" onChange={handleChange} />
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-6 mb-3">
           <div className="form-group">
-            <p className="font-weight-bold">Project Category</p>
-            <select className="form-control" name="categoryId" value={values.categoryId}>
-              
-            </select>
-
-
+            <p className="font-weight-bold">Số điện thoại</p>
+            <input value={values.phoneNumber} className="form-control" name="phoneNumber" onChange={handleChange} />
           </div>
         </div>
-        <div className="col-12">
+        <div className="col-6 mb-3">
+          <p className="font-weight-bold">Avatar</p>
+          <input className="form-control" type="file" onChange={(e) => { onSelectFile(e) }} />
+        </div>
+        <div className="col-6 mb-3">
+          <img src={avatarImg} style={{ height: 100, width: 100, objectFit: 'cover' }} />
+        </div>
+        <div className="col-12 mb-3">
           <div className="form-group">
-            <p className="font-weight-bold">Description</p>
+            <p className="font-weight-bold">Giới thiệu</p>
             <Editor
-
-              name="description123"
-              initialValue={values.description}
-              value={values.description}
+              name="userDetail"
+              initialValue={values.userDetail}
               init={{
                 selector: 'textarea#myTextArea',
                 height: 500,
@@ -70,7 +91,8 @@ function EditUserForm(props) {
         alignleft aligncenter alignright alignjustify | \
         bullist numlist outdent indent | removeformat | help'
               }}
-              onEditorChange={handleEditorChange}
+              onInit={(evt, editor) => editorRef.current = editor}
+              onChange={() => { log() }}
             />
           </div>
         </div>
@@ -82,39 +104,34 @@ function EditUserForm(props) {
 const FormUserEdit = withFormik({
   enableReinitialize: true,
   mapPropsToValues: (props) => {
-    const { projectEdit } = props;
-
+    const { UserInfo } = props;
     return {
-      id: projectEdit?.id,
-      projectName: "do ten ",
-      description: "do thong tin",
-      categoryId: "projectEdit.categoryId"
+      fullName: UserInfo.fullName,
+      phoneNumber: UserInfo.phoneNumber,
+      userDetail: UserInfo.userDetail,
     }
   },
+  // Custom sync validation
   validationSchema: Yup.object().shape({
-
-
   }),
   handleSubmit: (values, { props, setSubmitting }) => {
-
-    //Khi người dùng bấm submit => đưa dữ liệu về backedn thông qua api
-    // const action = {
-    //     type:'UPDATE_PROJECT_SAGA',
-    //     prjectUpdate:values
-    // }
-    //Gọi saga
-    // props.dispatch({
-    //     type:'UPDATE_PROJECT_SAGA',
-    //     prjectUpdate:values
-    // })
-
+    const createTime = new Date().toISOString();
+    const user = {
+      userName: props.UserInfo.userName,
+      fullName: values.fullName,
+      phoneNumber: values.phoneNumber,
+      userDetail: userDetail,
+      avatarParam: avatarParam,
+      createTime: createTime
+    }
+    props.dispatch(updateUserAPI(user));
   },
-  displayName: 'Edit user form',
-})(EditUserForm);
+  displayName: 'Sửa thông tin',
+})(Form);
 
 const mapStateToProps = (state) => ({
 
-  // projectEdit: state.ProjectReducer.projectEdit
+  UserInfo: state.UserReducer.UserInfo
 
 })
 

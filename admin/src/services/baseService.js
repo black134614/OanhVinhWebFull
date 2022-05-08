@@ -20,10 +20,11 @@ export class baseService {
     }
 
 
-    get = (url) => {
+    get = (url, model) => {
         return Axios({
             url: `${DOMAIN}/${url}`,
-            method: 'GET'
+            method: 'GET',
+            data: model
             // headers: {'Authorization': 'Bearer ' + localStorage.getItem(TOKEN)} //token yêu cầu từ backend chứng minh user đã đăng nhập rồi
         })
     }

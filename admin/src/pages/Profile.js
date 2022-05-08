@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import EditUserForm from "../components/forms/EditUserForm";
-import { USER_LOGIN } from '../util/constants/settingSystem'
+import { USER_LOGIN } from '../util/constants/settingSystem';
+import ReactHtmlParser from 'react-html-parser';
+
 import {
   Row,
   Col,
@@ -33,20 +35,20 @@ import project1 from "../assets/images/home-decor-1.jpeg";
 import project2 from "../assets/images/home-decor-2.jpeg";
 import project3 from "../assets/images/home-decor-3.jpeg";
 import { useDispatch, useSelector } from "react-redux";
-import { getFormUpdateUser } from "../redux/actions/UserActions/UserActions";
+import { getFormUpdateUser, getUserInfoSaga } from "../redux/actions/UserActions/UserActions";
+import dateFormat, { masks } from "dateformat";
 
-function Profile() {
+export default function Profile() {
   const dispatch = useDispatch();
-  
-  const userInfo = JSON.parse(localStorage.getItem(USER_LOGIN));
+  const UserInfo = useSelector((state) => state.UserReducer.UserInfo);
 
+  const userName = JSON.parse(localStorage.getItem(USER_LOGIN)).userName;
   useEffect(() => {
-    console.log(userInfo);
+    console.log(UserInfo);
+    dispatch(getUserInfoSaga(userName));
   }, []);
-
-  const showDrawer = () => {
-    dispatch(getFormUpdateUser("Sửa thông tin", <EditUserForm />));
-  };
+  //mask date time
+  const createTime = dateFormat(Date(UserInfo.createTime), "dd/mm/yyyy");
 
   const pencil = [
     <svg
@@ -67,68 +69,9 @@ function Profile() {
       ></path>
     </svg>,
   ];
-  const uploadButton = (
-    <div className="ant-upload-text font-semibold text-dark">
-      {<VerticalAlignTopOutlined style={{ width: 20, color: "#000" }} />}
-      <div>Upload New Project</div>
-    </div>
-  );
-
-  const data = [
-    {
-      title: "Sophie B.",
-      avatar: convesionImg,
-      description: "Hi! I need more information…",
-    },
-    {
-      title: "Anne Marie",
-      avatar: convesionImg2,
-      description: "Awesome work, can you…",
-    },
-    {
-      title: "Ivan",
-      avatar: convesionImg3,
-      description: "About files I can…",
-    },
-    {
-      title: "Peterson",
-      avatar: convesionImg4,
-      description: "Have a great afternoon…",
-    },
-    {
-      title: "Nick Daniel",
-      avatar: convesionImg5,
-      description: "Hi! I need more information…",
-    },
-  ];
-
-  const project = [
-    {
-      img: project1,
-      titlesub: "Project #1",
-      title: "Modern",
-      disciption:
-        "As Uber works through a huge amount of internal management turmoil.",
-    },
-    {
-      img: project2,
-      titlesub: "Project #2",
-      title: "Scandinavian",
-      disciption:
-        "Music is something that every person has his or her own specific opinion about.",
-    },
-    {
-      img: project3,
-      titlesub: "Project #3",
-      title: "Minimalist",
-      disciption:
-        "Different people have different taste, and various types of music, Zimbali Resort",
-    },
-  ];
-
   return (
     <>
-      <button onClick={showDrawer}>showdrawer</button>
+
 
       <div
         className="profile-nav-bg"
@@ -145,7 +88,7 @@ function Profile() {
                 <Avatar size={74} shape="square" src={profilavatar} />
 
                 <div className="avatar-info">
-                  <h4 className="font-semibold m-0">Sarah Jacob</h4>
+                  <h4 className="font-semibold m-0">{UserInfo.userName}</h4>
                   <p>CEO / Co-Founder</p>
                 </div>
               </Avatar.Group>
@@ -175,24 +118,24 @@ function Profile() {
             bordered={false}
             title={<h6 className="font-semibold m-0">Giới Thiệu</h6>}
             className="header-solid h-full card-profile-information"
-            extra={<Button type="link">{pencil}</Button>}
+            extra={<Button onClick={() => { dispatch(getFormUpdateUser("Sửa thông tin", <EditUserForm />)); }} type="link">{pencil}</Button>}
             bodyStyle={{ paddingTop: 0, paddingBottom: 16 }}
           >
             <p className="text-dark">
               {" "}
-              Tôi đã theo học và tốt nghiệp loại giỏi chuyên ngành Kế toán của Đại học Kinh tế Quốc dân. Trong quá trình học tập tại trường, tôi đã từng giành giải Nhất cuộc thi “The Audit Race 2019” do tập đoàn FAC tổ chức. Tôi có nhiều kinh nghiệm làm việc với công ty xuất khẩu: Công ty CPTM HBS Vietnam; Công ty Xuất nhập khẩu Trung Quốc Đại Dương.
+              {ReactHtmlParser(UserInfo.userDetail)}
               {" "}
             </p>
             <hr className="my-25" />
             <Descriptions title="Thông Tin Cá Nhân">
               <Descriptions.Item label="Tên" span={3}>
-                Sarah Emily Jacob
+                {UserInfo.fullName}
               </Descriptions.Item>
               <Descriptions.Item label="Số điện thoại" span={3}>
-                (44) 123 1234 123
+                {UserInfo.phoneNumber}
               </Descriptions.Item>
               <Descriptions.Item label="Ngày tạo" span={3}>
-                sarahjacob@mail.com
+                {createTime}
               </Descriptions.Item>
             </Descriptions>
           </Card>
@@ -201,4 +144,4 @@ function Profile() {
     </>
   );
 }
-export default Profile;
+
