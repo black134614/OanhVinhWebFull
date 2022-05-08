@@ -1,0 +1,83 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "DBContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "API",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Customer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Owner]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Post]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PostCategory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Product]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProductCategory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tag]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TagConnect]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TagType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[User]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[WebsiteActiveImage]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[WebsiteInfo]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "NAUL-PC.DeOanhVinh",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": true,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

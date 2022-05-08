@@ -32,9 +32,9 @@ export const getAllProductCategoryAction = (ProductCategoryList) => ({
   ProductCategoryList
 })
 
-export const deleteProductCategorySagaAction = (productCategoryID) => ({
+export const deleteProductCategorySagaAction = (productCategory) => ({
   type: DELETE_PRODUCT_CATEGORY_SAGA,
-  productCategoryID
+  productCategory
 })
 
 

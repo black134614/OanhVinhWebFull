@@ -10,8 +10,9 @@ import { closeDrawer } from '../../actions/DrawerActions/DrawerActions';
 //saga them danh muc san pham / add product category
 function* addProductCategorySaga(action) {
     const { userName, ProductCategory } = action;
+    console.log(ProductCategory);
     try {
-        const { data, status } = yield call(() => productCategoryServices.addProductCategory(userName, ProductCategory))
+        const { data, status } = yield call(() => productCategoryServices.addProductCategory(ProductCategory))
         if (status === STATUS_CODE.SUCCESS) {
             yield put(closeDrawer());
             notifiFunction('success', 'Thêm mới danh mục sản phẩm ' + ProductCategory.tittle + ' thành công!')
@@ -41,16 +42,11 @@ export function* theoDoiGetAllProductCategorySaga() {
 }
 //saga xoa danh muc san pham / delete product category
 function* deleteProductCategorySaga(action) {
-    let { productCategoryID } = action;
-    productCategoryID += '';
+    const { productCategory } = action;
     try {
-        const { data, status } = yield call(() => productCategoryServices.deleteProductCategory(productCategoryID));
-        if (status === STATUS_CODE.SUCCESS) {
-            console.log(typeof(productCategoryID));
-            console.log(data);
-            notifiFunction('success', 'Đã xóa thành công danh mục! ' + productCategoryID);
+        const { data, status } = yield call(() => productCategoryServices.deleteProductCategory(productCategory));
+            notifiFunction('success', 'Đã xóa thành công danh mục! ');
             yield put(getAllProductCategorySagaAction());
-        }
     } catch (error) {
         console.log(error)
     }

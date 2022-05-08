@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Table, Tag, Space, Button, Tooltip, Checkbox, Popconfirm, message } from 'antd';
 import { AppstoreAddOutlined, DeleteOutlined, EditOutlined, SearchOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteAction, getAllProductCategorySagaAction, getEditProductCategoryFormAction, getProductCategoryFormAction, setEditProductCategoryFormAction } from '../../redux/actions/ProductCategoryActions/ProductCategoryActions';
+import { deleteAction, deleteProductCategorySagaAction, getAllProductCategorySagaAction, getEditProductCategoryFormAction, getProductCategoryFormAction, setEditProductCategoryFormAction } from '../../redux/actions/ProductCategoryActions/ProductCategoryActions';
 import ProductCategoryForm from '../../components/forms/ProductCategoryForm';
 import { SET_EDIT_PRODUCT_CATEGORY_FORM } from '../../redux/constants/ProductCategoryConstants/ProductCategoryConstants';
 import EditProductCategoryForm from '../../components/forms/EditProductCategoryForm';
@@ -62,7 +62,14 @@ export default function ProductCategory() {
                     <Popconfirm
                         title={`Bạn có muốn xóa "${record.tittle}" không?`}
                         onConfirm={() => {
-                            dispatch(deleteAction(record.productCategoryID));
+                            const productCategory = {
+                                productCategoryID: record.productCategoryID,
+                                tittle: record.tittle,
+                                description: record.description,
+                                status: record.status,
+                                createBy: record.createBy
+                            }
+                            dispatch(deleteProductCategorySagaAction(productCategory));
                         }}
                         okText="Yes"
                         cancelText="No"
