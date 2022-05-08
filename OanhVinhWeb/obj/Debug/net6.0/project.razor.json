@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\WebOanhVinh.csproj",
+  "FilePath": "d:\\Project\\OanhVinhWebFull\\OanhVinhWeb\\WebOanhVinh.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16333,12 +16333,17 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "d:\\Project\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\_ViewImports.cshtml",
+      "FilePath": "d:\\Project\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Project\\OanhVinhWebFull\\OanhVinhWeb\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },

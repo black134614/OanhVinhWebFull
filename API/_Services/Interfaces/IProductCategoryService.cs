@@ -9,7 +9,7 @@ namespace API._Services.Interfaces
 
         Task<OperationResult> Add(ProductCategoryDTO productCategoryDTO);
         Task<OperationResult> Update(ProductCategoryDTO productCategoryDTO);
-        Task<OperationResult> Delete(int productCategoryID);
+        Task<OperationResult> Delete(ProductCategoryDTO productCategoryDTO);
 
     }
 }
