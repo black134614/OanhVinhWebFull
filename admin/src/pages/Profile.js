@@ -44,7 +44,6 @@ export default function Profile() {
 
   const userName = JSON.parse(localStorage.getItem(USER_LOGIN)).userName;
   useEffect(() => {
-    console.log(UserInfo);
     dispatch(getUserInfoSaga(userName));
   }, []);
   //mask date time

@@ -1,4 +1,5 @@
 import { Editor } from '@tinymce/tinymce-react'
+import { Alert } from 'antd';
 import { withFormik } from 'formik';
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +9,6 @@ import { updateUserAPI } from '../../redux/actions/UserActions/UserActions';
 import { SET_SUBMIT_EDIT_USER_FORM } from '../../redux/constants/AuthConstants/AuthConstants';
 
 let avatarParam = '';
-let userDetail = '';
 function Form(props) {
   const [avatarImg, setAvatarImg] = useState("https://picsum.photos/200/300");
   const dispatch = useDispatch();
@@ -40,14 +40,8 @@ function Form(props) {
       };
     }
   }
-  const log = () => {
-    if (editorRef.current) {
-      userDetail = editorRef.current.getContent();
-    }
-  };
-  const handleEditorChange = (content, editor) => {
-    setFieldValue('description', content)
-  }
+  
+
   return (
     <form className="container-fuild" onSubmit={handleSubmit}>
       <div className="row">
@@ -55,12 +49,14 @@ function Form(props) {
           <div className="form-group">
             <p className="font-weight-bold">Tên</p>
             <input value={values.fullName} className="form-control" name="fullName" onChange={handleChange} />
+            {errors.fullName && touched.fullName && <Alert id="feedback" message={errors.fullName} type="error" showIcon />}
           </div>
         </div>
         <div className="col-6 mb-3">
           <div className="form-group">
             <p className="font-weight-bold">Số điện thoại</p>
             <input value={values.phoneNumber} className="form-control" name="phoneNumber" onChange={handleChange} />
+            {errors.phoneNumber && touched.phoneNumber && <Alert id="feedback" message={errors.phoneNumber} type="error" showIcon />}
           </div>
         </div>
         <div className="col-6 mb-3">
@@ -91,9 +87,11 @@ function Form(props) {
         alignleft aligncenter alignright alignjustify | \
         bullist numlist outdent indent | removeformat | help'
               }}
-              onInit={(evt, editor) => editorRef.current = editor}
-              onChange={() => { log() }}
+              onEditorChange={(content, editor) => {
+                setFieldValue('userDetail', content);
+            }}
             />
+            {errors.userDetail && touched.userDetail && <Alert id="feedback" message={errors.userDetail} type="error" showIcon />}
           </div>
         </div>
       </div>
@@ -113,17 +111,28 @@ const FormUserEdit = withFormik({
   },
   // Custom sync validation
   validationSchema: Yup.object().shape({
+   
+    phoneNumber: Yup.string()
+    .required('Bạn cần nhập số điện thoại!')
+    .length(10, 'Số điện thoại có 10 chữ số!'),
+    fullName: Yup.string().required('Bạn cần nhập tên!'),
+    userDetail: Yup.string().max(1000, 'Giới thiệu quá dài!')
   }),
   handleSubmit: (values, { props, setSubmitting }) => {
     const createTime = new Date().toISOString();
-    const user = {
+    let user = {
       userName: props.UserInfo.userName,
       fullName: values.fullName,
       phoneNumber: values.phoneNumber,
-      userDetail: userDetail,
-      avatarParam: avatarParam,
+      userDetail: values.userDetail,
+      avatar: props.UserInfo.avatar,
       createTime: createTime
     }
+    if (avatarParam) {
+      user = { ...user, avatarParam: avatarParam, avatar: "" }
+    }
+
+    console.log(user)
     props.dispatch(updateUserAPI(user));
   },
   displayName: 'Sửa thông tin',

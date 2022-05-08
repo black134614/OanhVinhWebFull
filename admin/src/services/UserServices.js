@@ -4,7 +4,7 @@ export class UserServices extends baseService {
     constructor() {
         super();
     }
-    getUserInfo = (username) => {
+    getUserInfo =   (username) => {
         return this.get(`User/GetAllUsers?username=${username}`,username)
     }
     updateUser = (user) =>{

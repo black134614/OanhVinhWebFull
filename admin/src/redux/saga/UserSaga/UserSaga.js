@@ -14,6 +14,7 @@ function* getUserSaga(action) {
         }
         else {
             yield put(getUserInfo(data[0]));
+            console.log(data[0])
         }
     } catch (error) {
         console.log(error);
@@ -27,7 +28,6 @@ function* updateUserSaga(action) {
     const { user } = action;
     try {
         const { data, status } = yield call(() => userServices.updateUser(user));
-        console.log(data);
         if (data.success === false) {
             notifiFunction('error', 'Cập nhật người dùng thất bại!');
         }
