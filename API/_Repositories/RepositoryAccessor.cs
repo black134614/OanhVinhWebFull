@@ -14,6 +14,7 @@ namespace API._Repositories
             User = new UserRepository(_context);
             ProductCategory = new ProductCategoryRepository(_context);
             Product = new ProductRepository(_context);
+            PostCategory = new PostCategoryRepository(_context);
         }
 
 
@@ -22,6 +23,10 @@ namespace API._Repositories
         public IProductCategoryRepository ProductCategory { get; private set; }
 
         public IProductRepository Product { get; private set; }
+
+        public IPostCategoryRepository PostCategory { get; private set; }
+
+        public IPostRepository Post { get; private set; }
 
         public async Task<bool> SaveChangesAsync()
         {
