@@ -9,6 +9,9 @@ namespace API._Repositories
         IUserRepository User { get; }
         IProductCategoryRepository ProductCategory { get; }
         IProductRepository Product { get; }
+        IPostCategoryRepository PostCategory { get; }
+        IPostRepository Post { get; }
+
         Task<bool> SaveChangesAsync();
     }
 }

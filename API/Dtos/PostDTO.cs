@@ -21,5 +21,8 @@ namespace API.Dtos
         public string CreateBy { get; set; }
         public int? PostCategoryID { get; set; }
         public int? TagConnectID { get; set; }
+        public string PostCategoryName { get; set; }
+
+
     }
 }
