@@ -1,7 +1,7 @@
 import { GET_ALL_PRODUCT_CATEGORY, GET_EDIT_PRODUCT_CATEGORY_FORM, SET_EDIT_PRODUCT_CATEGORY_FORM } from "../../constants/ProductCategoryConstants/ProductCategoryConstants"
 
 const initialState = {
-    ProductCategory: [
+    ProductCategoryList: [
         {
             key: "0",
             productCategoryID: 0,
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
     switch (action.type) {
 
         case GET_ALL_PRODUCT_CATEGORY: {
-            state.ProductCategory = action.ProductCategoryList.map((item, index) => {
+            state.ProductCategoryList = action.ProductCategoryList.map((item, index) => {
                 return {
                     key: index + '',
                     productCategoryID: item.productCategoryID,
@@ -36,6 +36,7 @@ export default (state = initialState, action) => {
                     createTime: item.createTime
                 };
             })
+            console.log( state.ProductCategoryList)
             return { ...state }
         }
         case SET_EDIT_PRODUCT_CATEGORY_FORM: {

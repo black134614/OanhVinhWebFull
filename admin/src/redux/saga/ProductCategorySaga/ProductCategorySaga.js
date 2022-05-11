@@ -30,7 +30,8 @@ export function* theoDoiAddProductCategorySaga() {
 function* getAllProductCategorySaga() {
     try {
         const { data, status } = yield call(() => productCategoryServices.getAllProductCategory())
-        if (status === STATUS_CODE.SUCCESS) {
+        if (data.length > 0) {
+            console.log(data);
             yield put(getAllProductCategoryAction(data));
         }
     } catch (error) {
@@ -45,8 +46,8 @@ function* deleteProductCategorySaga(action) {
     const { productCategory } = action;
     try {
         const { data, status } = yield call(() => productCategoryServices.deleteProductCategory(productCategory));
-            notifiFunction('success', 'Đã xóa thành công danh mục! ');
-            yield put(getAllProductCategorySagaAction());
+        notifiFunction('success', 'Đã xóa thành công danh mục! ');
+        yield put(getAllProductCategorySagaAction());
     } catch (error) {
         console.log(error)
     }

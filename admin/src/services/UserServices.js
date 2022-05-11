@@ -1,13 +1,13 @@
-import {baseService} from './baseService'
+import { baseService } from './baseService'
 
 export class UserServices extends baseService {
     constructor() {
         super();
     }
-    getUserInfo =   (username) => {
-        return this.get(`User/GetAllUsers?username=${username}`,username)
+    getUserInfo = (username) => {
+        return this.get(`User/GetAllUsers?username=${username}`, username)
     }
-    updateUser = (user) =>{
+    updateUser = (user) => {
         return this.put('User/Update', user)
     }
 }

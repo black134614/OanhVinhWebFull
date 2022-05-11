@@ -8,6 +8,7 @@ import AuthReducer from './reducers/AuthReducer/AuthReducer';
 import DrawerReducer from './reducers/DrawerReducer/DrawerReducer';
 import ProductCategoryReducer from './reducers/ProductCategoryReducer/ProductCategoryReducer';
 import UserReducer from './reducers/UserReducer/UserReducer';
+import ProductReducer from './reducers/ProductReducer/ProductReducer';
 
 const middleWareSaga = createMiddleWareSaga();
 const rootReducer = combineReducers({
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
     AuthReducer,
     DrawerReducer,
     ProductCategoryReducer,
-    UserReducer
+    UserReducer,
+    ProductReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(middleWareSaga));

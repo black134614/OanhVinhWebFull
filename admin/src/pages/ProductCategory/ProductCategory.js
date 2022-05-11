@@ -9,9 +9,9 @@ import EditProductCategoryForm from '../../components/forms/EditProductCategoryF
 
 export default function ProductCategory() {
     const dispatch = useDispatch();
-    const data = useSelector((state) => state.ProductCategoryReducer.ProductCategory)
+    const data = useSelector((state) => state.ProductCategoryReducer.ProductCategoryList)
     useEffect(() => {
-        dispatch(getAllProductCategorySagaAction())
+        dispatch(getAllProductCategorySagaAction());
     }, []);
     const columns = [
         {

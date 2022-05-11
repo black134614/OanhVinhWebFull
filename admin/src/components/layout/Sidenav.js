@@ -184,9 +184,8 @@ function Sidenav({ color }) {
             <span className="label">Danh mục sản phẩm</span>
           </NavLink>
         </Menu.Item>
-        {/*
-              <Menu.Item key="3">
-          <NavLink to="/billing">
+        <Menu.Item key="3">
+          <NavLink to="/san-pham">
             <span
               className="icon"
               style={{
@@ -195,9 +194,10 @@ function Sidenav({ color }) {
             >
               {billing}
             </span>
-            <span className="label">Billing</span>
+            <span className="label">Sản Phẩm</span>
           </NavLink>
         </Menu.Item>
+        {/*
         <Menu.Item key="4">
           <NavLink to="/rtl">
             <span
