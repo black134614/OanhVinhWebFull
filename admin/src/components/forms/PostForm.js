@@ -82,7 +82,7 @@ function Form(props) {
                 <div className="col-6 mb-3">
                     <div className="form-group">
                         <p>Danh Mục bài viết</p>
-                        <select name="postCategoryID" value={values.postCategoryID} className="form-control" onChange={(e) => {
+                        <select name="postCategoryID" defaultValue={values.postCategoryID} className="form-control" onChange={(e) => {
 
                             // //dispatch giá trị làm thay đổi arrUser
                             // let { value } = e.target;
@@ -158,7 +158,7 @@ const PostForm = withFormik({
                 postName: '',
                 postDescription: '',
                 postALTSeo: '',
-                postCategoryID: '',
+                postCategoryID: props.PostCategoryList[0].postCategoryID,
                 status: true,
                 postDetail: ''
             }
@@ -195,9 +195,9 @@ const PostForm = withFormik({
             status: values.status,
             createBy: createBy
         }
-
         if (props.Post) {
-            Post = { ...Post, PostID: props.Post.PostID };
+            Post = { ...Post, PostID: props.Post.postID };
+            console.log('update',Post);
             props.dispatch(updatePostAPIAction(Post));
         }
         else {

@@ -9,6 +9,7 @@ import { ADD_POST_SAGA, DELETE_POST_SAGA, GET_ALL_POST_SAGA, UPDATE_POST_SAGA } 
 function* getAllPostSaga() {
     try {
         const { data, status } = yield call(() => postService.getAllPost());
+        console.log(data);
         if (!data) {
             notifiFunction('error', 'Lỗi load dữ liệu bài viết!');
         }

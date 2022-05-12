@@ -90,16 +90,18 @@ const PostCategoryForm = withFormik({
             .max(1000, 'Mô tả quá dài!')
     }),
     handleSubmit: (values, { props, setSubmitting }) => {
-        const PostCategory = {
+        let PostCategoryBuild = {
             tittle: values.tittle,
             description: values.description,
             status: values.status,
             createBy: userName
         }
         if (!props.PostCategory) {
-            props.dispatch(addPostCategoryAPIAction(PostCategory))
+            console.log('add');
+            props.dispatch(addPostCategoryAPIAction(PostCategoryBuild))
         } else {
-            props.dispatch(updatePostCategoryAPIAction(PostCategory))
+            console.log('update');
+            props.dispatch(updatePostCategoryAPIAction({ ...PostCategoryBuild, PostCategoryID: props.PostCategory.postCategoryID }))
         }
     },
 

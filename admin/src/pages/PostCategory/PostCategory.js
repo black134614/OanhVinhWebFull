@@ -55,7 +55,7 @@ export default function PostCategory() {
                                 description: record.description,
                                 status: record.status
                             }
-                            dispatch(getPostCategoryFormAction('Thêm Danh Mục Bài Đăng Mới', <PostCategoryForm PostCategory={PostCategory} />))
+                            dispatch(getPostCategoryFormAction('Sửa Danh Mục Bài Đăng', <PostCategoryForm PostCategory={PostCategory} />))
                         }}>
                         Chỉnh sửa
                     </Button>

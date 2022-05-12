@@ -35,16 +35,25 @@ export default (state = initialState, action) => {
             state.title = action.title;
             return { ...state };
         }
-        case GET_FORM_UPDATE_USER, GET_PRODUCT_FORM, GET_POST_CATEGORY_FORM, GET_POST_FORM: {
+        case GET_FORM_UPDATE_USER, GET_PRODUCT_FORM, GET_POST_FORM: {
             state.visible = true;
             state.ComponentContentDrawer = action.Component;
             state.title = action.title;
             return { ...state };
         }
-        case SET_SUBMIT_EDIT_USER_FORM, SET_SUBMIT_PRODUCT_FORM, SET_SUBMIT_POST_CATEGORY_FORM, SET_SUBMIT_POST_FORM: {
+        case SET_SUBMIT_EDIT_USER_FORM, SET_SUBMIT_PRODUCT_FORM, SET_SUBMIT_POST_FORM: {
             return { ...state, callBackSubmit: action.submitFunction }
         }
+        case GET_POST_CATEGORY_FORM: {
+            state.visible = true;
+            state.ComponentContentDrawer = action.Component;
+            state.title = action.title;
+            return { ...state };
+        }
+        case SET_SUBMIT_POST_CATEGORY_FORM: {
 
+            return { ...state, callBackSubmit: action.submitFunction }
+        }
         default:
             return state
     }

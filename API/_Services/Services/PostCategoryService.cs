@@ -66,7 +66,7 @@ namespace API._Services.Services
             if (postCategory != null)
             {
                 _repositoryAccessor.PostCategory.Update(postCategory);
-                await _repositoryAccessor.SaveChangesAsync();
+                await _repositoryAccessor.PostCategory.Save();
                 return new OperationResult(true, "Sửa thể loại bài viết thành công!");
             }
             return new OperationResult(false, "Sửa thể loại bài viết thất bại!");
