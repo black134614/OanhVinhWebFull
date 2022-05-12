@@ -4,7 +4,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { connect } from 'react-redux';
 import * as Yup from 'yup';
-import { addProductCategoryAction } from '../../redux/actions/ProductCategoryActions/ProductCategoryActions';
+import { addPostCategoryAPIAction, updatePostCategoryAPIAction } from '../../redux/actions/PostCategoryActions/PostCategoryActions';
+import { SET_SUBMIT_POST_CATEGORY_FORM } from '../../redux/constants/DrawerContants/DrawerContants';
 import { ADD_PRODUCT_CATEGORY_SAGA, SET_SUBMIT_CREATE_PRODUCT_CATEGORY } from '../../redux/constants/ProductCategoryConstants/ProductCategoryConstants';
 import { USER_LOGIN } from '../../util/constants/settingSystem';
 
@@ -18,7 +19,7 @@ try {
 function Form(props) {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch({ type: SET_SUBMIT_CREATE_PRODUCT_CATEGORY, submitFunction: handleSubmit })
+        dispatch({ type: SET_SUBMIT_POST_CATEGORY_FORM, submitFunction: handleSubmit })
     }, [])
     const {
         values,
@@ -60,9 +61,25 @@ function Form(props) {
     )
 }
 
-const ProductCategoryForm = withFormik({
+const PostCategoryForm = withFormik({
     enableReinitialize: true,
-    mapPropsToValues: () => ({ tittle: '', description: '', status: true }),
+    mapPropsToValues: (props) => {
+        const { PostCategory } = props;
+        if (PostCategory) {
+            return {
+                tittle: PostCategory.tittle,
+                description: PostCategory.description,
+                status: PostCategory.status,
+            }
+        }
+        else {
+            return {
+                tittle: '',
+                description: '',
+                status: true,
+            }
+        }
+    },
     // Custom sync validation
     validationSchema: Yup.object().shape({
         tittle: Yup.string()
@@ -73,16 +90,20 @@ const ProductCategoryForm = withFormik({
             .max(1000, 'Mô tả quá dài!')
     }),
     handleSubmit: (values, { props, setSubmitting }) => {
-        const ProductCategory = {
+        const PostCategory = {
             tittle: values.tittle,
             description: values.description,
             status: values.status,
-            createBy: userName,
+            createBy: userName
         }
-        props.dispatch(addProductCategoryAction(ProductCategory))
+        if (!props.PostCategory) {
+            props.dispatch(addPostCategoryAPIAction(PostCategory))
+        } else {
+            props.dispatch(updatePostCategoryAPIAction(PostCategory))
+        }
     },
 
-    displayName: 'Thêm Danh Mục Bài Đăng Mới',
+    displayName: 'Thêm Danh Mục Sản Phẩm Mới',
 })(Form);
 
 const mapStateToProps = (state) => ({
@@ -92,4 +113,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(ProductCategoryForm);
+export default connect(mapStateToProps)(PostCategoryForm);

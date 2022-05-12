@@ -1,4 +1,4 @@
-import { CLOSE_DRAWER, GET_PRODUCT_FORM, OPEN_DRAWER } from "../../constants/DrawerContants/DrawerContants";
+import { CLOSE_DRAWER, GET_POST_CATEGORY_FORM, GET_POST_FORM, GET_PRODUCT_FORM, OPEN_DRAWER, SET_SUBMIT_POST_CATEGORY_FORM } from "../../constants/DrawerContants/DrawerContants";
 
 export const openDrawer = () => ({
   type: OPEN_DRAWER
@@ -12,3 +12,21 @@ export const getProductFormAction = (title, Component) => ({
   title,
   Component
 })
+
+export const getPostCategoryFormAction = (title, Component) => ({
+  type: GET_POST_CATEGORY_FORM,
+  title,
+  Component
+})
+
+export const setSubmitPostCategoryFormAction = (submitFunction) => ({
+  type: SET_SUBMIT_POST_CATEGORY_FORM,
+  submitFunction
+})
+
+export const getPostFormAction = (title, Component) => ({
+  type: GET_POST_FORM,
+  title,
+  Component
+})
+

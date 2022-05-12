@@ -36,7 +36,6 @@ export default (state = initialState, action) => {
                     createTime: item.createTime
                 };
             })
-            console.log( state.ProductCategoryList)
             return { ...state }
         }
         case SET_EDIT_PRODUCT_CATEGORY_FORM: {

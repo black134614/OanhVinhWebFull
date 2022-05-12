@@ -9,6 +9,8 @@ import DrawerReducer from './reducers/DrawerReducer/DrawerReducer';
 import ProductCategoryReducer from './reducers/ProductCategoryReducer/ProductCategoryReducer';
 import UserReducer from './reducers/UserReducer/UserReducer';
 import ProductReducer from './reducers/ProductReducer/ProductReducer';
+import PostCategoryReducer from './reducers/PostCategoryReducer/PostCategoryReducer';
+import PostReducer from './reducers/PostReducer/PostReducer';
 
 const middleWareSaga = createMiddleWareSaga();
 const rootReducer = combineReducers({
@@ -17,7 +19,9 @@ const rootReducer = combineReducers({
     DrawerReducer,
     ProductCategoryReducer,
     UserReducer,
-    ProductReducer
+    ProductReducer,
+    PostCategoryReducer,
+    PostReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(middleWareSaga));

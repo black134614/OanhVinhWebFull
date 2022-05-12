@@ -14,6 +14,8 @@ import UpLoad from "./components/layout/UpLoad";
 import DrawerHOC from "./HOC/Drawer/DrawerHOC";
 import ProductCategory from "./pages/ProductCategory/ProductCategory";
 import { MainTemplate } from './templates/MainTemplate/MainTemplate';
+import PostCategory from "./pages/PostCategory/PostCategory";
+import Post from "./pages/Post/Post";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/upload" exact component={UpLoad} />
         <MainTemplate exact path='/dashboard' Component={Home} />
         <MainTemplate exact path='/san-pham' Component={Product} />
+        <MainTemplate exact path='/bai-dang' Component={Post} />
+        <MainTemplate exact path='/danh-muc-bai-dang' Component={PostCategory} />
         <MainTemplate exact path='/rtl' Component={Rtl} />
         <MainTemplate exact path='/profile' Component={Profile} />
         <MainTemplate exact path='/danh-muc-san-pham' Component={ProductCategory} />
