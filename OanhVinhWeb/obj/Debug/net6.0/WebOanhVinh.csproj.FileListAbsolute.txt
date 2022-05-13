@@ -50,3 +50,9 @@ C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\sco
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\scopedcss\projectbundle\WebOanhVinh.bundle.scp.css
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.genruntimeconfig.cache
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\ref\WebOanhVinh.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\efpt.config.json
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.csproj.CopyComplete
