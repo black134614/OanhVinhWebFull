@@ -1,31 +1,13 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@model List<PostCategory>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebOanhVinh</title>
     <!-- Required meta tags -->
 
-    <link rel="icon" href="img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/gijgo.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/all.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <vc:vc-hom />
 </head>
 <body>
     <div class="sharethis-sticky-share-buttons"></div>
@@ -63,9 +45,10 @@
                                         Bài Đăng
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.html">Blog</a>
-                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                        <a class="dropdown-item" href="elements.html">Elements</a>
+                                        @foreach (var item in Model)
+                                        {
+                                            <a class="dropdown-item" href="blog.html">@item.Tittle</a>
+                                        }
                                     </div>
                                 </li>
                                 <li class="nav-item">

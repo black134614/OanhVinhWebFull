@@ -39,7 +39,67 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Error.cshtml]
+=======
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcAbout/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNBYm91dFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcFooter/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNGb290ZXJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcGoogleMap/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNHb29nbGVNYXBcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcHeadCss/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNIZWFkQ3NzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcHomeBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNIb21lQmFubmVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcHomeContact/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNIb21lQ29udGFjdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcIntroVideo/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNJbnRyb1ZpZGVvXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcMainMenu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNNYWluTWVudVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcOwner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNPd25lclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcPostRelated/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNQb3N0UmVsYXRlZFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcRecentPost/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNSZWNlbnRQb3N0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcReview/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNSZXZpZXdcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcScript/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNTY3JpcHRcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcTopProduct/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNUb3BQcm9kdWN0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Error.cshtml]
+>>>>>>> user-mvc
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
