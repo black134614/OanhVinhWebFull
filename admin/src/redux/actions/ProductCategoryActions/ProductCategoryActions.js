@@ -17,9 +17,8 @@ export const setEditProductCategoryFormAction = (productCategory) => ({
   productCategory
 })
 
-export const addProductCategoryAction = (userName, ProductCategory) => ({
+export const addProductCategoryAPIAction = (ProductCategory) => ({
   type: ADD_PRODUCT_CATEGORY_SAGA,
-  userName,
   ProductCategory
 })
 

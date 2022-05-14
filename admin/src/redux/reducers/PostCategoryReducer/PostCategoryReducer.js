@@ -36,7 +36,6 @@ export default (state = initialState, action) => {
             createTime: item.createTime
         };
     })
-    console.log( state.PostCategoryList)
     return { ...state }
   }
 

@@ -6,6 +6,11 @@ import { deletePostCategoryAPIAction, getAllPostCategoryAPIAction } from '../../
 import PostCategoryForm from '../../components/forms/PostCategoryForm';
 import { getPostCategoryFormAction } from '../../redux/actions/DrawerActions/DrawerActions';
 
+const renderDeleteTitle = (title) =>{
+    return <>
+    <span>Xóa Danh mục này và <strong>Toàn Bộ Bài Viết Liên Quan!</strong> Bạn có muốn xóa <strong>{title}</strong> không?</span>
+    </>
+}
 export default function PostCategory() {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.PostCategoryReducer.PostCategoryList)
@@ -60,7 +65,7 @@ export default function PostCategory() {
                         Chỉnh sửa
                     </Button>
                     <Popconfirm
-                        title={`Bạn có muốn xóa "${record.tittle}" không?`}
+                        title={renderDeleteTitle(record.tittle)}
                         onConfirm={() => {
                             const PostCategory = {postCategoryID: record.postCategoryID}
                             dispatch(deletePostCategoryAPIAction(PostCategory));

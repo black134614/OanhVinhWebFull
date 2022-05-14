@@ -1,14 +1,4 @@
-/*!
-  =========================================================
-  * Muse Ant Design Dashboard - v1.0.0
-  =========================================================
-  * Product Page: https://www.creative-tim.com/product/muse-ant-design-dashboard
-  * Copyright 2021 Creative Tim (https://www.creative-tim.com)
-  * Licensed under MIT (https://github.com/creativetimofficial/muse-ant-design-dashboard/blob/main/LICENSE.md)
-  * Coded by Creative Tim
-  =========================================================
-  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+
 
 import { useState, useEffect } from "react";
 
@@ -25,6 +15,7 @@ import {
   Drawer,
   Typography,
   Switch,
+  Radio 
 } from "antd";
 
 import {
@@ -385,6 +376,32 @@ function Header({
                     </Button>
                   </ButtonContainer>
                 </div>
+
+                <div className="sidebarnav-color mb-2">
+                <Title level={5}>Sidenav Type</Title>
+                <Text>Choose between 2 different sidenav types.</Text>
+                <ButtonContainer className="trans">
+                  <Button
+                    type={sidenavType === "transparent" ? "primary" : "white"}
+                    onClick={() => {
+                      handleSidenavType("transparent");
+                      setSidenavType("transparent");
+                    }}
+                  >
+                    TRANSPARENT
+                  </Button>
+                  <Button
+                    type={sidenavType === "white" ? "primary" : "white"}
+                    onClick={() => {
+                      handleSidenavType("#fff");
+                      setSidenavType("white");
+                    }}
+                  >
+                    WHITE
+                  </Button>
+                </ButtonContainer>
+              </div>  
+
                 <div className="fixed-nav mb-2">
                   <Title level={5}>Navbar Fixed </Title>
                   <Switch onChange={(e) => handleFixedNavbar(e)} />

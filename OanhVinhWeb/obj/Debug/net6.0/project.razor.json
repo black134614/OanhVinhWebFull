@@ -14245,6 +14245,193 @@
         }
       },
       {
+        "HashCode": 477405110,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcAboutViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-about"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcAboutViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcAbout"
+        }
+      },
+      {
+        "HashCode": -1959475953,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcGoogleMapViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-google-map"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcGoogleMapViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcGoogleMap"
+        }
+      },
+      {
+        "HashCode": -1959229355,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcHomeBannerViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-home-banner"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcHomeBannerViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcHomeBanner"
+        }
+      },
+      {
+        "HashCode": 669793984,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcHomeContactViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-home-contact"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcHomeContactViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcHomeContact"
+        }
+      },
+      {
+        "HashCode": 874417409,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcIntroVideoViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-intro-video"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcIntroVideoViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcIntroVideo"
+        }
+      },
+      {
+        "HashCode": 1549954140,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcMainMenuViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-main-menu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcMainMenuViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcMainMenu"
+        }
+      },
+      {
+        "HashCode": 576311922,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcOwnerViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-owner"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcOwnerViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcOwner"
+        }
+      },
+      {
+        "HashCode": -1489116746,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcPostRelatedViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-post-related"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcPostRelatedViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcPostRelated"
+        }
+      },
+      {
+        "HashCode": -1718112474,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcRecentPostViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-recent-post"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcRecentPostViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcRecentPost"
+        }
+      },
+      {
+        "HashCode": -1028792731,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcReviewViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-review"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcReviewViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcReview"
+        }
+      },
+      {
+        "HashCode": 898186480,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcTopProductViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-top-product"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcTopProductViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcTopProduct"
+        }
+      },
+      {
         "HashCode": 141407075,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -16303,8 +16490,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcIntroVideo\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcIntroVideo\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcMainMenu\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcMainMenu\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcFooter\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcFooter\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcOwner\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcOwner\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcAbout\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcAbout\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16318,8 +16530,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcScript\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcScript\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Home\\About.cshtml",
       "TargetPath": "Views\\Home\\About.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcRecentPost\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcRecentPost\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16338,8 +16560,38 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcHomeContact\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcHomeContact\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostRelated\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcPostRelated\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcHomeBanner\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcHomeBanner\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcTopProduct\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcTopProduct\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcGoogleMap\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcGoogleMap\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcHeadCss\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcHeadCss\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16350,6 +16602,11 @@
     {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Home\\Contact.cshtml",
       "TargetPath": "Views\\Home\\Contact.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcReview\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcReview\\Default.cshtml",
       "FileKind": "mvc"
     }
   ],

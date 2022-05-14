@@ -13,6 +13,11 @@ export default function ProductCategory() {
     useEffect(() => {
         dispatch(getAllProductCategorySagaAction());
     }, []);
+    const renderDeleteTitle = (title) =>{
+        return <>
+        <span>Xóa Danh mục này và <strong>Toàn Bộ Sản Phẩm Liên Quan!</strong> Bạn có muốn xóa <strong>{title}</strong> không?</span>
+        </>
+    }
     const columns = [
         {
             title: 'Tên Danh Mục',
@@ -60,7 +65,7 @@ export default function ProductCategory() {
                         Chỉnh sửa
                     </Button>
                     <Popconfirm
-                        title={`Bạn có muốn xóa "${record.tittle}" không?`}
+                        title={renderDeleteTitle(record.tittle)}
                         onConfirm={() => {
                             const productCategory = {
                                 productCategoryID: record.productCategoryID,

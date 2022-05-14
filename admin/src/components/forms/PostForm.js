@@ -12,7 +12,7 @@ import { getAllPostCategoryAPIAction } from '../../redux/actions/PostCategoryAct
 import { addPostAPIAction, updatePostAPIAction } from '../../redux/actions/PostActions/PostActions';
 
 
-const createBy = JSON.parse(localStorage.getItem(USER_LOGIN)).userName;
+const createBy = JSON.parse(localStorage.getItem(USER_LOGIN))?.userName;
 let avatarParam = '';
 function Form(props) {
     const [avatarImg, setAvatarImg] = useState(avatarParam);
@@ -75,8 +75,8 @@ function Form(props) {
                 <div className="col-6 mb-3">
                     <div className="form-group">
                         <p className="font-weight-bold">ALT SEO bài viết</p>
-                        <input value={values.postALTSEO} className="form-control" name="postALTSEO" onChange={handleChange} />
-                        {errors.postALTSEO && touched.postALTSEO && <Alert id="feedback" message={errors.postALTSEO} type="error" showIcon />}
+                        <input value={values.postALTSeo} className="form-control" name="postALTSeo" onChange={handleChange} />
+                        {errors.postALTSeo && touched.postALTSeo && <Alert id="feedback" message={errors.postALTSeo} type="error" showIcon />}
                     </div>
                 </div>
                 <div className="col-6 mb-3">
@@ -121,7 +121,7 @@ function Form(props) {
                         <p className="font-weight-bold">Chi Tiết bài viết</p>
                         <Editor
                             name="postDetail"
-                            initialValue={values.postDetail}
+                            value={values.postDetail}
                             init={{
                                 selector: 'textarea#myTextArea',
                                 height: 500,
@@ -182,7 +182,7 @@ const PostForm = withFormik({
         postDescription: Yup.string()
             .max(1000, 'Mô tả bài viết dưới 1000 kí tự!'),
         postALTSeo: Yup.string()
-            .max(1000, 'Từ khóa SEO dưới 1000 kí tự!')
+            .max(100, 'Từ khóa SEO dưới 100 kí tự!')
     }),
     handleSubmit: (values, { props, setSubmitting }) => {
         let Post = {
@@ -195,9 +195,9 @@ const PostForm = withFormik({
             status: values.status,
             createBy: createBy
         }
+        console.log(Post);
         if (props.Post) {
             Post = { ...Post, PostID: props.Post.postID };
-            console.log('update',Post);
             props.dispatch(updatePostAPIAction(Post));
         }
         else {

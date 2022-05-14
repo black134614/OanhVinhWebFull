@@ -11,7 +11,7 @@ import { USER_LOGIN } from '../../util/constants/settingSystem';
 
 let userName = "";
 try {
-    userName = JSON.parse(localStorage.getItem(USER_LOGIN)).userName;
+    userName = JSON.parse(localStorage.getItem(USER_LOGIN))?.userName;
 } catch (error) {
     console.log(error)
 }
@@ -39,13 +39,14 @@ function Form(props) {
                         <p className="font-weight-bold">Tiêu Đề</p>
                         <input type="text" className="form-control" value={values.tittle} name="tittle" onChange={handleChange} />
                         {errors.tittle && touched.tittle && <Alert id="feedback" message={errors.tittle} type="error" showIcon />}
-
-                    </div>
-                </div>
-                <div className="col-12 col-md-6 mb-3">
-                    <div className="form-group">
+                        
+                        </div>
+                        </div>
+                        <div className="col-12 col-md-6 mb-3">
+                        <div className="form-group">
                         <p className="font-weight-bold">Mô Tả</p>
                         <input type="text" className="form-control" value={values.description} name="description" onChange={handleChange} />
+                        {errors.description && touched.description && <Alert id="feedback" message={errors.description} type="error" showIcon />}
                     </div>
                 </div>
                 <div className="col-12 col-md-6 mb-3">
@@ -97,10 +98,8 @@ const PostCategoryForm = withFormik({
             createBy: userName
         }
         if (!props.PostCategory) {
-            console.log('add');
             props.dispatch(addPostCategoryAPIAction(PostCategoryBuild))
         } else {
-            console.log('update');
             props.dispatch(updatePostCategoryAPIAction({ ...PostCategoryBuild, PostCategoryID: props.PostCategory.postCategoryID }))
         }
     },

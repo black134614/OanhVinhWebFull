@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import EditUserForm from "../components/forms/EditUserForm";
-import { USER_LOGIN } from '../util/constants/settingSystem';
+import { TOKEN, USER_LOGIN } from '../util/constants/settingSystem';
 import ReactHtmlParser from 'react-html-parser';
-
+import {useHistory} from 'react-router-dom'
 import {
   Row,
   Col,
@@ -22,6 +22,8 @@ import {
   TwitterOutlined,
   InstagramOutlined,
   VerticalAlignTopOutlined,
+  EditOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
 
 import BgProfile from "../assets/images/bg-signup.jpg";
@@ -37,10 +39,14 @@ import project3 from "../assets/images/home-decor-3.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { getFormUpdateUser, getUserInfoSaga } from "../redux/actions/UserActions/UserActions";
 import dateFormat, { masks } from "dateformat";
+import { getChangePasswordFormAction } from "../redux/actions/DrawerActions/DrawerActions";
+import ChangePasswordForm from "../components/forms/ChangePasswordForm";
 
 export default function Profile() {
   const dispatch = useDispatch();
   const UserInfo = useSelector((state) => state.UserReducer.UserInfo);
+
+  const history = useHistory();
 
   const userName = JSON.parse(localStorage.getItem(USER_LOGIN)).userName;
   useEffect(() => {
@@ -137,6 +143,27 @@ export default function Profile() {
                 {createTime}
               </Descriptions.Item>
             </Descriptions>
+          </Card>
+        </Col>
+        <Col span={24} md={8} className="mb-24">
+          <Card
+            bordered={false}
+            title={<h6 className="font-semibold m-0">Chức năng</h6>}
+            className="header-solid h-full card-profile-information"
+            bodyStyle={{ paddingTop: 0, paddingBottom: 16 }}
+          >
+            <Button type="primary" icon={<EditOutlined />}
+              onClick={() => { dispatch(getChangePasswordFormAction(`Đổi mật khẩu tài khoản ${UserInfo.userName}`, <ChangePasswordForm />)) }}>
+              Đổi mật khẩu
+            </Button>
+            <Button type="default" className="bg-danger mx-1" icon={<LogoutOutlined />}
+              onClick={() => {
+                history.push('sign-in');
+                localStorage.removeItem(USER_LOGIN);
+                localStorage.removeItem(TOKEN);
+              }}>
+              Đăng xuất
+            </Button>
           </Card>
         </Col>
       </Row>

@@ -16,11 +16,13 @@ export const MainTemplate = (props) => {
     const [sidenavColor, setSidenavColor] = useState("#1890ff");
     const [sidenavType, setSidenavType] = useState("transparent");
     const [fixed, setFixed] = useState(false);
+    const [backgroundColor, SetBackgroundColor] = useState("lightblue")
 
     const openDrawer = () => setVisible(!visible);
     const handleSidenavType = (type) => setSidenavType(type);
     const handleSidenavColor = (color) => setSidenavColor(color);
     const handleFixedNavbar = (type) => setFixed(type);
+    const handleBackgroundColor = (color) => SetBackgroundColor(color);
 
     let { pathname } = useLocation();
     pathname = pathname.replace("/", "");
@@ -46,6 +48,7 @@ export const MainTemplate = (props) => {
             <Layout
                 className={`layout-dashboard ${pathname === "profile" ? "layout-profile" : ""
                     } ${pathname === "rtl" ? "layout-dashboard-rtl" : ""}`}
+                    style={{backgroundColor: `${backgroundColor}`}}
             >
                 {authUserLogin()}
                 <Drawer
@@ -100,6 +103,7 @@ export const MainTemplate = (props) => {
                                     handleSidenavColor={handleSidenavColor}
                                     handleSidenavType={handleSidenavType}
                                     handleFixedNavbar={handleFixedNavbar}
+                                    handleBackgroundColor={handleBackgroundColor}
                                 />
                             </AntHeader>
                         </Affix>
@@ -112,13 +116,13 @@ export const MainTemplate = (props) => {
                                 handleSidenavColor={handleSidenavColor}
                                 handleSidenavType={handleSidenavType}
                                 handleFixedNavbar={handleFixedNavbar}
+                                handleBackgroundColor={handleBackgroundColor}
                             />
                         </AntHeader>
                     )}
                     <Content className="content-ant">
                         <Component {...propsRoute} />
                     </Content>
-                    <Footer />
                 </Layout>
             </Layout>
         </>

@@ -10,7 +10,7 @@ import { USER_LOGIN } from '../../util/constants/settingSystem';
 
 let userName = "";
 try {
-    userName = JSON.parse(localStorage.getItem(USER_LOGIN)).userName;
+    userName = JSON.parse(localStorage.getItem(USER_LOGIN))?.userName;
 } catch (error) {
     console.log(error)
 }

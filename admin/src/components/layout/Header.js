@@ -1,15 +1,3 @@
-/*!
-  =========================================================
-  * Muse Ant Design Dashboard - v1.0.0
-  =========================================================
-  * Product Page: https://www.creative-tim.com/product/muse-ant-design-dashboard
-  * Copyright 2021 Creative Tim (https://www.creative-tim.com)
-  * Licensed under MIT (https://github.com/creativetimofficial/muse-ant-design-dashboard/blob/main/LICENSE.md)
-  * Coded by Creative Tim
-  =========================================================
-  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState, useEffect } from "react";
 
 import {
@@ -25,6 +13,7 @@ import {
   Drawer,
   Typography,
   Switch,
+  Radio,
 } from "antd";
 
 import {
@@ -37,6 +26,7 @@ import {
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import avtar from "../../assets/images/team-2.jpg";
+import { USER_LOGIN } from "../../util/constants/settingSystem";
 
 const ButtonContainer = styled.div`
   .ant-btn-primary {
@@ -249,6 +239,7 @@ const setting = [
   </svg>,
 ];
 
+const user = JSON.parse(localStorage.getItem(USER_LOGIN));
 function Header({
   placement,
   name,
@@ -257,6 +248,7 @@ function Header({
   handleSidenavColor,
   handleSidenavType,
   handleFixedNavbar,
+  handleBackgroundColor,
 }) {
   const { Title, Text } = Typography;
 
@@ -293,17 +285,6 @@ function Header({
           </div>
         </Col>
         <Col span={24} md={18} className="header-control">
-          <Badge size="small" count={4}>
-            <Dropdown overlay={menu} trigger={["click"]}>
-              <a
-                href="#pablo"
-                className="ant-dropdown-link"
-                onClick={(e) => e.preventDefault()}
-              >
-                {bell}
-              </a>
-            </Dropdown>
-          </Badge>
           <Button type="link" onClick={showDrawer}>
             {logsetting}
           </Button>
@@ -325,13 +306,13 @@ function Header({
             <div layout="vertical">
               <div className="header-top">
                 <Title level={4}>
-                  Configurator
-                  <Text className="subtitle">See our dashboard options.</Text>
+                  Cấu Hình
+                  <Text className="subtitle">Cấu hình trang Admin</Text>
                 </Title>
               </div>
 
               <div className="sidebar-color">
-                <Title level={5}>Sidebar Color</Title>
+                <Title level={5}>Chỉnh màu sắc menu</Title>
                 <div className="theme-color mb-2">
                   <ButtonContainer>
                     <Button
@@ -369,8 +350,7 @@ function Header({
                 </div>
 
                 <div className="sidebarnav-color mb-2">
-                  <Title level={5}>Sidenav Type</Title>
-                  <Text>Choose between 2 different sidenav types.</Text>
+                  <Title level={5}>Chỉnh màu nền menu</Title>
                   <ButtonContainer className="trans">
                     <Button
                       type={sidenavType === "transparent" ? "primary" : "white"}
@@ -379,7 +359,7 @@ function Header({
                         setSidenavType("transparent");
                       }}
                     >
-                      TRANSPARENT
+                      Trong suốt
                     </Button>
                     <Button
                       type={sidenavType === "white" ? "primary" : "white"}
@@ -388,48 +368,35 @@ function Header({
                         setSidenavType("white");
                       }}
                     >
-                      WHITE
+                      Trắng
                     </Button>
                   </ButtonContainer>
                 </div>
                 <div className="fixed-nav mb-2">
-                  <Title level={5}>Navbar Fixed </Title>
+                  <Title level={5}>Cố định đầu trang</Title>
                   <Switch onChange={(e) => handleFixedNavbar(e)} />
                 </div>
-                <div className="ant-docment">
-                  <ButtonContainer>
-                    <Button type="black" size="large">
-                      FREE DOWNLOAD
-                    </Button>
-                    <Button size="large">VIEW DOCUMENTATION</Button>
-                  </ButtonContainer>
-                </div>
-                <div className="viewstar">
-                  <a href="#pablo">{<StarOutlined />} Star</a>
-                  <a href="#pablo"> 190</a>
-                </div>
-
-                <div className="ant-thank">
-                  <Title level={5} className="mb-2">
-                    Thank you for sharing!
-                  </Title>
-                  <ButtonContainer className="social">
-                    <Button type="black">{<TwitterOutlined />}TWEET</Button>
-                    <Button type="black">{<FacebookFilled />}SHARE</Button>
-                  </ButtonContainer>
+                <div className="fixed-nav mb-2">
+                  <Title level={5}>Chỉnh màu nền trang admin </Title>
+                  <Radio.Group defaultValue="white" size="small" buttonStyle="outline" onChange={(e) => { handleBackgroundColor(e.target.value) }}>
+                    <Radio.Button value="white" style={{ backgroundColor: 'white' }}></Radio.Button>
+                    <Radio.Button value="gray" style={{ backgroundColor: 'gray' }}></Radio.Button>
+                    <Radio.Button value="lightblue" style={{ backgroundColor: 'lightblue' }}></Radio.Button>
+                    <Radio.Button value="seagreen" style={{ backgroundColor: 'seagreen' }}></Radio.Button>
+                    <Radio.Button value="darkorange" style={{ backgroundColor: 'darkorange' }}></Radio.Button>
+                    <Radio.Button value="yellowgreen" style={{ backgroundColor: 'yellowgreen' }}></Radio.Button>
+                    <Radio.Button value="darkorchid" style={{ backgroundColor: 'darkorchid' }}></Radio.Button>
+                    <Radio.Button value="salmon" style={{ backgroundColor: 'salmon' }}></Radio.Button>
+                  </Radio.Group>
                 </div>
               </div>
             </div>
           </Drawer>
-          <Link to="/sign-in" className="btn-sign-in">
-            {profile}
-            <span>Sign in</span>
-          </Link>
-          <Input
-            className="header-search"
-            placeholder="Type here..."
-            prefix={<SearchOutlined />}
-          />
+          <div>
+            <span>Xin chào, </span>
+            <strong>{user.userName}</strong>
+            <img className="rounded" src={user.avatar}/>
+          </div>
         </Col>
       </Row>
     </>

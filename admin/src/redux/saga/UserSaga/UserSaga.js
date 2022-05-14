@@ -14,7 +14,6 @@ function* getUserSaga(action) {
         }
         else {
             yield put(getUserInfo(data[0]));
-            console.log(data[0])
         }
     } catch (error) {
         console.log(error);
@@ -34,6 +33,7 @@ function* updateUserSaga(action) {
         else {
             yield put(closeDrawer());
             yield put(getUserInfoSaga(user.userName));
+            notifiFunction('success', 'Cập nhật người dùng thành công!');
         }
     } catch (error) {
         console.log(error);

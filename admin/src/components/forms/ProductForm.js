@@ -12,7 +12,7 @@ import { USER_LOGIN } from '../../util/constants/settingSystem';
 import NoImg from '../../assets/images/no-img.jpg'
 
 
-const createBy = JSON.parse(localStorage.getItem(USER_LOGIN)).userName;
+const createBy = JSON.parse(localStorage.getItem(USER_LOGIN))?.userName;
 let avatarParam = '';
 function Form(props) {
     const [avatarImg, setAvatarImg] = useState(avatarParam);
@@ -121,7 +121,7 @@ function Form(props) {
                         <p className="font-weight-bold">Chi Tiết Sản Phẩm</p>
                         <Editor
                             name="productDetail"
-                            initialValue={values.productDetail}
+                            value={values.productDetail}
                             init={{
                                 selector: 'textarea#myTextArea',
                                 height: 500,
@@ -153,13 +153,12 @@ const ProductForm = withFormik({
     enableReinitialize: true,
     mapPropsToValues: (props) => {
         const { Product } = props;
-        console.log('Product', Product)
         if (!Product) {
             return {
                 productName: '',
                 productDescription: '',
                 productALTSeo: '',
-                productCategoryID: '',
+                productCategoryID: props.ProductCategoryList[0].productCategoryID,
                 status: true,
                 productDetail: ''
             }
@@ -196,7 +195,7 @@ const ProductForm = withFormik({
             status: values.status,
             createBy: createBy
         }
-
+        console.log(product);
         if (props.Product) {
             product = { ...product, productID: props.Product.productID };
             props.dispatch(updateProductAPI(product));

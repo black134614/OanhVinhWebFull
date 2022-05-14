@@ -1,22 +1,8 @@
 import { GET_ALL_PRODUCT_CATEGORY, GET_EDIT_PRODUCT_CATEGORY_FORM, SET_EDIT_PRODUCT_CATEGORY_FORM } from "../../constants/ProductCategoryConstants/ProductCategoryConstants"
 
 const initialState = {
-    ProductCategoryList: [
-        {
-            key: "0",
-            productCategoryID: 0,
-            tittle: "string",
-            description: "string",
-            positon: 0,
-            status: true,
-            isDelete: null,
-            createBy: "admin",
-            createTime: "2022-05-05T19:03:34.623"
-        }
-    ],
-    EditProductCategory: {
-
-    }
+    ProductCategoryList: [],
+    EditProductCategory: {}
 }
 
 export default (state = initialState, action) => {

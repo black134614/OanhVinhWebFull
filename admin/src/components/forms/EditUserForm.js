@@ -9,6 +9,7 @@ import { updateUserAPI } from '../../redux/actions/UserActions/UserActions';
 import { SET_SUBMIT_EDIT_USER_FORM } from '../../redux/constants/AuthConstants/AuthConstants';
 
 let avatarParam = '';
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 function Form(props) {
   const [avatarImg, setAvatarImg] = useState("https://picsum.photos/200/300");
   const dispatch = useDispatch();
@@ -24,7 +25,8 @@ function Form(props) {
     handleBlur,
     handleSubmit,
     setValues,
-    setFieldValue
+    setFieldValue,
+    setText
   } = props;
   const onSelectFile = (event) => {
     let reader = new FileReader(); // HTML5 FileReader API
@@ -40,7 +42,7 @@ function Form(props) {
       };
     }
   }
-  
+
 
   return (
     <form className="container-fuild" onSubmit={handleSubmit}>
@@ -71,7 +73,7 @@ function Form(props) {
             <p className="font-weight-bold">Giới thiệu</p>
             <Editor
               name="userDetail"
-              initialValue={values.userDetail}
+              value={values.userDetail}
               init={{
                 selector: 'textarea#myTextArea',
                 height: 500,
@@ -89,7 +91,7 @@ function Form(props) {
               }}
               onEditorChange={(content, editor) => {
                 setFieldValue('userDetail', content);
-            }}
+              }}
             />
             {errors.userDetail && touched.userDetail && <Alert id="feedback" message={errors.userDetail} type="error" showIcon />}
           </div>
@@ -111,17 +113,21 @@ const FormUserEdit = withFormik({
   },
   // Custom sync validation
   validationSchema: Yup.object().shape({
-   
+
     phoneNumber: Yup.string()
-    .required('Bạn cần nhập số điện thoại!')
-    .length(10, 'Số điện thoại có 10 chữ số!'),
-    fullName: Yup.string().required('Bạn cần nhập tên!'),
+      .required('Bạn cần nhập số điện thoại!')
+      .matches(phoneRegExp, 'Chỉ nhập số!')
+      .length(10, 'Số điện thoại có 10 chữ số!'),
+    fullName: Yup.string().
+    required('Bạn cần nhập tên!')
+    .max(100, 'Tên có tối đa 100 kí tự!'),
     userDetail: Yup.string().max(1000, 'Giới thiệu quá dài!')
   }),
   handleSubmit: (values, { props, setSubmitting }) => {
     const createTime = new Date().toISOString();
     let user = {
       userName: props.UserInfo.userName,
+      password: props.UserInfo.password,  
       fullName: values.fullName,
       phoneNumber: values.phoneNumber,
       userDetail: values.userDetail,
@@ -131,8 +137,6 @@ const FormUserEdit = withFormik({
     if (avatarParam) {
       user = { ...user, avatarParam: avatarParam, avatar: "" }
     }
-
-    console.log(user)
     props.dispatch(updateUserAPI(user));
   },
   displayName: 'Sửa thông tin',

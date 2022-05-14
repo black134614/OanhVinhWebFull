@@ -3,20 +3,22 @@ import { authServices } from '../../../services/AuthServices';
 import { SIGN_IN_SAGA } from '../../constants/AuthConstants/AuthConstants';
 import { TOKEN, USER_LOGIN, STATUS_CODE } from '../../../util/constants/settingSystem';
 import { productCategoryServices } from '../../../services/ProductCategoryServices';
-import { ADD_PRODUCT_CATEGORY_SAGA, DELETE_PRODUCT_CATEGORY_SAGA, GET_ALL_PRODUCT_CATEGORY, GET_ALL_PRODUCT_CATEGORY_SAGA, UPDATE_PRODUCT_CATEGORY_SAGA } from '../../constants/ProductCategoryConstants/ProductCategoryConstants';
+import { ADD_PRODUCT_CATEGORY_SAGA, DELETE_PRODUCT_CATEGORY_SAGA, GET_ALL_PRODUCT_CATEGORY_SAGA, UPDATE_PRODUCT_CATEGORY_SAGA } from '../../constants/ProductCategoryConstants/ProductCategoryConstants';
 import { getAllProductCategoryAction, getAllProductCategorySagaAction } from '../../actions/ProductCategoryActions/ProductCategoryActions';
 import { notifiFunction } from '../../../util/Notification/Notification'
 import { closeDrawer } from '../../actions/DrawerActions/DrawerActions';
 //saga them danh muc san pham / add product category
 function* addProductCategorySaga(action) {
-    const { userName, ProductCategory } = action;
-    console.log(ProductCategory);
+    const { ProductCategory } = action;
     try {
         const { data, status } = yield call(() => productCategoryServices.addProductCategory(ProductCategory))
-        if (status === STATUS_CODE.SUCCESS) {
+        if (data.success === true) {
             yield put(closeDrawer());
             notifiFunction('success', 'Thêm mới danh mục sản phẩm ' + ProductCategory.tittle + ' thành công!')
             yield put(getAllProductCategorySagaAction());
+        }
+        else{
+            notifiFunction('error', 'Thêm mới danh mục sản phẩm thất bại!')
         }
     } catch (error) {
         console.log(error);
@@ -30,8 +32,7 @@ export function* theoDoiAddProductCategorySaga() {
 function* getAllProductCategorySaga() {
     try {
         const { data, status } = yield call(() => productCategoryServices.getAllProductCategory())
-        if (data.length > 0) {
-            console.log(data);
+        if (status === STATUS_CODE.SUCCESS) {
             yield put(getAllProductCategoryAction(data));
         }
     } catch (error) {

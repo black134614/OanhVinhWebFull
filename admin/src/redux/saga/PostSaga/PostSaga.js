@@ -26,6 +26,7 @@ export function* theoDoiGetAllPostSaga() {
 //saga add product / them san pham
 function* addPostSaga(action) {
     const { Post } = action;
+    console.log(Post);
     try {
         const { data, status } = yield call(() => postService.addPost(Post));
         if (!data) {
