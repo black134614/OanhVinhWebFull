@@ -12,10 +12,8 @@ namespace WebOanhVinh.ViewComponents
     {
         public IViewComponentResult Invoke()
         {
-            WebDBContext db = new WebDBContext();
-            var data = db.WebsiteInfos
-                         .Where(x => x.Status == true);
-            return View(data.FirstOrDefault());
+           
+            return View();
         }
     }
 }
