@@ -4,11 +4,10 @@ using WebOanhVinh.Models;
 
 namespace WebOanhVinh.ViewComponents
 {
-    public class vcReview : ViewComponent
+    public class vcPostNewSidebar : ViewComponent
     {
         private readonly HttpClient client;
-
-        public vcReview(IHttpClientFactory httpClientFactory)
+        public vcPostNewSidebar(IHttpClientFactory httpClientFactory)
         {
             client = httpClientFactory.CreateClient("default");
         }

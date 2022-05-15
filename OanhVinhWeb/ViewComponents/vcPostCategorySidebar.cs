@@ -4,23 +4,22 @@ using WebOanhVinh.Models;
 
 namespace WebOanhVinh.ViewComponents
 {
-    public class vcReview : ViewComponent
+    public class vcPostCategorySidebar : ViewComponent
     {
         private readonly HttpClient client;
-
-        public vcReview(IHttpClientFactory httpClientFactory)
+        public vcPostCategorySidebar(IHttpClientFactory clientFactory)
         {
-            client = httpClientFactory.CreateClient("default");
+            client = clientFactory.CreateClient("default");
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var response = await client.GetAsync("api/Customer/GetCustomers");
+            var response = await client.GetAsync("api/PostCategory/GetAllPostCategories");
             if (response == null)
             {
-                return View(new List<Customer>());
+                return View(new List<PostCategory>());
             }
             string json = response.Content.ReadAsStringAsync().Result;
-            List<Customer> data = JsonConvert.DeserializeObject<List<Customer>>(json);
+            List<PostCategory> data = JsonConvert.DeserializeObject<List<PostCategory>>(json);
             return View(data);
         }
     }
