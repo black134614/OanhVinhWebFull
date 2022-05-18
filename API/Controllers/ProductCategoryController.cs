@@ -8,6 +8,7 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class ProductCategoryController : ControllerBase
     {
         private readonly IProductCategoryService _productCategoryService;

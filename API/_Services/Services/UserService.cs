@@ -65,7 +65,7 @@ namespace API._Services.Services
                 await _repositoryAccessor.SaveChangesAsync();
                 return new OperationResult(true, "Sửa Thông Tin Thành Công");
             }
-            catch (System.Exception ex)
+            catch (System.Exception)
             {
                 return new OperationResult(false, "Sửa Thông Tin Thất bại");
             }

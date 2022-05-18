@@ -16,9 +16,14 @@ namespace API._Repositories
             Product = new ProductRepository(_context);
             PostCategory = new PostCategoryRepository(_context);
             Posts = new PostRepository(_context);
+            WebsiteInfo = new WebSiteInfoRepository(_context);
+            WebsiteActiveImage = new WebsiteActiveImageRepository(_context);
+            Owner = new OwnerRepository(_context);
         }
 
-
+        public IOwnerRepository Owner {get; private set;}
+        public IWebsiteActiveImageRepository WebsiteActiveImage {get; private set;}
+        public IWebsiteInfoRepository WebsiteInfo {get; private set;}
         public ICustomerRepository Customer { get; private set; }
         public IUserRepository User { get; private set; }
         public IProductCategoryRepository ProductCategory { get; private set; }

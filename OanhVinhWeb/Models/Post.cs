@@ -32,5 +32,12 @@ namespace WebOanhVinh.Models
         public string CreateBy { get; set; }
         public int? PostCategoryID { get; set; }
         public int? TagConnectID { get; set; }
+
+        [NotMapped]
+        public string Date { get; set; }
+        [NotMapped]
+        public string PostCategoryName { get; set; }
+        [NotMapped]
+        public string UserFullName { get; set; }
     }
 }

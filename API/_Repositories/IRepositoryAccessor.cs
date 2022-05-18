@@ -5,6 +5,9 @@ namespace API._Repositories
 {
     public interface IRepositoryAccessor
     {
+        IOwnerRepository Owner {get;}
+        IWebsiteActiveImageRepository WebsiteActiveImage {get;}
+        IWebsiteInfoRepository WebsiteInfo {get;}
         ICustomerRepository Customer { get; }
         IUserRepository User { get; }
         IProductCategoryRepository ProductCategory { get; }

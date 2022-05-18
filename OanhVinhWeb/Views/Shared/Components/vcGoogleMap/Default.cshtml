@@ -1,19 +1,18 @@
-﻿   <!--::review_part start::-->
-    <section class="map review_part gray_bg section_padding" data-spy="scroll" id="google-map" data-offset="0">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-5">
-                    <div class="section_tittle">
-                        <p>Vị trí trên bản đồ</p>
-                        <h2>Oanh Vĩnh</h2>
-                    </div>
+﻿@model WebsiteInfo
+<!--::review_part start::-->
+<section class="map review_part gray_bg section_padding" data-spy="scroll" id="google-map" data-offset="0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Vị trí trên bản đồ</p>
+                    <h2>Oanh Vĩnh</h2>
                 </div>
             </div>
-            <div>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15632.957352840795!2d106.2627731!3d11.6062787!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeff0ec5c41624d15!2zVHLhuqFpIEThur8gT2FuaCBWxKluaCBUw6J5IE5pbmg!5e0!3m2!1sen!2s!4v1650956646711!5m2!1sen!2s"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
         </div>
-    </section>
-    <!--::review_part end::-->
+        <div>
+            @Html.Raw(Model.GoogleMap)
+        </div>
+    </div>
+</section>
+<!--::review_part end::-->

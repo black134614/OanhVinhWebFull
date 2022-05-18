@@ -18,5 +18,6 @@ namespace API.Dtos
         public int? PostCategoryID { get; set; }
         public int? TagConnectID { get; set; }
         public string PostCategoryName { get; set; }
+        public string UserFullName {get; set;}
     }
 }

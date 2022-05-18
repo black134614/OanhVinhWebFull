@@ -195,7 +195,6 @@ const ProductForm = withFormik({
             status: values.status,
             createBy: createBy
         }
-        console.log(product);
         if (props.Product) {
             product = { ...product, productID: props.Product.productID };
             props.dispatch(updateProductAPI(product));

@@ -1,0 +1,13 @@
+﻿@model List<Product>
+    <div class="row row-cols-6">
+           @foreach (var item in Model)
+           {
+                <div class="single_food_item media">
+                <img src="@item.ProductImages" class="mr-3" alt="@item.ProductALTSeo">
+                <div class="media-body align-self-center">
+                    <h3>@item.ProductName</h3>
+                    <p>@item.ProductDescription</p>
+                </div>
+            </div>
+           }
+    </div>

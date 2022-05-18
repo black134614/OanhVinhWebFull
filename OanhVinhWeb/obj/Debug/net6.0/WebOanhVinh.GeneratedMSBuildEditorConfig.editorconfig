@@ -43,16 +43,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNBYm91dFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcCss/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNDc3NcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcFoodMenuCategory/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNGb29kTWVudUNhdGVnb3J5XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcFooter/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNGb290ZXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcGoogleMap/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNHb29nbGVNYXBcRGVmYXVsdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcHeadCss/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNIZWFkQ3NzXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcHomeBanner/Default.cshtml]
@@ -75,8 +79,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNPd25lclxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcPostActiveImgSidebar/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNQb3N0QWN0aXZlSW1nU2lkZWJhclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcPostCategorySidebar/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNQb3N0Q2F0ZWdvcnlTaWRlYmFyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcPostNewSidebar/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNQb3N0TmV3U2lkZWJhclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcPostRelatedSidebar/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNQb3N0UmVsYXRlZFNpZGViYXJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcPostRelated/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNQb3N0UmVsYXRlZFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcProductDetailModal/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNQcm9kdWN0RGV0YWlsTW9kYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcProductListPanel/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcdmNQcm9kdWN0TGlzdFBhbmVsXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/luanv/OneDrive/Desktop/OanhVinhWebFull/OanhVinhWeb/Views/Shared/Components/vcRecentPost/Default.cshtml]

@@ -42,6 +42,9 @@ builder.Services.AddScoped<IMapper>(sp => new Mapper(AutoMapperConfig.RegisterMa
 builder.Services.AddSingleton(AutoMapperConfig.RegisterMappings());
 
 builder.Services.AddScoped<IRepositoryAccessor, RepositoryAccessor>();
+builder.Services.AddScoped<IWebsiteActiveImageService, WebsiteActiveImageService>();
+builder.Services.AddScoped<IOwnerService, OwnerService>();
+builder.Services.AddScoped<IWebSiteInfoService, WebSiteInfoService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -49,6 +52,8 @@ builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPostCategoryService, PostCategoryService>();
 builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<ICountListService, CountListService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

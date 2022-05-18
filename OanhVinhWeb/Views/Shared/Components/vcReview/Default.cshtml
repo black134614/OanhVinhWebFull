@@ -1,54 +1,43 @@
-﻿    <!--::review_part start::-->
-    <section class="review_part gray_bg section_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-5">
-                    <div class="section_tittle">
-                        <p>Khách hàng</p>
-                        <h2>Phản Hồi</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-11">
-                    <div class="client_review_part owl-carousel">
-                        <div class="client_review_single media">
-                            <div class="client_img align-self-center">
-                                <img class="rounded-circle" src="img/client/phan-hoi.jpg" alt="">
-                            </div>
-                            <div class="client_review_text media-body">
-                                <p>Ngon lắm e ơi. Giá cả phải chăng nguồn gốc rõ ràng ngại gì mà khôngg rinh em nó về để
-                                    lai rai cùng bạn bè</p>
-                                <h4>Thanh Nguyen <span>nhà phân phối bán lẻ</span></h4>
-                            </div>
-                        </div>
-                        <div class="client_review_single media">
-                            <div class="client_img align-self-center">
-                                <img src="img/client/client_1.png " alt="">
-                            </div>
-                            <div class="client_review_text media-body">
-                                <p>Also made from. Give may saying meat there from heaven it lights face had is gathered
-                                    god dea earth light for life may itself shall whales made they're blessed whales
-                                    also made from give
-                                    may saying meat. There from heaven it lights face had amazing place</p>
-                                <h4>Mosan Cameron, <span>Executive of fedex</span></h4>
-                            </div>
-                        </div>
-                        <div class="client_review_single media">
-                            <div class="client_img align-self-center">
-                                <img src="img/client/client_1.png" alt="">
-                            </div>
-                            <div class="client_review_text media-body">
-                                <p>Also made from. Give may saying meat there from heaven it lights face had is gathered
-                                    god dea earth light for life may itself shall whales made they're blessed whales
-                                    also made from give
-                                    may saying meat. There from heaven it lights face had amazing place</p>
-                                <h4>Mosan Cameron, <span>Executive of fedex</span></h4>
-                            </div>
-                        </div>
-                    </div>
+﻿@using WebOanhVinh.Models
+@model List<Customer>
+<!--::review_part start::-->
+<section class="review_part gray_bg section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Khách hàng</p>
+                    <h2>Phản Hồi</h2>
                 </div>
             </div>
         </div>
-    </section>
-    <!--::review_part end::-->
+        <div class="row">
+            <div class="col-lg-11">
+                <div class="client_review_part owl-carousel">
+                    @if (Model != null)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <div class="client_review_single media">
+                                <div class="client_img align-self-center">
+                                    <img class="rounded-circle" src="@item.Avatar" alt="@item.Name">
+                                </div>
+                                <div class="client_review_text media-body">
+                                    <p>
+                                        @item.Review
+                                    </p>
+                                    <h4>@item.Name <span>@item.Jobs</span></h4>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                         <div class="client_review_single media"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::review_part end::-->

@@ -19,29 +19,31 @@ namespace WebOanhVinh.Controllers
         [Route("home/index")]
         public async Task<IActionResult> Index()
         {
-            ViewData["Title"] = "Trang Chủ | OanhVinh";
+            ViewData["Title"] = "Trang Chủ";
 
-            var response = await client.GetAsync("api/PostCategory/GetAllPostCategories");
-            if (response == null)
-            {
-                return View(new List<PostCategory>());
-            }
-            string json = response.Content.ReadAsStringAsync().Result;
-            List<PostCategory> data = JsonConvert.DeserializeObject<List<PostCategory>>(json);
-            return View(data);
+           
+            return View();
         }
         [Route("gioi-thieu")]
         public IActionResult About()
         {
-            ViewData["Title"] = "Giới thiệu | TraiDeOanhVinh";
+            ViewData["Title"] = "Giới thiệu";
             return View();
         }
         [Route("lien-he")]
         [Route("contact")]
-        public IActionResult Contact()
+        public async Task<IActionResult> Contact()
         {
-            ViewData["Title"] = "Liên Hệ | TauThuyenViet";
-            return View();
+            ViewData["Title"] = "Liên Hệ";
+            var response = await client.GetAsync("api/WebsiteInfo/GetWebSiteInfos");
+            if (response == null)
+            {
+                return View(new WebsiteInfo());
+            }
+            string json = response.Content.ReadAsStringAsync().Result;
+            WebsiteInfo data = JsonConvert.DeserializeObject<WebsiteInfo>(json);
+
+            return View(data);
         }
     }
 }

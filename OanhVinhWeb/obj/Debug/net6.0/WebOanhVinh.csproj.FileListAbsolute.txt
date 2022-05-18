@@ -56,3 +56,11 @@ C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Mic
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.csproj.CopyComplete
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\PagedList.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.DotNet.InternalAbstractions.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\PagedList.Core.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\PagedList.Core.Mvc.dll

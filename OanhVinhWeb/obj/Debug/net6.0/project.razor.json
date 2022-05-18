@@ -14245,6 +14245,74 @@
         }
       },
       {
+        "HashCode": -1414850143,
+        "Kind": "ITagHelper",
+        "Name": "PagedList.Core.Mvc.PagerTagHelper",
+        "AssemblyName": "PagedList.Core.Mvc",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "pager"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "ITagHelper",
+            "Name": "list",
+            "TypeName": "PagedList.Core.IPagedList",
+            "Metadata": {
+              "Common.PropertyName": "List"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "asp-all-route-data",
+            "TypeName": "System.Collections.Generic.IDictionary<System.String, System.String>",
+            "IndexerNamePrefix": "asp-route-",
+            "IndexerTypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "RouteValues"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "asp-action",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "AspAction"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "asp-controller",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "AspController"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "options",
+            "TypeName": "PagedList.Core.Mvc.PagedListRenderOptions",
+            "Metadata": {
+              "Common.PropertyName": "Options"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "param-page-number",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ParamPageNumber"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "PagedList.Core.Mvc.PagerTagHelper"
+        }
+      },
+      {
         "HashCode": 477405110,
         "Kind": "MVC.ViewComponent",
         "Name": "__Generated__vcAboutViewComponentTagHelper",
@@ -14259,6 +14327,57 @@
           "Runtime.Name": "ITagHelper",
           "Common.TypeName": "__Generated__vcAboutViewComponentTagHelper",
           "MVC.ViewComponent.Name": "vcAbout"
+        }
+      },
+      {
+        "HashCode": -391279398,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcCssViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-css"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcCssViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcCss"
+        }
+      },
+      {
+        "HashCode": -1100106688,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcFoodMenuCategoryViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-food-menu-category"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcFoodMenuCategoryViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcFoodMenuCategory"
+        }
+      },
+      {
+        "HashCode": -1353641120,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcFooterViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-footer"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcFooterViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcFooter"
         }
       },
       {
@@ -14364,6 +14483,57 @@
         }
       },
       {
+        "HashCode": 1875173284,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcPostActiveImgSidebarViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-post-active-img-sidebar"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcPostActiveImgSidebarViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcPostActiveImgSidebar"
+        }
+      },
+      {
+        "HashCode": 1559040545,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcPostCategorySidebarViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-post-category-sidebar"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcPostCategorySidebarViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcPostCategorySidebar"
+        }
+      },
+      {
+        "HashCode": 2139923150,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcPostNewSidebarViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-post-new-sidebar"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcPostNewSidebarViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcPostNewSidebar"
+        }
+      },
+      {
         "HashCode": -1489116746,
         "Kind": "MVC.ViewComponent",
         "Name": "__Generated__vcPostRelatedViewComponentTagHelper",
@@ -14378,6 +14548,72 @@
           "Runtime.Name": "ITagHelper",
           "Common.TypeName": "__Generated__vcPostRelatedViewComponentTagHelper",
           "MVC.ViewComponent.Name": "vcPostRelated"
+        }
+      },
+      {
+        "HashCode": -1605807851,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcPostRelatedSidebarViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-post-related-sidebar"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcPostRelatedSidebarViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcPostRelatedSidebar"
+        }
+      },
+      {
+        "HashCode": -851618776,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcProductDetailModalViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-product-detail-modal"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcProductDetailModalViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcProductDetailModal"
+        }
+      },
+      {
+        "HashCode": 817048370,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcProductListPanelViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-product-list-panel",
+            "Attributes": [
+              {
+                "Name": "mid"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "mid",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "mid"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcProductListPanelViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcProductListPanel"
         }
       },
       {
@@ -14412,6 +14648,23 @@
           "Runtime.Name": "ITagHelper",
           "Common.TypeName": "__Generated__vcReviewViewComponentTagHelper",
           "MVC.ViewComponent.Name": "vcReview"
+        }
+      },
+      {
+        "HashCode": 1598393207,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__vcScriptViewComponentTagHelper",
+        "AssemblyName": "WebOanhVinh",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:vc-script"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__vcScriptViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "vcScript"
         }
       },
       {
@@ -16485,8 +16738,18 @@
   "RootNamespace": "WebOanhVinh",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostNewSidebar\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcPostNewSidebar\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostCategorySidebar\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcPostCategorySidebar\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16505,6 +16768,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcCss\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcCss\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcOwner\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\vcOwner\\Default.cshtml",
       "FileKind": "mvc"
@@ -16512,6 +16780,11 @@
     {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostActiveImgSidebar\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcPostActiveImgSidebar\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16532,6 +16805,16 @@
     {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcScript\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\vcScript\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcFoodMenuCategory\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcFoodMenuCategory\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostRelatedSidebar\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcPostRelatedSidebar\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16565,6 +16848,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcProductDetailModal\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcProductDetailModal\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -16572,6 +16860,11 @@
     {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostRelated\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\vcPostRelated\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcProductListPanel\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\vcProductListPanel\\Default.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16587,11 +16880,6 @@
     {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcGoogleMap\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\vcGoogleMap\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcHeadCss\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\vcHeadCss\\Default.cshtml",
       "FileKind": "mvc"
     },
     {

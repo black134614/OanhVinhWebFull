@@ -6,6 +6,7 @@ using API.Helpers.Params;
 using API.Models;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using LinqKit;
 
 namespace API._Services.Services
 {
@@ -50,27 +51,49 @@ namespace API._Services.Services
 
         public async Task<List<PostDTO>> GetAllPosts(PostParams postParams)
         {
-            var data = await _repositoryAccessor.Posts.FindAll()
+            var layoutPred = PredicateBuilder.New<Post>(true);
+            if (!string.IsNullOrEmpty(postParams.PostName))
+            {
+                layoutPred.And(x => x.PostTitle.Contains(postParams.PostName));
+            }
+            var data = await _repositoryAccessor.Posts.FindAll(layoutPred)
                             .Join(_repositoryAccessor.PostCategory.FindAll(),
                             x => x.PostCategoryID,
                             y => y.PostCategoryID,
                             (x, y) => new { Post = x, PostCategory = y })
+                            .Join(_repositoryAccessor.User.FindAll(),
+                            x => x.Post.CreateBy,
+                            z => z.UserName,
+                            (x,z) => new{PostConnect = x, User = z})
                             .Select(x => new PostDTO()
                             {
-                                PostID = x.Post.PostID,
-                                PostTitle = x.Post.PostTitle,
-                                CreateBy = x.Post.CreateBy,
-                                CreateTime = x.Post.CreateTime,
-                                IsDelete = x.Post.IsDelete,
-                                PostALTSEO = x.Post.PostALTSEO,
-                                PostCategoryID = x.PostCategory.PostCategoryID,
-                                PostCategoryName = x.PostCategory.Tittle,
-                                PostDescription = x.Post.PostDescription,
-                                PostDetail = x.Post.PostDetail,
-                                PostImages = x.Post.PostImages,
-                                Status = x.Post.Status,
-                                UpdateTime = x.Post.UpdateTime
+                                PostID = x.PostConnect.Post.PostID,
+                                PostTitle = x.PostConnect.Post.PostTitle,
+                                CreateBy = x.PostConnect.Post.CreateBy,
+                                CreateTime = x.PostConnect.Post.CreateTime,
+                                IsDelete = x.PostConnect.Post.IsDelete,
+                                PostALTSEO = x.PostConnect.Post.PostALTSEO,
+                                PostCategoryID = x.PostConnect.PostCategory.PostCategoryID,
+                                PostCategoryName = x.PostConnect.PostCategory.Tittle,
+                                PostDescription = x.PostConnect.Post.PostDescription,
+                                PostDetail = x.PostConnect.Post.PostDetail,
+                                PostImages = x.PostConnect.Post.PostImages,
+                                Status = x.PostConnect.Post.Status,
+                                UpdateTime = x.PostConnect.Post.UpdateTime.Value.Date,
+                                UserFullName = x.User.FullName
                             }).ToListAsync();
+            if (!string.IsNullOrEmpty(postParams.PostCategoryID) && !string.IsNullOrEmpty(postParams.PostID))
+            {
+                data = data.Where(x => x.PostCategoryID == Convert.ToInt32(postParams.PostCategoryID) && x.PostID == Convert.ToInt32(postParams.PostID)).ToList();
+            }
+            else if (!string.IsNullOrEmpty(postParams.PostCategoryID))
+            {
+                data = data.Where(x => x.PostCategoryID == Convert.ToInt32(postParams.PostCategoryID)).ToList();
+            }
+            else if (!string.IsNullOrEmpty(postParams.PostID))
+            {
+                data = data.Where(x => x.PostID == Convert.ToInt32(postParams.PostID)).ToList();
+            }
             return data;
         }
         public async Task<OperationResult> Update(PostDTO postDTO)

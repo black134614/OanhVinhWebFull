@@ -1,481 +1,61 @@
-﻿@{
-    ViewData["Title"] = "Trang Chủ - TraiDeOanhVinh";
-}
- <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner text-center">
-                        <div class="breadcrumb_iner_item">
-                            <h2>Thực Đơn</h2>
-                        </div>
+﻿@model List<Product>
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Thực Đơn</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- breadcrumb start-->
-
-    <!--::chefs_part start::-->
-    <!-- food_menu start-->
-    <section class="food_menu gray_bg">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-5">
-                    <div class="section_tittle">
-                        <p>Tất cả</p>
-                        <h2>Sản Phẩm</h2>
-                    </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+<!-- food_menu start-->
+<section class="food_menu gray_bg">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="section_tittle">
+                    <p>Tất cả</p>
+                    <h2>Sản Phẩm</h2>
                 </div>
-                <div class="col-lg-6">
-                    <div class="nav nav-tabs food_menu_nav" id="myTab" role="tablist">
-                        <a class="active" id="Special-tab" data-toggle="tab" href="#Special" role="tab"
-                            aria-controls="Special" aria-selected="false">Dế Sấy <img src="img/icon/play.svg"
-                                alt="play"></a>
-                        <a id="Breakfast-tab" data-toggle="tab" href="#Breakfast" role="tab" aria-controls="Breakfast"
-                            aria-selected="false">Breakfast <img src="img/icon/play.svg" alt="play"></a>
-                        <a id="Launch-tab" data-toggle="tab" href="#Launch" role="tab" aria-controls="Launch"
-                            aria-selected="false">Launch <img src="img/icon/play.svg" alt="play"></a>
-                        <a id="Dinner-tab" data-toggle="tab" href="#Dinner" role="tab" aria-controls="Dinner"
-                            aria-selected="false">Dinner <img src="img/icon/play.svg" alt="play"> </a>
-                        <a id="Sneaks-tab" data-toggle="tab" href="#Sneaks" role="tab" aria-controls="Sneaks"
-                            aria-selected="false">Sneaks <img src="img/icon/play.svg" alt="play"></a>
+            </div>
+            <vc:vc-food-menu-category/>
+            <div class="col-lg-12">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active single-member" id="AllProduct" role="tabpanel">
+                        <div class="row">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="card mb-3 col-6 col-lg-4 mb-5">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-md-4">
+                                                <img src="@item.ProductImages" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h3 class="card-title">@item.ProductName</h3>
+                                                    <p class="card-text">@item.ProductDescription</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
                     </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active single-member" id="Special" role="tabpanel"
-                            aria-labelledby="Special-tab">
-                            <div class="row">
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/de-say-oanh-vinh-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế sấy khô</h3>
-                                                <p class="card-text">Đây là một lựa chọn tuyệt vời cho các món ăn nhẹ ở
-                                                    những người có như cầu protein cao như vận động viên, những người
-                                                    tập gym, thể hình, vừa dinh dưỡng lại rất giàu protein.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/de-xao-xa-ot-oanh-vinh-resz-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế xào sả ớt</h3>
-                                                <p class="card-text">Dế mèn là một sản phẩm không thể thiếu cho những người đang là vận động viên thể thao.
-                                                    Thể hình. Và đặc biệt cho những người có nhu cầu cung cấp chất dinh dưỡng cao cho cơ thể
-                                                    vì DẾ MÈN có chứa rất nhiều vitamin dinh dưỡng và khoáng chất giúp cho cơ thể.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/mon-an-voi-de-men-oanh-vinh-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế Oanh Vĩnh</h3>
-                                                <p class="card-text">TRẠI DẾ OANH VĨNH TÂY NINH đã không ngừng sáng tạo ra nhiều món ăn thật tuyệt vời cho tất
-                                                    cả khách hàng khi đến với Tây Ninh để được thưởng thức các món ăn từ con Dế mèn.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/de-say-oanh-vinh-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế sấy khô</h3>
-                                                <p class="card-text">Đây là một lựa chọn tuyệt vời cho các món ăn nhẹ ở
-                                                    những người có như cầu protein cao như vận động viên, những người
-                                                    tập gym, thể hình, vừa dinh dưỡng lại rất giàu protein.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/de-xao-xa-ot-oanh-vinh-resz-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế xào sả ớt</h3>
-                                                <p class="card-text">Dế mèn là một sản phẩm không thể thiếu cho những người đang là vận động viên thể thao.
-                                                    Thể hình. Và đặc biệt cho những người có nhu cầu cung cấp chất dinh dưỡng cao cho cơ thể
-                                                    vì DẾ MÈN có chứa rất nhiều vitamin dinh dưỡng và khoáng chất giúp cho cơ thể.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/mon-an-voi-de-men-oanh-vinh-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế Oanh Vĩnh</h3>
-                                                <p class="card-text">TRẠI DẾ OANH VĨNH TÂY NINH đã không ngừng sáng tạo ra nhiều món ăn thật tuyệt vời cho tất
-                                                    cả khách hàng khi đến với Tây Ninh để được thưởng thức các món ăn từ con Dế mèn.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/de-say-oanh-vinh-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế sấy khô</h3>
-                                                <p class="card-text">Đây là một lựa chọn tuyệt vời cho các món ăn nhẹ ở
-                                                    những người có như cầu protein cao như vận động viên, những người
-                                                    tập gym, thể hình, vừa dinh dưỡng lại rất giàu protein.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/de-xao-xa-ot-oanh-vinh-resz-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế xào sả ớt</h3>
-                                                <p class="card-text">Dế mèn là một sản phẩm không thể thiếu cho những người đang là vận động viên thể thao.
-                                                    Thể hình. Và đặc biệt cho những người có nhu cầu cung cấp chất dinh dưỡng cao cho cơ thể
-                                                    vì DẾ MÈN có chứa rất nhiều vitamin dinh dưỡng và khoáng chất giúp cho cơ thể.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3 col-6 col-lg-4 mb-5" data-toggle="modal" data-target="#exampleModal">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-md-4">
-                                            <img src="img/food_item/mon-an-voi-de-men-oanh-vinh-min.jpg" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Dế Oanh Vĩnh</h3>
-                                                <p class="card-text">TRẠI DẾ OANH VĨNH TÂY NINH đã không ngừng sáng tạo ra nhiều món ăn thật tuyệt vời cho tất
-                                                    cả khách hàng khi đến với Tây Ninh để được thưởng thức các món ăn từ con Dế mèn.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade single-member" id="Breakfast" role="tabpanel"
-                            aria-labelledby="Breakfast-tab">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_4.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Easter Delight</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_5.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Tiener Schnitze</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_6.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Chicken Roast</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_1.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Pork Sandwich</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_2.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Roasted Marrow</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_3.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Summer Cooking</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade single-member" id="Launch" role="tabpanel"
-                            aria-labelledby="Launch-tab">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_1.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Pork Sandwich</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_2.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Roasted Marrow</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_3.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Summer Cooking</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_4.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Easter Delight</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_5.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Tiener Schnitze</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_6.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Chicken Roast</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="tab-pane fade single-member" id="Dinner" role="tabpanel"
-                            aria-labelledby="Dinner-tab">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_4.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Easter Delight</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_5.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Tiener Schnitze</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_6.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Chicken Roast</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_1.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Pork Sandwich</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_2.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Roasted Marrow</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_3.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Summer Cooking</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="tab-pane fade single-member" id="Sneaks" role="tabpanel"
-                            aria-labelledby="Sneaks-tab">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_1.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Pork Sandwich</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_2.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Roasted Marrow</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_3.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Summer Cooking</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_4.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Easter Delight</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_5.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Tiener Schnitze</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="single_food_item media">
-                                        <img src="img/food_menu/single_food_6.png" class="mr-3" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h3>Chicken Roast</h3>
-                                            <p>They're wherein heaven seed hath nothing</p>
-                                            <h5>$40.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <!--Đổ dữ liệu danh sách sp theo danh mục vào panel từ vcProductListPanel-->
+                    <div class="tab-pane fade single-member" id="Product" role="tabpanel">
+                        <vc:vc-product-list-panel />
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- food_menu part end-->
-    <!--modal for product list-->
-    <section class="list-modal">
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalLongTitle">Dế sấy khô</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <h5 class="description">
-                            Đây là một lựa chọn tuyệt vời cho các món ăn nhẹ ở những người có như cầu protein cao như
-                            vận động viên, những người tập gym, thể hình, vừa dinh dưỡng lại rất giàu protein.
-                        </h5>
-                        <div class="detail">
-                            <p><span style="font-size: 14pt;" data-mce-style="font-size: 14pt;">Đây là một lựa chọn
-                                    tuyệt vời cho các món ăn nhẹ ở những người có như cầu protein cao như vận động viên,
-                                    những người tập gym, thể hình.</span></p>
-                            <img class="d-block m-auto" src="/img/food_item/de-say-oanh-vinh-min.jpg" />
-                            <p><br><span style="font-size: 14pt;" data-mce-style="font-size: 14pt;"><strong>Giá trị dinh
-                                        dưỡng của dế :&nbsp;</strong></span><br><span style="font-size: 14pt;"
-                                    data-mce-style="font-size: 14pt;">Theo như tìm hiểu thì các nghiên cứu dinh dưỡng về
-                                    côn trùng tại Mỹ cho rằng “thịt dế tốt hơn thịt bò”.</span><br><span
-                                    style="font-size: 14pt;" data-mce-style="font-size: 14pt;">Lý do là vì trong dế có
-                                    lượng Sắt lớn hơn nhiều so với thịt bò, sắt là thành phần dinh dưỡng chủ yếu khiến
-                                    thịt bò trở nên thịnh hành như ngày nay. Mặt khác, hệ tiêu hóa của người hấp thụ sắt
-                                    từ dế cũng tốt hơn từ thịt bò.</span></p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
+<!-- food_menu part end-->
 
-    <!--::chefs_part end::-->
-
-    <!-- intro_video_bg start-->
-    <section class="intro_video_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro_video_iner text-center">
-                        <h2>Expect The Best</h2>
-                        <div class="intro_video_icon">
-                            <a id="play-video_1" class="video-play-button popup-youtube"
-                                href="https://www.youtube.com/watch?v=pBFQdxA-apI">
-                                <span class="ti-control-play"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- intro_video_bg part start-->
+<vc:vc-intro-video />
