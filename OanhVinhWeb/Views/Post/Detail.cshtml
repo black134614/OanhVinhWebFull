@@ -1,4 +1,5 @@
-﻿@model Post
+﻿@using WebOanhVinh.Models
+@model Post
 <!-- breadcrumb start-->
 <section class="breadcrumb breadcrumb_bg">
     <div class="container">
@@ -25,12 +26,25 @@
                     </div>
                     <div class="blog_details">
                         <h2>
-                           @Model.PostTitle
+                            @Model.PostTitle
                         </h2>
                         <ul class="blog-info-link mt-3 mb-4">
-                            <li><a href="#"><i class="fa fa-th-large"></i>@Model.PostCategoryID</a></li>
-                            <li><a href="#"><i class="far fa-user"></i> @Model.CreateBy</a></li>
-                            <li><a href="#"><i class="ti-calendar"></i>@Model.CreateTime</a></li>
+                            <li>
+                                <a asp-route="ProductListByCategoryID"
+                                   asp-route-mid="@Model.PostCategoryID"
+                                   asp-route-title="@Model.PostTitle"><i class="fa fa-th-large"></i>@Model.PostCategoryName</a>
+                            </li>
+                            <li><a href="#"><i class="far fa-user"></i> @Model.UserFullName</a></li>
+                            <li>
+                                @if (@Model.CreateTime == null)
+                                {
+                                    <i class="ti-calendar"> 01/01/2022</i>
+                                }
+                                else
+                                {
+                                    <i class="ti-calendar"> @Model.CreateTime.Value.Day/@Model.CreateTime.Value.Month/@Model.CreateTime.Value.Year</i>
+                                }
+                            </li>
                         </ul>
                         <div class="content-detail textview">
                             @Html.Raw(Model.PostDetail)
@@ -73,7 +87,25 @@
                     <!-- vcPostCategorySidebar -->
                     <vc:vc-post-category-sidebar />
                     <!-- vcPostRalatedSidebar -->
-                    <vc:vc-post-related-sidebar />
+                    <!--Post related-->
+                    <aside class="single_sideb ar_widget popular_post_widget">
+                        <h3 class="widget_title">Bài Đăng Liên Quan</h3>
+                        @foreach (var item in @ViewBag.PostRelated)
+                        {
+                            <div class="media post_item">
+                                <img src="@item.PostImages" alt="@item.PostALTSEO">
+                                <div class="media-body">
+                                    <a asp-route="PostDetail"
+                                   asp-route-mid="@item.PostCategoryID"
+                                   asp-route-id="@item.PostID"
+                                   asp-route-title="@item.PostTitle">
+                                        <h3>@item.PostTitle</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </aside>
+                    <!--Post related-->
                     <!-- vcPostActiveImgSidebar -->
                     <vc:vc-post-active-img-sidebar />
                     <!-- vcPostNewSidebar -->

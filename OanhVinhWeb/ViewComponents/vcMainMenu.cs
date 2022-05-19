@@ -14,6 +14,30 @@ namespace WebOanhVinh.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
+            var getProductCategory = await client.GetAsync("api/ProductCategory/GetAllProductCategories");
+            if(getProductCategory == null)
+            {
+                ViewBag.ProductCategory = new List<ProductCategory>();
+            }
+            else
+            {
+                string jsonProductCategory = getProductCategory.Content.ReadAsStringAsync().Result;
+                List<ProductCategory> dataProductCategory = JsonConvert.DeserializeObject<List<ProductCategory>>(jsonProductCategory);
+                ViewBag.ProductCategory = dataProductCategory;
+            }
+
+            var getPhoneNumber = await client.GetAsync("api/WebsiteInfo/GetWebSiteInfos");
+            if (getPhoneNumber == null)
+            {
+                ViewBag.PhoneNumber = "0985566673";
+            }
+            else
+            {
+                string jsonWeb = getPhoneNumber.Content.ReadAsStringAsync().Result;
+                WebsiteInfo dataProductCategory = JsonConvert.DeserializeObject<WebsiteInfo>(jsonWeb);
+                ViewBag.PhoneNumber = dataProductCategory?.WebsitePhoneNumber;
+            }
+
             var response = await client.GetAsync("api/PostCategory/GetAllPostCategories");
             if (response == null)
             {

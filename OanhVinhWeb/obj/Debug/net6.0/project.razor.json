@@ -14534,89 +14534,6 @@
         }
       },
       {
-        "HashCode": -1489116746,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__vcPostRelatedViewComponentTagHelper",
-        "AssemblyName": "WebOanhVinh",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:vc-post-related"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__vcPostRelatedViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "vcPostRelated"
-        }
-      },
-      {
-        "HashCode": -1605807851,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__vcPostRelatedSidebarViewComponentTagHelper",
-        "AssemblyName": "WebOanhVinh",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:vc-post-related-sidebar"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__vcPostRelatedSidebarViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "vcPostRelatedSidebar"
-        }
-      },
-      {
-        "HashCode": -851618776,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__vcProductDetailModalViewComponentTagHelper",
-        "AssemblyName": "WebOanhVinh",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:vc-product-detail-modal"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__vcProductDetailModalViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "vcProductDetailModal"
-        }
-      },
-      {
-        "HashCode": 817048370,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__vcProductListPanelViewComponentTagHelper",
-        "AssemblyName": "WebOanhVinh",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:vc-product-list-panel",
-            "Attributes": [
-              {
-                "Name": "mid"
-              }
-            ]
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "MVC.ViewComponent",
-            "Name": "mid",
-            "TypeName": "System.Int32",
-            "Metadata": {
-              "Common.PropertyName": "mid"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__vcProductListPanelViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "vcProductListPanel"
-        }
-      },
-      {
         "HashCode": -1718112474,
         "Kind": "MVC.ViewComponent",
         "Name": "__Generated__vcRecentPostViewComponentTagHelper",
@@ -16738,6 +16655,11 @@
   "RootNamespace": "WebOanhVinh",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Product\\Detail.cshtml",
+      "TargetPath": "Views\\Product\\Detail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostNewSidebar\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\vcPostNewSidebar\\Default.cshtml",
       "FileKind": "mvc"
@@ -16813,11 +16735,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostRelatedSidebar\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\vcPostRelatedSidebar\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Home\\About.cshtml",
       "TargetPath": "Views\\Home\\About.cshtml",
       "FileKind": "mvc"
@@ -16848,23 +16765,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcProductDetailModal\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\vcProductDetailModal\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcPostRelated\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\vcPostRelated\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\Views\\Shared\\Components\\vcProductListPanel\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\vcProductListPanel\\Default.cshtml",
       "FileKind": "mvc"
     },
     {

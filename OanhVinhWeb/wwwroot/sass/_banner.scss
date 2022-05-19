@@ -1,7 +1,7 @@
 /**************** banner part css start ****************/
 .banner_part {
     position: relative;
-    height: 520px;
+    height: 500px;
     position: relative;
     // background-image: url(../img/banner/trai-de-oanh-vinh-banner-1.png);
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@
         background-color: #f0eed4;
     }
     @media #{$large_mobile} {
-        height: 520px;
+        height: 500px;
         background-image: none;
         background-color: #f0eed4;
     }
@@ -24,7 +24,7 @@
     }
     @media #{$medium_device} {
         background-size: auto;
-        height: 550px;
+        height: 520px;
     }
     &:after {
         width: 20vw;
@@ -54,7 +54,6 @@
         display: table;
         width: 100%;
         height: 600px;
-        padding-top: 40px;
         .banner_text_iner {
             display: table-cell;
             vertical-align: middle;

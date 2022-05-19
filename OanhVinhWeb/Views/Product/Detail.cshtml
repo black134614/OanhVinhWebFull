@@ -1,0 +1,131 @@
+﻿@model Product
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Thực đơn</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+<!--================Product detail Area  =================-->
+<section class="product_area single-product-area section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="product-img col-6">
+                        <img class="img-fluid rounded" src="@Model.ProductImages" alt="@Model.ProductALTSeo" asp-append-version="true">
+                    </div>
+                    <div class="col-6">
+                        <h3 class="product-title">
+                            @Model.ProductName
+                        </h3>
+                        <p class="product-description">
+                            @Model.ProductDescription
+                        </p>
+                        <div class="product-action">
+                            <h5 class="product-action-title mt-5">Liên hệ với chúng tôi để nhận nhiều ưu đãi!</h5>
+                            <div class="item d-flex align-items-center">
+                                <span class="ti-map-alt fa-3x mr-3"></span>
+                                <div>
+                                    @ViewBag.WebsiteInfo.Address
+                                </div>
+                            </div>
+                            <div class="item d-flex align-items-center">
+                                <span class="fa fa-phone fa-3x mr-3"></span>
+                                <a href="tel:@ViewBag.WebsiteInfo.WebsitePhoneNumber">
+                                    @ViewBag.WebsiteInfo.WebsitePhoneNumber
+                                </a>
+                            </div>
+                            <div class="item d-flex align-items-center">
+                                <span class="ti-calendar fa-3x mr-3"></span>
+                                <div>
+                                    Thứ 2 - Chủ nhật: 9h00 - 16h00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-detail mt-5">
+                    <h3 class="font-weight-bolder">Thông tin sản phẩm</h3>
+                    <div class="detail">
+                        @Html.Raw(@Model.ProductDetail)
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Từ khóa tìm kiếm'
+                                           onfocus="this.placeholder = ''"
+                                           onblur="this.placeholder = 'Từ khóa tìm kiếm'">
+                                    <div class="input-group-append">
+                                        <button class="btn" type="button"><i class="ti-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button rounded-0 primary-bg text-white w-100 btn_4"
+                                    type="submit">
+                                Tìm
+                            </button>
+                        </form>
+                    </aside>
+                    <vc:vc-food-menu-category />
+                    <!--Product  related-->
+                    <aside class="single_sidebar_widget popular_post_widget">
+                        <h3 class="widget_title">Sản Phẩm Liên Quan</h3>
+                        @foreach (var item in @ViewBag.RelatedProduct)
+                        {
+                            <div class="media post_item">
+                                <img src="@item.ProductImages" alt="@item.ProductALTSeo">
+                                <div class="media-body">
+                                    <a asp-route="ProductDetail"
+                                   asp-route-mid="@item.ProductCategoryID"
+                                   asp-route-id="@item.ProductID"
+                                   asp-route-title="@item.ProductName">
+                                        <h3>
+                                            @item.ProductName
+                                        </h3>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </aside>
+                    <!--Post related-->
+                    <vc:vc-post-active-img-sidebar />
+                    <aside class="single_sidebar_widget popular_post_widget">
+                        <h3 class="widget_title">Sản Phẩm Mới</h3>
+                         @foreach (var item in @ViewBag.NewProduct)
+                        {
+                            <div class="media post_item">
+                                <img src="@item.ProductImages" alt="@item.ProductALTSeo">
+                                <div class="media-body">
+                                    <a asp-route="ProductDetail"
+                                   asp-route-mid="@item.ProductCategoryID"
+                                   asp-route-id="@item.ProductID"
+                                   asp-route-title="@item.ProductName">
+                                        <h3>
+                                            @item.ProductName
+                                        </h3>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================Blog Area end =================-->
+<vc:vc-intro-video/>

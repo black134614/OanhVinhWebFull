@@ -1,21 +1,24 @@
 ﻿@using WebOanhVinh.Models
 @model List<ProductCategory>
 
-<div class="col-lg-6">
-    <div class="nav nav-tabs food_menu_nav" id="myTab" role="tablist">
-        <a class="active" id="Special-tab" data-toggle="tab" href="#AllProduct" role="tab">
-            Tất cả Sản Phẩm<img src="img/icon/play.svg"
-                                alt="play">
-        </a>
-        <!--Đổ menu ở đây! Click menu sẽ thay đổi đường dẫn -> /danh-muc-1 -> lấy danh mục 1 đổ dữ liệu vào tabpanel id="Product"-->
+<aside class="single_sidebar_widget post_category_widget">
+    <h4 class="widget_title">Danh Mục Sản Phẩm</h4>
+    <ul class="list cat-list">
+        <li>
+            <a href="san-pham" class="d-flex">
+                <p>Tất cả sản phẩm</p>
+            </a>
+        </li>
         @foreach (var item in Model)
         {
-            <a id="Launch-tab"
-           asp-route="ProductListByID"
-           asp-route-mid="@item.ProductCategoryID"
-           asp-route-title="@item.Tittle"
-           >@item.Tittle<img src="img/icon/play.svg" alt="play"></a>
-
+            <li>
+                <a asp-route="ProductListByCategoryID"
+               asp-route-mid="@item.ProductCategoryID"
+               asp-route-title="@item.Tittle"
+               class="d-flex">
+                    <p>@item.Tittle</p>
+                </a>
+            </li>
         }
-    </div>
-</div>
+    </ul>
+</aside>

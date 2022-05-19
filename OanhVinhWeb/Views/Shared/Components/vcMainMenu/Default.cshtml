@@ -25,8 +25,21 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/gioi-thieu">Giới Thiệu</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/san-pham">Menu</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="/san-pham" id="navbarDropdown"
+                                   role="button" data-toggle="dropdown">
+                                    Sản Phẩm
+                                </a>
+                                    <div class="dropdown-menu" >
+                                        @foreach(var item in ViewBag.ProductCategory)
+                                        {
+                                        <a class="dropdown-item"
+                                                             asp-route="ProductListByCategoryID"
+                                                             asp-route-mid="@item.ProductCategoryID"
+                                                             asp-route-title="@item.Tittle"
+                                        >@item.Tittle</a>
+                                        }
+                                    </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="/danh-muc-bai-dang" id="navbarDropdown"
@@ -50,7 +63,7 @@
                         </ul>
                     </div>
                     <div class="menu_btn">
-                        <a href="#" class="btn_1 d-none d-sm-block">Gọi cho chúng tôi</a>
+                        <a href="tel:@ViewBag.PhoneNumber" class="btn_1 d-none d-sm-block">Gọi cho chúng tôi</a>
                     </div>
                 </nav>
             </div>

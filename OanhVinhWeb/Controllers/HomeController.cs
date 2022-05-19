@@ -41,6 +41,8 @@ namespace WebOanhVinh.Controllers
                 return View(new WebsiteInfo());
             }
             string json = response.Content.ReadAsStringAsync().Result;
+            if(json == null)
+                return View(new WebsiteInfo());
             WebsiteInfo data = JsonConvert.DeserializeObject<WebsiteInfo>(json);
 
             return View(data);

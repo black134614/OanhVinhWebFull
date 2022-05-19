@@ -37,6 +37,8 @@ namespace WebOanhVinh.Controllers
                 return View(new List<Post>());
 
             string json = response.Content.ReadAsStringAsync().Result;
+            if (json == null)
+                return View(new WebsiteInfo());
             List<Post> data = JsonConvert.DeserializeObject<List<Post>>(json);
             if (mid > 0 && data != null)
             {
@@ -58,18 +60,22 @@ namespace WebOanhVinh.Controllers
             }
             ViewData["Title"] = headTitle;
             //api tra ve list
-            var response = await client.GetAsync("api/Post/GetAllPosts?PostID=" + id);
+            var response = await client.GetAsync("api/Post/GetAllPosts");
 
             if (response == null)
                 return View(new Post());
 
             string json = response.Content.ReadAsStringAsync().Result;
+            if (json == null)
+                return View(new WebsiteInfo());
             List<Post> data = JsonConvert.DeserializeObject<List<Post>>(json);
             if (data != null)
             {
-                Post trueData = data.FirstOrDefault();
+                ViewBag.PostRelated = data.Where((x) => x.PostCategoryID == mid).Take(5).ToList();
+                Post trueData = data.Where(x=>x.PostID == id).FirstOrDefault();
                 return View(trueData);
             }
+            ViewBag.PostRelated = new List<Post>();
             return View();
         }
     }

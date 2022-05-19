@@ -172,6 +172,7 @@
         border: none;
         cursor: pointer;
         img {
+            height: 120px;
             border-radius: 100%;
             transition: all 0.5s ease-in-out;
             @media #{$small_mobile} {

@@ -2073,6 +2073,11 @@ ul {
   padding-right: 100px;
 }
 
+.home_menu .menu_btn a {
+  background-color: #ff6426;
+  color: #fff !important;
+}
+
 .home_menu .menu_btn:hover a {
   color: #fff !important;
 }
@@ -2083,7 +2088,7 @@ ul {
 }
 
 .main_menu .navbar .navbar-brand img {
-  max-height: 100px;
+  max-height: 80px;
 }
 
 .main_menu .navbar .nav-link {
@@ -2210,7 +2215,7 @@ ul {
   -webkit-transform: scale(1, 0);
           transform: scale(1, 0);
   display: block;
-  margin-top: 18px;
+  margin-top: 8px;
 }
 
 .dropdown .dropdown-menu .dropdown-item {
@@ -2348,7 +2353,7 @@ ul {
 /**************** banner part css start ****************/
 .banner_part {
   position: relative;
-  height: 520px;
+  height: 500px;
   position: relative;
   background-repeat: no-repeat;
   background-size: auto;
@@ -2365,7 +2370,7 @@ ul {
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .banner_part {
-    height: 520px;
+    height: 500px;
     background-image: none;
     background-color: #f0eed4;
   }
@@ -2382,7 +2387,7 @@ ul {
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .banner_part {
     background-size: auto;
-    height: 550px;
+    height: 520px;
   }
 }
 
@@ -2426,7 +2431,6 @@ ul {
   display: table;
   width: 100%;
   height: 600px;
-  padding-top: 40px;
 }
 
 .banner_part .banner_text .banner_text_iner {
@@ -3315,6 +3319,7 @@ ul {
 }
 
 .food_menu .card img {
+  height: 120px;
   border-radius: 100%;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -4873,6 +4878,7 @@ h6 {
 }
 
 .blog_item_section .single_blog_item .single_blog_img img {
+  height: 16em;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -6464,6 +6470,35 @@ h6 {
 
 .list-modal .modal-content .description {
   font-size: 20px;
+}
+
+.product_area .product-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.product_area .product-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background-color: #ff6426;
+}
+
+.product_area .product-action .product-action-title {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.product_area .product-action .item span {
+  font-size: 20px;
+  margin: 0.25rem 0;
+  color: #ff6426;
 }
 
 .breadcrumb {

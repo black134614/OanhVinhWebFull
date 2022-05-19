@@ -4,6 +4,10 @@
 		padding-right: 100px;
 	}
 	.menu_btn {
+		a{
+			background-color: $common_color	;
+			color: $white-color !important;
+		}
 		&:hover a {
 			color: $white-color !important;
 		}
@@ -17,7 +21,7 @@
 
 	.navbar {
 		.navbar-brand img {
-			max-height: 100px;
+			max-height: 80px;
 		}
 		.nav-link {
 			display: inline-block;
@@ -120,7 +124,7 @@
 		transform-origin: top center;
 		transform: scale(1, 0);
 		display: block;
-		margin-top: 18px;
+		margin-top: 8px;
 		.dropdown-item {
 			font-size: 14px;
 			padding: 9px 18px !important;

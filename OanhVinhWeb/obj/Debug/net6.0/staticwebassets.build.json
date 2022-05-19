@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ECXB0Z5Q+qHPOGrn2orsueGltN3rmCELn9BlF6OuCpQ=",
+  "Hash": "t7mE9Sxyghke2L/UdGXuUTia8hNEu2P0B+5fjsm+ytM=",
   "Source": "WebOanhVinh",
   "BasePath": "_content/WebOanhVinh",
   "Mode": "Default",
@@ -695,6 +695,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\fonts\\themify.woff"
+    },
+    {
+      "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\food_detail.html",
+      "SourceId": "WebOanhVinh",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\",
+      "BasePath": "_content/WebOanhVinh",
+      "RelativePath": "food_detail.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\food_detail.html"
     },
     {
       "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\food_menu.html",
@@ -3891,6 +3908,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sass\\_portfolio.scss"
+    },
+    {
+      "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\sass\\_product_detail.scss",
+      "SourceId": "WebOanhVinh",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\",
+      "BasePath": "_content/WebOanhVinh",
+      "RelativePath": "sass/_product_detail.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sass\\_product_detail.scss"
     },
     {
       "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\sass\\_project_details.scss",

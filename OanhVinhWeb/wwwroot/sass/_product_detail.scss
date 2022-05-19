@@ -1,0 +1,39 @@
+.product_area{
+    .product-title{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: -0.5rem;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background-color: $common_color;
+        }
+    }
+    .product-description{
+
+    }
+    .product-action{
+        .product-action-title{
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+        .item{
+            span{
+                font-size: 20px;
+                margin: 0.25rem 0;
+                color: $common_color;
+            }
+        }
+    }
+    .product-detail{
+     .detail{
+        
+     }   
+    }
+}
