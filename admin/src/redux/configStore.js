@@ -11,6 +11,7 @@ import UserReducer from './reducers/UserReducer/UserReducer';
 import ProductReducer from './reducers/ProductReducer/ProductReducer';
 import PostCategoryReducer from './reducers/PostCategoryReducer/PostCategoryReducer';
 import PostReducer from './reducers/PostReducer/PostReducer';
+import CountListReducer from './reducers/CountListReducer/CountListReducer';
 
 const middleWareSaga = createMiddleWareSaga();
 const rootReducer = combineReducers({
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
     ProductReducer,
     PostCategoryReducer,
     PostReducer,
+    CountListReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(middleWareSaga));

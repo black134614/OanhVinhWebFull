@@ -5,6 +5,7 @@ import * as UserSaga from './UserSaga/UserSaga'
 import * as ProductSaga from './ProductSaga/ProductSaga'
 import * as PostcategorySaga from './PostcategorySaga/PostcategorySaga'
 import * as Post from './PostSaga/PostSaga'
+import * as CountList from './CountListSaga/CountListSaga'
 export function* rootSaga() {
     yield all([
         //nghiep vu login
@@ -32,5 +33,7 @@ export function* rootSaga() {
         Post.theoDoiDeletePostSaga(),
         Post.theoDoiAddPostSaga(),
         Post.theoDoiUpdatePostSaga(),
+        //nghiep vu thong ke bai viet, san pham (countlist)
+        CountList.theoDoiGetCountListSaga(),
     ])
 }

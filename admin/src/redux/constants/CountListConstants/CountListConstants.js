@@ -1,0 +1,2 @@
+export const GET_COUNT_LIST_SAGA = 'GET_COUNT_LIST_SAGA';
+export const GET_COUNT_LIST = 'GET_COUNT_LIST';

@@ -42,20 +42,21 @@ namespace API._Services.Services
         public async Task<OperationResult> Update(UserDTO userDTO)
         {
             userDTO.CreateTime = DateTime.Now;
-            if (!string.IsNullOrEmpty(userDTO.AvatarParam))
-            {
-                string folderPath = $"uploaded/";
+            userDTO.Avatar = userDTO.AvatarParam;
+            // if (!string.IsNullOrEmpty(userDTO.AvatarParam))
+            // {
+            //     string folderPath = $"uploaded/";
 
-                string fileName = $"{userDTO.FullName}";
+            //     string fileName = $"{userDTO.FullName}";
 
-                FunctionUtility fc = new FunctionUtility();
+            //     FunctionUtility fc = new FunctionUtility();
 
-                userDTO.Avatar = await fc.UploadAsync(userDTO.AvatarParam, folderPath, fileName);
-            }
-            else
-            {
-                userDTO.Avatar = "images/no-image.jpg";
-            }
+            //     userDTO.Avatar = await fc.UploadAsync(userDTO.AvatarParam, folderPath, fileName);
+            // }
+            // else
+            // {
+            //     userDTO.Avatar = "images/no-image.jpg";
+            // }
 
             var userMapping = _mapper.Map<User>(userDTO);
 

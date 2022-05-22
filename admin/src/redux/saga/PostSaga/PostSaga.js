@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects'
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { postService } from '../../../services/PostServices';
 import { notifiFunction } from '../../../util/Notification/Notification';
 import { closeDrawer } from '../../actions/DrawerActions/DrawerActions';

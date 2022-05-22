@@ -1,7 +1,14 @@
 import { GET_ALL_PRODUCT_CATEGORY, GET_EDIT_PRODUCT_CATEGORY_FORM, SET_EDIT_PRODUCT_CATEGORY_FORM } from "../../constants/ProductCategoryConstants/ProductCategoryConstants"
 
 const initialState = {
-    ProductCategoryList: [],
+    ProductCategoryList: [{
+        postCategoryID: 0,
+        tittle: "",
+        description: "",
+        status: true,
+        createBy: "Null",
+        createTime: null
+      }],
     EditProductCategory: {}
 }
 
