@@ -11,6 +11,7 @@ import { SET_SUBMIT_POST_FORM } from '../../redux/constants/DrawerContants/Drawe
 import { getAllPostCategoryAPIAction } from '../../redux/actions/PostCategoryActions/PostCategoryActions';
 import { addPostAPIAction, updatePostAPIAction } from '../../redux/actions/PostActions/PostActions';
 import { resetAvatarParam, setAvatarParam, setInputImgValue } from '../../redux/actions/FormImageActions/FormImageActions';
+import { notifiFunction } from '../../util/Notification/Notification';
 
 
 const createBy = JSON.parse(localStorage.getItem(USER_LOGIN))?.userName;
@@ -164,7 +165,7 @@ const PostForm = withFormik({
             return {
                 postName: props.Post.postName,
                 postDescription: props.Post.postDescription,
-                postALTSeo: props.Post.postALTSeo,
+                postALTSeo: props.Post.postALTSEO,
                 postCategoryID: props.Post.postCategoryID,
                 status: props.Post.status,
                 postDetail: props.Post.postDetail
@@ -188,19 +189,26 @@ const PostForm = withFormik({
             postDescription: values.postDescription,
             postCategoryID: values.postCategoryID,
             postImages: avatarParam,
-            postALTSEO: values.postALTSEO,
+            postALTSEO: values.postALTSeo,
             status: values.status,
             createBy: createBy
         }
-        if (props.Post) {
-            Post = { ...Post, PostID: props.Post.postID };
-            props.dispatch(updatePostAPIAction(Post));
+        
+        if (!avatarParam && props.Post !== null) {
+            Post = { ...Post, postImages: props.Post.postImages };
+            if (props.Post) {
+                Post = { ...Post, PostID: props.Post.postID };
+                props.dispatch(updatePostAPIAction(Post));
+            }
+            else {
+                props.dispatch(addPostAPIAction(Post));
+            }
+            props.dispatch(resetAvatarParam());
+            resetForm();
         }
         else {
-            props.dispatch(addPostAPIAction(Post));
+            notifiFunction('warning','Vui lòng chọn hình ảnh!');
         }
-        props.dispatch(resetAvatarParam());
-        resetForm();
     },
     displayName: 'Sửa thông tin',
 })(Form);

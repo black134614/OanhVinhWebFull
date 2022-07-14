@@ -23,6 +23,7 @@ export function* rootSaga() {
         ProductSaga.theoDoiGetAllProductSaga(),
         ProductSaga.theoDoiAddProductSaga(),
         ProductSaga.theoDoiDeleteProductSaga(),
+        ProductSaga.theoDoiUpdateProductSaga(),
         //nghiep vu Postcategory
         PostcategorySaga.theoDoiGetAllPostCategorySaga(),
         PostcategorySaga.theoDoiAddPostCategorySaga(),

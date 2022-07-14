@@ -30,11 +30,11 @@
                         </h2>
                         <ul class="blog-info-link mt-3 mb-4">
                             <li>
-                                <a asp-route="ProductListByCategoryID"
+                                <a asp-route="PostListByCategoryID"
                                    asp-route-mid="@Model.PostCategoryID"
-                                   asp-route-title="@Model.PostTitle"><i class="fa fa-th-large"></i>@Model.PostCategoryName</a>
+                                   asp-route-title="@Model.PostCategoryName"><i class="fa fa-th-large"></i>@Model.PostCategoryName</a>
                             </li>
-                            <li><a href="#"><i class="far fa-user"></i> @Model.UserFullName</a></li>
+                            <li><i class="far fa-user"></i> @Model.UserFullName</li>
                             <li>
                                 @if (@Model.CreateTime == null)
                                 {
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="blog-author">
+                @*<div class="blog-author">
                     <div class="media align-items-center">
                         <img src="img/blog/author.png" alt="">
                         <div class="media-body">
@@ -59,12 +59,11 @@
                                 <h4>@Model.CreateBy</h4>
                             </a>
                             <p>
-                                Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-                                our dominion twon Second divided from
+                                @Mo
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>*@
             </div>
 
             <div class="col-lg-4">

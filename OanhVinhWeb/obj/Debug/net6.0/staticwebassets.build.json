@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K3EnRf2L72VyZLFHexpBAatmVRkHLByOxp11rEqjMW0=",
+  "Hash": "Nwo7e7oLF15AWg/v2jjqkSbxQV1Z4tHFly6erRP8y9U=",
   "Source": "WebOanhVinh",
   "BasePath": "_content/WebOanhVinh",
   "Mode": "Default",
@@ -2465,6 +2465,23 @@
       "OriginalItemSpec": "wwwroot\\img\\Quote.png"
     },
     {
+      "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\img\\team\\client_1.png",
+      "SourceId": "WebOanhVinh",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\",
+      "BasePath": "_content/WebOanhVinh",
+      "RelativePath": "img/team/client_1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\team\\client_1.png"
+    },
+    {
       "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\img\\team\\giai-thuong-3.jpg",
       "SourceId": "WebOanhVinh",
       "SourceType": "Discovered",
@@ -2480,6 +2497,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\team\\giai-thuong-3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\img\\team\\phan-hoi.jpg",
+      "SourceId": "WebOanhVinh",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\",
+      "BasePath": "_content/WebOanhVinh",
+      "RelativePath": "img/team/phan-hoi.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\team\\phan-hoi.jpg"
     },
     {
       "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\index.html",

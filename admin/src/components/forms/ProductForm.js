@@ -11,6 +11,7 @@ import { SET_SUBMIT_PRODUCT_FORM } from '../../redux/constants/DrawerContants/Dr
 import { USER_LOGIN } from '../../util/constants/settingSystem';
 import NoImg from '../../assets/images/no-img.jpg'
 import { resetAvatarParam, setAvatarParam, setInputImgValue } from '../../redux/actions/FormImageActions/FormImageActions';
+import { notifiFunction } from '../../util/Notification/Notification';
 
 
 const createBy = JSON.parse(localStorage.getItem(USER_LOGIN))?.userName;
@@ -25,7 +26,7 @@ function Form(props) {
     }, [])
     const { ProductCategoryList } = props;
     const renderImage = () => {
-            return <img src={avatarImg} style={{ height: 100, width: 100, objectFit: 'cover' }} />
+        return <img src={avatarImg} style={{ height: 100, width: 100, objectFit: 'cover' }} />
     }
     const {
         values,
@@ -181,7 +182,7 @@ const ProductForm = withFormik({
         productALTSeo: Yup.string()
             .max(1000, 'Từ khóa SEO dưới 1000 kí tự!')
     }),
-    handleSubmit: (values, { props, setSubmitting, resetForm  }) => {
+    handleSubmit: (values, { props, setSubmitting, resetForm }) => {
         let product = {
             productName: values.productName,
             productDetail: values.productDetail,
@@ -192,15 +193,23 @@ const ProductForm = withFormik({
             status: values.status,
             createBy: createBy
         }
-        if (props.Product) {
-            product = { ...product, productID: props.Product.productID };
-            props.dispatch(updateProductAPI(product));
+        if (!avatarParam && props.Product !== null) {
+
+            product = { ...product, productImages: props.Product.productImages };
+            if (props.Product) {
+                product = { ...product, productID: props.Product.productID };
+                props.dispatch(updateProductAPI(product));
+            }
+            else {
+                props.dispatch(addProductAPI(product));
+                console.log(product);
+            }
+            resetForm();
+            props.dispatch(resetAvatarParam());
         }
         else {
-            props.dispatch(addProductAPI(product));
+            notifiFunction('warning','Vui lòng chọn hình ảnh!')
         }
-        resetForm();
-        props.dispatch(resetAvatarParam());
     },
     displayName: 'Sửa thông tin',
 })(Form);

@@ -114,7 +114,7 @@ export default function SignIn() {
                     },
                   ]}
                 >
-                  <Input placeholder="Mật khẩu..." />
+                  <Input.Password placeholder="Mật khẩu..." />
                 </Form.Item>
 
            

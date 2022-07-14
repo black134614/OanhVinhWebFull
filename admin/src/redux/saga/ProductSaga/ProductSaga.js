@@ -79,6 +79,7 @@ function* updateProductSaga(action){
         }
         else{
             yield put(getAllProductAPIAction());
+            yield put(closeDrawer());
             notifiFunction('success', 'Cập nhật sản phẩm thành công!');
         }
     } catch (error) {

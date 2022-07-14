@@ -2,20 +2,27 @@
 
 <aside class="single_sidebar_widget popular_post_widget">
     <h3 class="widget_title">Bài Đăng Mới Nhất</h3>
-   @foreach (var item in Model)
-   {
+    @foreach (var item in Model)
+    {
         <div class="media post_item">
-        <img src="@item.PostImages" alt="@item.PostALTSEO" asp-append-version="true">
-        <div class="media-body">
-            <a 
-            >
-                <h3>@item.PostTitle</h3>
+            <a asp-route="PostDetail"
+           asp-route-mid="@item.PostCategoryID"
+           asp-route-id="@item.PostID"
+           asp-route-title="@item.PostTitle">
+                <img src="@item.PostImages" alt="@item.PostALTSEO" asp-append-version="true">
             </a>
-            @if(@item.CreateTime != null)
+            <div class="media-body">
+                <a asp-route="PostDetail"
+               asp-route-mid="@item.PostCategoryID"
+               asp-route-id="@item.PostID"
+               asp-route-title="@item.PostTitle">
+                    <h3>@item.PostTitle</h3>
+                </a>
+                @if (@item.CreateTime != null)
                 {
                     <p>@item.CreateTime.Value.Day / @item.CreateTime.Value.Month / @item.CreateTime.Value.Year  </p>
                 }
             </div>
-    </div>
-   }
+        </div>
+    }
 </aside>
