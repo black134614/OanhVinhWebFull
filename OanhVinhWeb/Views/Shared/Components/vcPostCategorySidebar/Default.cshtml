@@ -1,0 +1,23 @@
+﻿@model List<PostCategory>
+<aside class="single_sidebar_widget post_category_widget">
+    <h4 class="widget_title">Danh Mục Bài Đăng</h4>
+    <ul class="list cat-list">
+        <li>
+            <a href="/danh-muc-bai-dang" class="d-flex">
+                <p>Tất cả danh mục</p>
+            </a>
+        </li>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a 
+               asp-route="PostListByCategoryID"
+               asp-route-mid="@item.PostCategoryID"
+               asp-route-title="@item.Tittle"
+               class="d-flex">
+                    <p>@item.Tittle</p>
+                </a>
+            </li>
+        }
+    </ul>
+</aside>

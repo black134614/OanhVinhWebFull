@@ -1,0 +1,39 @@
+﻿@model WebsiteInfo    
+<!--HomeContact::regervation_part start::-->
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Liên hệ với</p>
+                    <h2>@Model.WebsiteName</h2>
+                </div>
+            </div>
+        </div>
+        <di class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <div class="item d-flex align-items-center">
+                        <span class="ti-map-alt fa-3x mr-3"></span>
+                        <div>
+                            @Model.Address
+                            <a href="#google-map" class="genric-btn primary circle small">Xem trên bản đồ</a>
+                        </div>
+                    </div>
+                    <div class="item d-flex align-items-center">
+                        <span class="fa fa-phone fa-3x mr-3"></span>
+                        <div>
+                            @Model.WebsitePhoneNumber
+                        </div>
+                    </div>
+                    <div class="item d-flex align-items-center">
+                        <span class="ti-calendar fa-3x mr-3"></span>
+                        <div>
+                            Thứ 2 - Chủ nhật: 9h00 - 16h00
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!--::regervation_part end::-->

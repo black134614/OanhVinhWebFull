@@ -1,0 +1,36 @@
+﻿@model List<Product>
+<!--::exclusive_item_part Top_Product start::-->
+<section class="exclusive_item_part blog_item_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Hàng đại trà</p>
+                    <h2 class="text-capitalize">Top Sản phẩm</h2>
+                </div>
+            </div>
+        </div>
+        <div class="owl-carousel list-top-product">
+            @foreach (var item in Model)
+            {
+                <div class="single_blog_item">
+                    <a asp-route="ProductDetail"
+                   asp-route-mid="@item.ProductCategoryID"
+                   asp-route-id="@item.ProductID"
+                   asp-route-title="@item.ProductName">
+                        <div class="single_blog_img">
+                            <img src="@item.ProductImages" alt="@item.ProductALTSeo" asp-append-version="true">
+                        </div>
+                        <div class="single_blog_text">
+                            <h3>@item.ProductName</h3>
+                            <p>
+                                @item.ProductDescription
+                            </p>
+                            <div class="btn_3">Đọc thêm <img src="img/icon/left_2.svg"></div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

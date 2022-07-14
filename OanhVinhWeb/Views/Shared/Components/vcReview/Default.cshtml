@@ -1,0 +1,43 @@
+﻿@using WebOanhVinh.Models
+@model List<Customer>
+<!--::review_part start::-->
+<section class="review_part gray_bg section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Khách hàng</p>
+                    <h2>Phản Hồi</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-11">
+                <div class="client_review_part owl-carousel">
+                    @if (Model != null)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <div class="client_review_single media">
+                                <div class="client_img align-self-center">
+                                    <img class="rounded-circle" src="@item.Avatar" alt="@item.Name">
+                                </div>
+                                <div class="client_review_text media-body">
+                                    <p>
+                                        @item.Review
+                                    </p>
+                                    <h4>@item.Name <span>@item.Jobs</span></h4>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                         <div class="client_review_single media"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::review_part end::-->

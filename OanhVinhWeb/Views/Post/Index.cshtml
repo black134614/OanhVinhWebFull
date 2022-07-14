@@ -1,0 +1,93 @@
+﻿@using PagedList.Mvc; //import this so we get our HTML Helper
+@using PagedList; //import this so we can cast our list to IPagedList (only necessary because ViewBag is dynamic)
+@using WebOanhVinh.ClassHelpers
+@using WebOanhVinh.Models
+@model List<Post>
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        @if (@ViewData["Title"] == "Danh Mục Bài Đăng")
+                        {
+                            <h2>Tất Cả Bài Đăng (@ViewBag.CountList)</h2>
+                        }
+                        else
+                        {
+                            <h2>@ViewData["Title"] (@ViewBag.CountList)</h2>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+<!--================Blog Area =================-->
+<section class="blog_area section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="blog_left_sidebar">
+                    @foreach (var item in Model)
+                    {
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="@item.PostImages" alt="@item.PostALTSEO">
+                                <a href="#" class="blog_item_date">
+                                    @{
+                                        if (@item.CreateTime != null)
+                                        {
+                                            <h3>@item.CreateTime.Value.Day</h3>
+                                            <p>@item.CreateTime.Value.Month.@item.CreateTime.Value.Year</p>
+                                        }
+                                        else
+                                        {
+                                            <h3>01</h3>
+                                            <p>01.2022</p>
+                                        }
+                                    }
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block"
+                               asp-route="PostDetail"
+                               asp-route-mid="@item.PostCategoryID"
+                               asp-route-id="@item.PostID"
+                               asp-route-title="@item.PostTitle">
+                                    <h2>@item.PostTitle</h2>
+                                </a>
+                                <p>@item.PostDescription</p>
+                                <ul class="blog-info-link">
+                                    <li>
+                                        <a asp-route="PostListByCategoryID"
+                                       asp-route-mid="@item.PostCategoryID"
+                                       asp-route-title="@item.PostTitle"><i class="fa fa-th-large"></i>@item.PostCategoryName</a>
+                                    </li>
+                                    <li><i class="far fa-user"></i> @item.UserFullName</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <!--search-->
+                    <vc:vc-search/>
+                    <!-- vcPostCategorySidebar -->
+                    <vc:vc-post-category-sidebar />
+                    <!-- vcPostActiveImgSidebar -->
+                    <vc:vc-post-active-img-sidebar />
+                    <!-- vcPostNewSidebar -->
+                    <vc:vc-post-new-sidebar />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

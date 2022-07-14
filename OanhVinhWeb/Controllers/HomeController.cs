@@ -1,32 +1,51 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using Newtonsoft.Json;
 using WebOanhVinh.Models;
 
 namespace WebOanhVinh.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly HttpClient client;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IHttpClientFactory httpClientFactory)
         {
-            _logger = logger;
+            client = httpClientFactory.CreateClient("default");
         }
 
+        [Route("")]
+        [Route("trang-chu")]
+        [Route("home")]
+        [Route("home/index")]
         public IActionResult Index()
         {
+            ViewData["Title"] = "Trang Chủ";
+
+           
             return View();
         }
-
-        public IActionResult Privacy()
+        [Route("gioi-thieu")]
+        public IActionResult About()
         {
+            ViewData["Title"] = "Giới thiệu";
             return View();
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [Route("lien-he")]
+        [Route("contact")]
+        public async Task<IActionResult> Contact()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ViewData["Title"] = "Liên Hệ";
+            var response = await client.GetAsync("api/WebsiteInfo/GetWebSiteInfos");
+            if (response == null)
+            {
+                return View(new WebsiteInfo());
+            }
+            string json = response.Content.ReadAsStringAsync().Result;
+            if(json == null)
+                return View(new WebsiteInfo());
+            WebsiteInfo data = JsonConvert.DeserializeObject<WebsiteInfo>(json);
+
+            return View(data);
         }
     }
 }

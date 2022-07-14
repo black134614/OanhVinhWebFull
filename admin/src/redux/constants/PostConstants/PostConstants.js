@@ -1,0 +1,5 @@
+export const GET_ALL_POST_SAGA = 'GET_ALL_POST_SAGA'
+export const GET_ALL_POST = 'GET_ALL_POST'
+export const DELETE_POST_SAGA = 'DELETE_POST_SAGA'
+export const ADD_POST_SAGA = 'ADD_POST_SAGA'
+export const UPDATE_POST_SAGA = 'UPDATE_POST_SAGA'

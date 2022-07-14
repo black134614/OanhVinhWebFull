@@ -1,0 +1,18 @@
+﻿@model WebsiteInfo
+<!--::review_part start::-->
+<section class="map review_part gray_bg section_padding" data-spy="scroll" id="google-map" data-offset="0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Vị trí trên bản đồ</p>
+                    <h2>Oanh Vĩnh</h2>
+                </div>
+            </div>
+        </div>
+        <div>
+            @Html.Raw(Model.GoogleMap)
+        </div>
+    </div>
+</section>
+<!--::review_part end::-->

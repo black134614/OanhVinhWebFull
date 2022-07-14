@@ -1,0 +1,101 @@
+﻿@model List<Product>
+
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Thực Đơn</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+<!--::chefs_part start::-->
+<!-- food_menu start-->
+<section class="food_menu gray_bg">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="section_tittle">
+                    <p>Danh Sách</p>
+                    <h2>Sản Phẩm</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="nav nav-tabs food_menu_nav">
+                    @if (@ViewBag.Active == 0)
+                    {
+                        <a class="active" href="/san-pham">
+                            Tất cả sản phẩm<img src="~/img/icon/play.svg"
+                                            asp-append-version="true" alt="play">
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/san-pham">
+                            Tất cả sản phẩm<img src="~/img/icon/play.svg"
+                                            asp-append-version="true" alt="play">
+                        </a>
+                    }
+                    @foreach (var item in @ViewBag.ProductCategory)
+                    {
+                        if (@item.ProductCategoryID == @ViewBag.Active)
+                        {
+                            <a class="active" asp-route="ProductListByCategoryID"
+                       asp-route-mid="@item.ProductCategoryID"
+                       asp-route-title="@item.Tittle">
+                                @item.Tittle<img src="~/img/icon/play.svg" asp-append-version="true" alt="play">
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-route="ProductListByCategoryID"
+                       asp-route-mid="@item.ProductCategoryID"
+                       asp-route-title="@item.Tittle">
+                                @item.Tittle<img src="~/img/icon/play.svg" asp-append-version="true" alt="play">
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="tab-content">
+                    <div class="single-member">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <a class="card mb-3 col-6 col-lg-4 mb-5"
+                               asp-route="ProductDetail"
+                               asp-route-mid="@item.ProductCategoryID"
+                               asp-route-id="@item.ProductID"
+                               asp-route-title="@item.ProductName">
+
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-md-4">
+                                            <img src="@item.ProductImages" alt="..." asp-append-version="true">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h3 class="card-title">@item.ProductName</h3>
+                                                <p class="card-text">
+                                                    @item.ProductDescription
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- food_menu part end-->
+<vc:vc-intro-video />

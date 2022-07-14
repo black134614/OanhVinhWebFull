@@ -1,0 +1,76 @@
+﻿@model List<Post>
+
+<!--::exclusive_item_part start::-->
+<section class="news blog_item_section blog_section section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Bài viết của tác giả</p>
+                    <h2>Bài Đăng Mới Nhất</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="@item.PostImages" alt="@item.PostALTSEO" asp-append-version="true">
+                        </div>
+                        <div class="single_blog_text">
+                            <div class="date">
+                                @if(@item.CreateTime == null)
+                                {
+                                    <span class="date_item">01/01/2022</span>
+                                }
+                                else
+                                {
+                                    <span class="date_item">@item.CreateTime.Value.Day/@item.CreateTime.Value.Month/@item.CreateTime.Value.Year</span>
+                                }
+                                <a asp-route="PostListByCategoryID"
+                               asp-route-mid="@item.PostCategoryID"
+                               asp-route-title="@item.PostCategoryName"
+                               class="date_item"> <span>#</span>@item.PostCategoryName</a>
+                            </div>
+                            <h3>
+                                <a asp-route="PostDetail"
+                               asp-route-mid="@item.PostCategoryID"
+                               asp-route-id="@item.PostID"
+                               asp-route-title="@item.PostTitle">@item.PostTitle</a>
+                            </h3>
+                            <a asp-route="PostDetail"
+                           asp-route-mid="@item.PostCategoryID"
+                           asp-route-id="@item.PostID"
+                           asp-route-title="@item.PostTitle"
+                           class="btn_3">Xem thêm<img src="~/img/icon/left_1.svg" alt="" asp-append-version="true"></a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="col-sm-6 col-lg-4 d-flex d-sm-none d-md-flex d-lg-none">
+                <div class="single_blog_item">
+                    <div class="single_blog_img">
+                        <img src="img/blog/bien-de-men-thanh-dac-san-3-sao.jpg" alt="">
+                    </div>
+                    <div class="single_blog_text">
+                        <div class="date">
+                            <a href="#" class="date_item">26/04/2022 </a>
+                            <a href="#" class="date_item"> <span>#</span> Loài dế </a>
+                        </div>
+                        <h3><a href="blog.html">Dế mèn và các thông tin thú vị có thể bạn chưa biết</a></h3>
+                        <a href="#" class="btn_3">Xem thêm<img src="img/icon/left_1.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 text-center">
+            <a href="/danh-muc-bai-dang" style="font-size: 16px;" class="genric-btn primary circle arrow bold">
+                Xem Thêm<span class="lnr lnr-arrow-right"></span>
+            </a>
+        </div>
+    </div>
+</section>
+<!--::exclusive_item_part end::-->
