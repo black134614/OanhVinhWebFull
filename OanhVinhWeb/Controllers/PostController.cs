@@ -1,12 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using WebOanhVinh.Models;
-using PagedList;
 
 namespace WebOanhVinh.Controllers
 {
@@ -21,7 +16,7 @@ namespace WebOanhVinh.Controllers
         [Route("danh-muc-bai-dang")]
         [Route("danh-muc-bai-dang/{mid:int?}/{title?}", Name = "PostListByCategoryID")]
         [Route("post")]
-        public async Task<IActionResult> Index(int mid, string title, int? page)
+        public async Task<IActionResult> Index(int? mid, string title)
         {
             if (title == null)
             {
@@ -45,7 +40,7 @@ namespace WebOanhVinh.Controllers
                 data = data.Where(x => x.PostCategoryID == mid).ToList();
             }
             ViewBag.CountList = data.Count;
-            return View(data);
+            return View(data);  
         }
 
 

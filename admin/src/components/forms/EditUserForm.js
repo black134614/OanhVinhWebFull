@@ -123,7 +123,7 @@ const FormUserEdit = withFormik({
     .max(100, 'Tên có tối đa 100 kí tự!'),
     userDetail: Yup.string().max(1000, 'Giới thiệu quá dài!')
   }),
-  handleSubmit: (values, { props, setSubmitting }) => {
+  handleSubmit: (values, { props, setSubmitting, resetForm }) => {
     const createTime = new Date().toISOString();
     let user = {
       userName: props.UserInfo.userName,
@@ -138,6 +138,7 @@ const FormUserEdit = withFormik({
       user = { ...user, avatarParam: avatarParam, avatar: "" }
     }
     props.dispatch(updateUserAPI(user));
+    resetForm();
   },
   displayName: 'Sửa thông tin',
 })(Form);

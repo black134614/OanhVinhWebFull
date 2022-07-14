@@ -80,7 +80,7 @@ const EditProductCategoryForm = withFormik({
         description: Yup.string()
             .max(1000, 'Mô tả quá dài!')
     }),
-    handleSubmit: (values, { props, setSubmitting }) => {
+    handleSubmit: (values, { props, setSubmitting,resetForm }) => {
         const ProductCategory = {
             productCategoryID: props.ProductCategory.productCategoryID,
             tittle: values.tittle,
@@ -88,7 +88,8 @@ const EditProductCategoryForm = withFormik({
             status: values.status,
             createBy: userName
         }
-        props.dispatch(updateProductCategorySagaAction(ProductCategory))
+        props.dispatch(updateProductCategorySagaAction(ProductCategory));
+        resetForm();
     },
 
     displayName: 'Chỉnh Sửa Danh Mục Sản Phẩm',

@@ -73,14 +73,15 @@ const ProductCategoryForm = withFormik({
         description: Yup.string()
             .max(1000, 'Mô tả quá dài!')
     }),
-    handleSubmit: (values, { props, setSubmitting }) => {
+    handleSubmit: (values, { props, setSubmitting,resetForm }) => {
         const ProductCategory = {
             tittle: values.tittle,
             description: values.description,
             status: values.status,
             createBy: userName,
         }
-        props.dispatch(addProductCategoryAPIAction(ProductCategory))
+        props.dispatch(addProductCategoryAPIAction(ProductCategory));
+        resetForm();
     },
 
     displayName: 'Thêm Danh Mục Bài Đăng Mới',

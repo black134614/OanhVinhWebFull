@@ -10,12 +10,14 @@ import { getAllProductCategorySagaAction } from '../../redux/actions/ProductCate
 import { SET_SUBMIT_PRODUCT_FORM } from '../../redux/constants/DrawerContants/DrawerContants';
 import { USER_LOGIN } from '../../util/constants/settingSystem';
 import NoImg from '../../assets/images/no-img.jpg'
+import { resetAvatarParam, setAvatarParam, setInputImgValue } from '../../redux/actions/FormImageActions/FormImageActions';
 
 
 const createBy = JSON.parse(localStorage.getItem(USER_LOGIN))?.userName;
 let avatarParam = '';
 function Form(props) {
-    const [avatarImg, setAvatarImg] = useState(avatarParam);
+    const avatarImg = useSelector(state => state.FormImageReducer.avatarParam);
+    const inputImgValue = useSelector(state => state.FormImageReducer.inputImgValue);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch({ type: SET_SUBMIT_PRODUCT_FORM, submitFunction: handleSubmit });
@@ -23,12 +25,7 @@ function Form(props) {
     }, [])
     const { ProductCategoryList } = props;
     const renderImage = () => {
-        if (avatarImg === '') {
-            return <img src={props.Product ? props.Product.productImages : NoImg} style={{ height: 100, width: 100, objectFit: 'cover' }} />
-        }
-        else{
             return <img src={avatarImg} style={{ height: 100, width: 100, objectFit: 'cover' }} />
-        }
     }
     const {
         values,
@@ -48,8 +45,8 @@ function Form(props) {
             //When file uploads set it to file formcontrol
             reader.onload = (e) => {
                 // called once readAsDataURL is completed
-                setAvatarImg(e.target.result.toString());
                 avatarParam = e.target.result.toString();
+                dispatch(setAvatarParam(avatarParam));
             };
         }
     }
@@ -103,7 +100,7 @@ function Form(props) {
                 </div>
                 <div className="col-6 mb-3">
                     <p className="font-weight-bold">Avatar</p>
-                    <input className="form-control" type="file" onChange={(e) => { onSelectFile(e) }} />
+                    <input className="form-control" value={inputImgValue} type="file" onChange={(e) => { onSelectFile(e); dispatch(setInputImgValue(e.target.value)) }} />
                 </div>
                 <div className="col-6 mb-3">
                     {renderImage()}
@@ -184,7 +181,7 @@ const ProductForm = withFormik({
         productALTSeo: Yup.string()
             .max(1000, 'Từ khóa SEO dưới 1000 kí tự!')
     }),
-    handleSubmit: (values, { props, setSubmitting }) => {
+    handleSubmit: (values, { props, setSubmitting, resetForm  }) => {
         let product = {
             productName: values.productName,
             productDetail: values.productDetail,
@@ -202,6 +199,8 @@ const ProductForm = withFormik({
         else {
             props.dispatch(addProductAPI(product));
         }
+        resetForm();
+        props.dispatch(resetAvatarParam());
     },
     displayName: 'Sửa thông tin',
 })(Form);

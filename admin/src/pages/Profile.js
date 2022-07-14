@@ -27,7 +27,6 @@ import {
 } from "@ant-design/icons";
 
 import BgProfile from "../assets/images/bg-signup.jpg";
-import profilavatar from "../assets/images/face-1.jpg";
 import convesionImg from "../assets/images/face-3.jpg";
 import convesionImg2 from "../assets/images/face-4.jpg";
 import convesionImg3 from "../assets/images/face-5.jpeg";
@@ -90,11 +89,10 @@ export default function Profile() {
           <Row justify="space-between" align="middle" gutter={[24, 0]}>
             <Col span={24} md={12} className="col-info">
               <Avatar.Group>
-                <Avatar size={74} shape="square" src={profilavatar} />
+                <Avatar size={74} shape="square" src={UserInfo.avatar} />
 
                 <div className="avatar-info">
                   <h4 className="font-semibold m-0">{UserInfo.userName}</h4>
-                  <p>CEO / Co-Founder</p>
                 </div>
               </Avatar.Group>
             </Col>
@@ -107,11 +105,6 @@ export default function Profile() {
                 justifyContent: "flex-end",
               }}
             >
-              <Radio.Group defaultValue="a">
-                <Radio.Button value="a">OVERVIEW</Radio.Button>
-                <Radio.Button value="b">TEAMS</Radio.Button>
-                <Radio.Button value="c">PROJECTS</Radio.Button>
-              </Radio.Group>
             </Col>
           </Row>
         }

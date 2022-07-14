@@ -60,15 +60,18 @@ const ChangePasswordForm = withFormik({
         .required('Bạn cần nhập lại mật khẩu mới!')
             .oneOf([Yup.ref('newPassword'), null], 'Mật khẩu nhập lại không khớp')
     }),
-    handleSubmit: (values, { props, setSubmitting }) => {
+    handleSubmit: (values, { props, setSubmitting ,resetForm}) => {
         let user = {
             userName: props.UserInfo.userName,
+            fullName : props.UserInfo.fullName,
             password: values.newPassword,
             phoneNumber: props.UserInfo.phoneNumber,
             userDetail: props.UserInfo.userDetail,
-            avatar: props.UserInfo.avatar
+            avatar: props.UserInfo.avatar,
+            avatarParam: props.UserInfo.avatar
         }
         props.dispatch(updateUserAPI(user));
+        resetForm();
     },
     displayName: 'Đổi mật khẩu',
 })(Form);

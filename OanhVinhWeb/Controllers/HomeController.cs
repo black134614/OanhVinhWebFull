@@ -17,7 +17,7 @@ namespace WebOanhVinh.Controllers
         [Route("trang-chu")]
         [Route("home")]
         [Route("home/index")]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             ViewData["Title"] = "Trang Chủ";
 

@@ -396,6 +396,10 @@ ul {
   width: 100% !important;
 }
 
+.media img {
+  max-width: 150px;
+}
+
 @media (max-width: 576px) {
   .container-fluid {
     padding-right: 15px;
@@ -414,6 +418,9 @@ ul {
   .media {
     display: block;
   }
+  .media .media-body {
+    display: inline-block;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -423,6 +430,9 @@ ul {
   }
   .media {
     display: block;
+  }
+  .media .media-body {
+    display: inline-block;
   }
 }
 
@@ -484,6 +494,48 @@ ul {
 
 #toTopBtn:hover::after {
   border-bottom-color: #ff6426;
+}
+
+#search-box {
+  min-height: 35px;
+  width: 100%;
+  padding: 20px 10px;
+  border: 1px solid #ff6426;
+  border-radius: 0.25rem;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+#search-box li {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#search-box li img {
+  opacity: 1;
+  max-width: 100px;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+#search-box li img.d-invisible {
+  opacity: 0;
+}
+
+#search-box.bg-common {
+  background-color: rgba(255, 100, 38, 0.4);
+  border: none;
 }
 
 /* Main Button Area css
@@ -768,6 +820,10 @@ ul {
 
 .blog_area a h2:hover {
   color: #ff6426 !important;
+}
+
+.blog_area .feature-img {
+  text-align: center;
 }
 
 .blog_right_sidebar .btn_4 {
@@ -1337,6 +1393,10 @@ ul {
   background: #fbf9ff;
   padding: 30px;
   margin-bottom: 30px;
+}
+
+.blog_right_sidebar .single_sideb img {
+  max-width: 150px;
 }
 
 .blog_right_sidebar .search_widget .form-control {
@@ -2110,6 +2170,30 @@ ul {
           transform: translateX(50%);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .main_menu .navbar .nav-link::before {
+    bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .main_menu .navbar .nav-link::before {
+    bottom: 5px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .main_menu .navbar .nav-link::before {
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main_menu .navbar .nav-link::before {
+    bottom: 10px;
+  }
 }
 
 .main_menu .navbar .nav-link:hover::before, .main_menu .navbar .nav-link:focus::before {

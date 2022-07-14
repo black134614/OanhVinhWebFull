@@ -1,12 +1,14 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, delay, put, takeLatest } from 'redux-saga/effects';
 import { postService } from '../../../services/PostServices';
 import { notifiFunction } from '../../../util/Notification/Notification';
 import { closeDrawer } from '../../actions/DrawerActions/DrawerActions';
+import { displayLoading, hideLoading } from '../../actions/LoadingActions';
 import { getAllPostAction, getAllPostAPIAction } from '../../actions/PostActions/PostActions';
 import { getAllProductAPIAction } from '../../actions/ProductAction/ProductAction';
 import { ADD_POST_SAGA, DELETE_POST_SAGA, GET_ALL_POST_SAGA, UPDATE_POST_SAGA } from '../../constants/PostConstants/PostConstants';
 //saga get all post / lay tat ca bai viet
 function* getAllPostSaga() {
+    yield put(displayLoading());
     try {
         const { data, status } = yield call(() => postService.getAllPost());
         console.log(data);
@@ -16,6 +18,8 @@ function* getAllPostSaga() {
         else {
             yield put(getAllPostAction(data));
         }
+        yield delay(500);
+        yield put(hideLoading());
     } catch (error) {
         console.log(error);
     }

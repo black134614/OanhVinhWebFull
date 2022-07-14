@@ -1,7 +1,8 @@
-import { call, takeLatest, put } from 'redux-saga/effects';
+import { call, takeLatest, put, delay } from 'redux-saga/effects';
 import { postCategoryServices } from '../../../services/PostCategoryService';
 import { notifiFunction } from '../../../util/Notification/Notification'
 import { closeDrawer } from '../../actions/DrawerActions/DrawerActions';
+import { displayLoading, hideLoading } from '../../actions/LoadingActions';
 import { getAllPostCategoryAction, getAllPostCategoryAPIAction } from '../../actions/PostCategoryActions/PostCategoryActions';
 import { ADD_POST_CATEGORY_SAGA, DELETE_POST_CATEGORY_SAGA, GET_ALL_POST_CATEGORY_SAGA, UPDATE_POST_CATEGORY_SAGA } from '../../constants/PostCategoryConstants/PostCategoryConstants';
 // saga them danh muc bai dang / add post category
@@ -17,6 +18,7 @@ function* addPostCategorySaga(action) {
         else{
             notifiFunction('error', 'Thêm mới danh mục bài đăng thất bại!');
         }
+       
     } catch (error) {
         console.log(error);
     }
@@ -27,11 +29,17 @@ export function* theoDoiAddPostCategorySaga() {
 
 //saga lay tat ca danh muc bai dang / get all post category
 function* getAllPostCategory() {
+    yield put(displayLoading());
     try {
         const { data, status } = yield call(() => postCategoryServices.getAllPostCategory())
         if (data) {
             yield put(getAllPostCategoryAction(data));
         }
+        else{
+            notifiFunction("error", "Lỗi load dữ liệu!")
+        }
+        yield delay(500);
+        yield put(hideLoading());
     } catch (error) {
         console.log(error.response.data)
     }

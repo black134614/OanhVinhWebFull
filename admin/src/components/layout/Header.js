@@ -395,7 +395,7 @@ function Header({
           <div>
             <span>Xin chào, </span>
             <strong>{user.userName}</strong>
-            <img className="rounded" src={user.avatar}/>
+            <img style={{maxWidth: 50}} className="rounded " src={user.avatar}/>
           </div>
         </Col>
       </Row>

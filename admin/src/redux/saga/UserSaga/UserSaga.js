@@ -1,11 +1,13 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { GET_USER_INFO, GET_USER_INFO_SAGA, UPDATE_USER_SAGA } from "../../constants/UserConstants/UserConstants";
 import { userServices } from '../../../services/UserServices'
 import { notifiFunction } from "../../../util/Notification/Notification";
 import { getUserInfo, getUserInfoSaga } from "../../actions/UserActions/UserActions";
 import { closeDrawer } from '../../actions/DrawerActions/DrawerActions';
+import { displayLoading, hideLoading } from "../../actions/LoadingActions";
 //Nghiep vu load thong tin user // get all user in api
 function* getUserSaga(action) {
+    yield put(displayLoading());
     const { userName } = action;
     try {
         const { data, status } = yield call(() => userServices.getUserInfo(userName));
@@ -15,6 +17,8 @@ function* getUserSaga(action) {
         else {
             yield put(getUserInfo(data[0]));
         }
+        yield delay(500);
+        yield put(hideLoading());
     } catch (error) {
         console.log(error);
     }

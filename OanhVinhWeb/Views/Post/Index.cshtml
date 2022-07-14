@@ -1,5 +1,5 @@
-﻿@using PagedList
-@using PagedList.Core.Mvc
+﻿@using PagedList.Mvc; //import this so we get our HTML Helper
+@using PagedList; //import this so we can cast our list to IPagedList (only necessary because ViewBag is dynamic)
 @using WebOanhVinh.ClassHelpers
 @using WebOanhVinh.Models
 @model List<Post>
@@ -78,20 +78,7 @@
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
                     <!--search-->
-                    <aside class="single_sidebar_widget search_widget">
-                        <form action="#">
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Từ khóa tìm kiếm'
-                                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Từ khóa tìm kiếm'">
-                                    <div class="input-group-append">
-                                        <button class="btn" type="button"><i class="ti-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="button rounded-0 primary-bg text-white w-100 btn_4" type="submit">Tìm</button>
-                        </form>
-                    </aside>
+                    <vc:vc-search/>
                     <!-- vcPostCategorySidebar -->
                     <vc:vc-post-category-sidebar />
                     <!-- vcPostActiveImgSidebar -->
@@ -102,24 +89,5 @@
             </div>
         </div>
     </div>
-</section>
-@*<pager class="pager-container" list="@Model" options="@PagedListRenderOptions.TwitterBootstrapPager" asp-action="Index" asp-controller="PostController" />*@
 
-<!--================Blog Area =================-->
-@*<nav aria-label="Page navigation example">
-    <ul class="pagination">
-    <li class="page-item">
-    <a class="page-link" href="#" aria-label="Previous">
-    <span aria-hidden="true">&laquo;</span>
-    </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-    <a class="page-link" href="#" aria-label="Next">
-    <span aria-hidden="true">&raquo;</span>
-    </a>
-    </li>
-    </ul>
-    </nav>*@
+</section>

@@ -12,6 +12,8 @@ import ProductReducer from './reducers/ProductReducer/ProductReducer';
 import PostCategoryReducer from './reducers/PostCategoryReducer/PostCategoryReducer';
 import PostReducer from './reducers/PostReducer/PostReducer';
 import CountListReducer from './reducers/CountListReducer/CountListReducer';
+import LoadingReducer from './reducers/LoadingReducer';
+import FormImageReducer from './reducers/FormImageReducer/FormImageReducer';
 
 const middleWareSaga = createMiddleWareSaga();
 const rootReducer = combineReducers({
@@ -24,6 +26,8 @@ const rootReducer = combineReducers({
     PostCategoryReducer,
     PostReducer,
     CountListReducer,
+    LoadingReducer,
+    FormImageReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(middleWareSaga));

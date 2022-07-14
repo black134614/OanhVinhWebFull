@@ -8,6 +8,7 @@ import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 import DrawerHOC from "./HOC/Drawer/DrawerHOC";
+import LoadingComponent from "./components/GlobalSetting/LoadingComponent/LoadingComponent";
 import ProductCategory from "./pages/ProductCategory/ProductCategory";
 import { MainTemplate } from './templates/MainTemplate/MainTemplate';
 import PostCategory from "./pages/PostCategory/PostCategory";
@@ -18,6 +19,7 @@ function App() {
   return (
     <div>
     <DrawerHOC />
+    <LoadingComponent />
       <Switch>
         <Route path="/sign-in" exact component={SignIn} />
         <MainTemplate exact path='/dashboard' Component={Home} />

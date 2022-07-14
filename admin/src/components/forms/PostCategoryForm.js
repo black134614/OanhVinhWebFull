@@ -90,7 +90,7 @@ const PostCategoryForm = withFormik({
         description: Yup.string()
             .max(1000, 'Mô tả quá dài!')
     }),
-    handleSubmit: (values, { props, setSubmitting }) => {
+    handleSubmit: (values, { props, setSubmitting ,resetForm}) => {
         let PostCategoryBuild = {
             tittle: values.tittle,
             description: values.description,
@@ -102,6 +102,7 @@ const PostCategoryForm = withFormik({
         } else {
             props.dispatch(updatePostCategoryAPIAction({ ...PostCategoryBuild, PostCategoryID: props.PostCategory.postCategoryID }))
         }
+        resetForm();
     },
 
     displayName: 'Thêm Danh Mục Sản Phẩm Mới',

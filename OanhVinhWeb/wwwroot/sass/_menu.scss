@@ -4,8 +4,8 @@
 		padding-right: 100px;
 	}
 	.menu_btn {
-		a{
-			background-color: $common_color	;
+		a {
+			background-color: $common_color;
 			color: $white-color !important;
 		}
 		&:hover a {
@@ -38,7 +38,20 @@
 				background-color: $common_color_blur;
 				transform: translateX(50%);
 				transition: all 0.5s ease-in-out;
+				@media #{$medium_device} {
+					bottom: 10px;
+				}
+				@media #{$tab_device} {
+					bottom: 5px;
+				}
+				@media #{$large_mobile} {
+					bottom: 10px;
+				}
+				@media #{$small_mobile} {
+					bottom: 10px;
+				}
 			}
+			
 			&:hover,
 			&:focus {
 				&::before {
@@ -273,3 +286,4 @@
 		}
 	}
 }
+

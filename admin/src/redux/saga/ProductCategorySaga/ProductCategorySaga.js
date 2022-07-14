@@ -1,4 +1,4 @@
-import { call, takeLatest, put } from 'redux-saga/effects';
+import { call, takeLatest, put, delay } from 'redux-saga/effects';
 import { authServices } from '../../../services/AuthServices';
 import { SIGN_IN_SAGA } from '../../constants/AuthConstants/AuthConstants';
 import { TOKEN, USER_LOGIN, STATUS_CODE } from '../../../util/constants/settingSystem';
@@ -7,6 +7,7 @@ import { ADD_PRODUCT_CATEGORY_SAGA, DELETE_PRODUCT_CATEGORY_SAGA, GET_ALL_PRODUC
 import { getAllProductCategoryAction, getAllProductCategorySagaAction } from '../../actions/ProductCategoryActions/ProductCategoryActions';
 import { notifiFunction } from '../../../util/Notification/Notification'
 import { closeDrawer } from '../../actions/DrawerActions/DrawerActions';
+import { displayLoading, hideLoading } from '../../actions/LoadingActions';
 //saga them danh muc san pham / add product category
 function* addProductCategorySaga(action) {
     const { ProductCategory } = action;
@@ -30,11 +31,17 @@ export function* theoDoiAddProductCategorySaga() {
 
 //saga lay tat ca danh muc san pham / get all product category
 function* getAllProductCategorySaga() {
+    yield put(displayLoading());
     try {
         const { data, status } = yield call(() => productCategoryServices.getAllProductCategory())
         if (status === STATUS_CODE.SUCCESS) {
             yield put(getAllProductCategoryAction(data));
         }
+        else{
+            notifiFunction("error", "Lỗi load dữ liệu!")
+        }
+        yield delay(500);
+        yield put(hideLoading());
     } catch (error) {
         console.log(error.response.data)
     }

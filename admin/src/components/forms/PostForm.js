@@ -10,25 +10,22 @@ import NoImg from '../../assets/images/no-img.jpg'
 import { SET_SUBMIT_POST_FORM } from '../../redux/constants/DrawerContants/DrawerContants';
 import { getAllPostCategoryAPIAction } from '../../redux/actions/PostCategoryActions/PostCategoryActions';
 import { addPostAPIAction, updatePostAPIAction } from '../../redux/actions/PostActions/PostActions';
+import { resetAvatarParam, setAvatarParam, setInputImgValue } from '../../redux/actions/FormImageActions/FormImageActions';
 
 
 const createBy = JSON.parse(localStorage.getItem(USER_LOGIN))?.userName;
 let avatarParam = '';
 function Form(props) {
-    const [avatarImg, setAvatarImg] = useState(avatarParam);
     const dispatch = useDispatch();
+    const avatarImg = useSelector(state => state.FormImageReducer.avatarParam);
+    const inputImgValue = useSelector(state => state.FormImageReducer.inputImgValue);
     useEffect(() => {
         dispatch({ type: SET_SUBMIT_POST_FORM, submitFunction: handleSubmit });
         dispatch(getAllPostCategoryAPIAction());
     }, [])
     const { PostCategoryList } = props;
     const renderImage = () => {
-        if (avatarImg === '') {
-            return <img src={props.Post ? props.Post.postImages : NoImg} style={{ height: 100, width: 100, objectFit: 'cover' }} />
-        }
-        else {
-            return <img src={avatarImg} style={{ height: 100, width: 100, objectFit: 'cover' }} />
-        }
+        return <img src={avatarImg} style={{ height: 100, width: 100, objectFit: 'cover' }} />
     }
     const {
         values,
@@ -48,8 +45,8 @@ function Form(props) {
             //When file uploads set it to file formcontrol
             reader.onload = (e) => {
                 // called once readAsDataURL is completed
-                setAvatarImg(e.target.result.toString());
                 avatarParam = e.target.result.toString();
+                dispatch(setAvatarParam(avatarParam));
             };
         }
     }
@@ -103,7 +100,7 @@ function Form(props) {
                 </div>
                 <div className="col-6 mb-3">
                     <p className="font-weight-bold">Avatar</p>
-                    <input className="form-control" type="file" onChange={(e) => { onSelectFile(e) }} />
+                    <input className="form-control" value={inputImgValue} type="file" onChange={(e) => { onSelectFile(e) ; dispatch(setInputImgValue(e.target.value)) }} />
                 </div>
                 <div className="col-6 mb-3">
                     {renderImage()}
@@ -184,7 +181,7 @@ const PostForm = withFormik({
         postALTSeo: Yup.string()
             .max(100, 'Từ khóa SEO dưới 100 kí tự!')
     }),
-    handleSubmit: (values, { props, setSubmitting }) => {
+    handleSubmit: (values, { props, setSubmitting, resetForm }) => {
         let Post = {
             postTitle: values.postName,
             postDetail: values.postDetail,
@@ -195,7 +192,6 @@ const PostForm = withFormik({
             status: values.status,
             createBy: createBy
         }
-        console.log(Post);
         if (props.Post) {
             Post = { ...Post, PostID: props.Post.postID };
             props.dispatch(updatePostAPIAction(Post));
@@ -203,6 +199,8 @@ const PostForm = withFormik({
         else {
             props.dispatch(addPostAPIAction(Post));
         }
+        props.dispatch(resetAvatarParam());
+        resetForm();
     },
     displayName: 'Sửa thông tin',
 })(Form);
