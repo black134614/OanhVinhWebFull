@@ -3,13 +3,13 @@ import { GET_USER_INFO } from "../../constants/UserConstants/UserConstants"
 const initialState = {
   UserInfo: {
     userName: "admin",
-    password: ":( lộ thế",
-    fullName: "tét thay ",
-    phoneNumber: "string",
-    isDelete: true,
+    password: "123456",
+    fullName: "Oanh Vinh",
+    phoneNumber: "xxx",
+    isDelete: false,
     createTime: "2022-05-04T22:00:45.093",
-    userDetail: "asdasdaddasd",
-    avatar: "Users/tét thay .png",
+    userDetail: "detail",
+    avatar: "",
   }
 }
 

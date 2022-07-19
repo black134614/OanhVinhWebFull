@@ -46,7 +46,7 @@ export default function Product() {
             title: 'Hiển thị',
             dataIndex: 'status',
             key: 'status',
-            render: status => <Checkbox checked={status}>{status ? 'Hiển thị' : 'Ẩn'}</Checkbox>
+            render: status => <Checkbox checked={status}></Checkbox>
         },
         {
             title: 'Danh mục bài đăng',
@@ -74,12 +74,12 @@ export default function Product() {
             dataIndex: 'createBy',
         },
         {
-            title: <Button className='d-inline-flex align-items-center' size='small' icon={<AppstoreAddOutlined />}
+            title: <Button className='d-inline-flex align-items-center btn-primary' size='small' icon={<AppstoreAddOutlined />}
                 onClick={() => {
                     dispatch(getPostFormAction('Thêm Bài Đăng', <PostForm Post={null} />))
                     dispatch(setAvatarParam(NoImg))
                 }}>
-                <span class="d-none d-lg-block">Thêm Bài Đăng Mới</span>
+                <span className='d-none d-lg-inline-block'>Thêm Bài Đăng</span>
             </Button>,
             key: 'action',
             dataIndex: ['postID', 'postName', 'postDescription', 'postDetail', 'postImages', 'postALTSEO', 'status', 'postCategoryID'],
@@ -100,7 +100,6 @@ export default function Product() {
                             dispatch(setAvatarParam(record.postImages));
                             dispatch(getPostFormAction('Chỉnh sửa bài đăng', <PostForm Post={Post} />))
                         }}>
-                        <span class="d-none d-lg-block">Chỉnh sửa</span>
                     </Button>
                     <Popconfirm
                         title={`Bạn có muốn xóa "${record.postName}" không?`}
@@ -112,7 +111,6 @@ export default function Product() {
                         cancelText="No"
                     >
                         <Button className='d-inline-flex align-items-center' size='small' type="primary" danger icon={<DeleteOutlined />}>
-                        <span class="d-none d-lg-block">Xóa</span>
                         </Button>
                     </Popconfirm>
                 </>

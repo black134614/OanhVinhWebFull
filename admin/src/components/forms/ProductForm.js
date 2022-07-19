@@ -180,7 +180,7 @@ const ProductForm = withFormik({
         productDescription: Yup.string()
             .max(1000, 'Mô tả sản phẩm dưới 1000 kí tự!'),
         productALTSeo: Yup.string()
-            .max(1000, 'Từ khóa SEO dưới 1000 kí tự!')
+            .max(100, 'Từ khóa SEO dưới 100 kí tự!')
     }),
     handleSubmit: (values, { props, setSubmitting, resetForm }) => {
         let product = {
@@ -193,22 +193,22 @@ const ProductForm = withFormik({
             status: values.status,
             createBy: createBy
         }
-        if (!avatarParam && props.Product !== null) {
-
+        if (!avatarParam && props.Product) {
             product = { ...product, productImages: props.Product.productImages };
-            if (props.Product) {
-                product = { ...product, productID: props.Product.productID };
-                props.dispatch(updateProductAPI(product));
-            }
-            else {
-                props.dispatch(addProductAPI(product));
-                console.log(product);
-            }
+            product = { ...product, productID: props.Product.productID };
+            props.dispatch(updateProductAPI(product));
             resetForm();
             props.dispatch(resetAvatarParam());
         }
         else {
-            notifiFunction('warning','Vui lòng chọn hình ảnh!')
+            if (!avatarParam) {
+                notifiFunction('warning', 'Vui lòng chọn hình ảnh!');
+            }
+            else {
+                props.dispatch(addProductAPI(product));
+                resetForm();
+                props.dispatch(resetAvatarParam());
+            }
         }
     },
     displayName: 'Sửa thông tin',

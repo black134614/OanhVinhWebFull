@@ -1,8 +1,9 @@
-import { call, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { authServices } from '../../../services/AuthServices';
 import { SIGN_IN_SAGA } from '../../constants/AuthConstants/AuthConstants';
 import { TOKEN, USER_LOGIN, STATUS_CODE } from '../../../util/constants/settingSystem';
 import { notifiFunction } from '../../../util/Notification/Notification';
+import { getUserInfo } from '../../actions/UserActions/UserActions';
 
 //saga chuc nang đang nhap / login
 export function* signinSaga(action) {
@@ -13,6 +14,7 @@ export function* signinSaga(action) {
         if (status === STATUS_CODE.SUCCESS) {
             localStorage.setItem(TOKEN, data.token);
             localStorage.setItem(USER_LOGIN, JSON.stringify(data.user));
+            yield put(getUserInfo(data.user));
             action.history.push('/dashboard');
         }
         else {

@@ -26,30 +26,7 @@
   .layout-dashboard .header-control .sidebar-toggler {
     display: none;
   }
-}
 
-@media (min-width: 768px) {
-  .layout-dashboard .ant-layout-header {
-    margin: 10px 20px;
-  }
-  .layout-dashboard .header-control {
-    margin-top: 0;
-  }
-  .layout-dashboard .header-control .header-search {
-    margin: 0 7px;
-  }
-  .layout-dashboard .header-control .btn-sign-in span {
-    display: inline;
-  }
-  .profile-nav-bg {
-    margin-top: -87.8px;
-  }
-  .card-profile-head {
-    margin: -53px 24px 24px;
-  }
-}
-
-@media (min-width: 992px) {
   .card-billing-info.ant-card .ant-card-body {
     display: flex;
   }
@@ -77,8 +54,36 @@
   }
 }
 
+@media (min-width: 768px) {
+  .layout-dashboard .ant-layout-header {
+    margin: 10px 20px;
+  }
+  .layout-dashboard .header-control {
+    margin-top: 0;
+  }
+  .layout-dashboard .header-control .header-search {
+    margin: 0 7px;
+  }
+  .layout-dashboard .header-control .btn-sign-in span {
+    display: inline;
+  }
+  .profile-nav-bg {
+    margin-top: -87.8px;
+  }
+  .card-profile-head {
+    margin: -53px 24px 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .layout-dashboard.layout-dashboard-rtl .header-control {
     justify-content: flex-end;
   }
+  .ant-table-wrapper .ant-spin-nested-loading{
+    width: fit-content;
+  }
+  .ant-table-wrapper{
+    overflow-x: scroll;
+  }
 }
+

@@ -6,9 +6,9 @@ import { deletePostCategoryAPIAction, getAllPostCategoryAPIAction } from '../../
 import PostCategoryForm from '../../components/forms/PostCategoryForm';
 import { getPostCategoryFormAction } from '../../redux/actions/DrawerActions/DrawerActions';
 
-const renderDeleteTitle = (title) =>{
+const renderDeleteTitle = (title) => {
     return <>
-    <span>Xóa Danh mục này và <strong>Toàn Bộ Bài Viết Liên Quan!</strong> Bạn có muốn xóa <strong>{title}</strong> không?</span>
+        <span>Xóa Danh mục này và <strong>Toàn Bộ Bài Viết Liên Quan!</strong> Bạn có muốn xóa <strong>{title}</strong> không?</span>
     </>
 }
 export default function PostCategory() {
@@ -34,7 +34,7 @@ export default function PostCategory() {
             title: 'Hiển Thị',
             dataIndex: 'status',
             key: 'status',
-            render: status => <Checkbox checked={status}>{status ? 'Hiển thị' : 'Ẩn'}</Checkbox>
+            render: status => <Checkbox checked={status}></Checkbox>
         },
         {
             title: 'Tạo Bởi',
@@ -42,11 +42,11 @@ export default function PostCategory() {
             dataIndex: 'createBy',
         },
         {
-            title: <Button className='d-inline-flex align-items-center' size='small' icon={<AppstoreAddOutlined />}
+            title: <Button className='d-inline-flex align-items-center btn-primary' size='small' icon={<AppstoreAddOutlined />}
                 onClick={() => {
                     dispatch(getPostCategoryFormAction('Thêm Danh Mục Bài Đăng Mới', <PostCategoryForm />))
                 }}>
-                Thêm Mới
+                <span className='d-none d-lg-inline-block'>Thêm Danh Mục</span>
             </Button>,
             key: 'action',
             dataIndex: ['postCategoryID', 'tittle', 'description', 'status', 'createBy'],
@@ -62,19 +62,17 @@ export default function PostCategory() {
                             }
                             dispatch(getPostCategoryFormAction('Sửa Danh Mục Bài Đăng', <PostCategoryForm PostCategory={PostCategory} />))
                         }}>
-                        Chỉnh sửa
                     </Button>
                     <Popconfirm
                         title={renderDeleteTitle(record.tittle)}
                         onConfirm={() => {
-                            const PostCategory = {postCategoryID: record.postCategoryID}
+                            const PostCategory = { postCategoryID: record.postCategoryID }
                             dispatch(deletePostCategoryAPIAction(PostCategory));
                         }}
                         okText="Yes"
                         cancelText="No"
                     >
                         <Button className='d-inline-flex align-items-center' size='small' type="primary" danger icon={<DeleteOutlined />}>
-                            Xóa
                         </Button>
                     </Popconfirm>
                 </>

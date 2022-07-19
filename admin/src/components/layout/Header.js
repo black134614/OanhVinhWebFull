@@ -23,10 +23,11 @@ import {
   FacebookFilled,
 } from "@ant-design/icons";
 
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import avtar from "../../assets/images/team-2.jpg";
-import { USER_LOGIN } from "../../util/constants/settingSystem";
+import { TOKEN, USER_LOGIN } from "../../util/constants/settingSystem";
+import { useSelector } from "react-redux";
 
 const ButtonContainer = styled.div`
   .ant-btn-primary {
@@ -239,7 +240,6 @@ const setting = [
   </svg>,
 ];
 
-const user = JSON.parse(localStorage.getItem(USER_LOGIN));
 function Header({
   placement,
   name,
@@ -255,11 +255,15 @@ function Header({
   const [visible, setVisible] = useState(false);
   const [sidenavType, setSidenavType] = useState("transparent");
 
-  useEffect(() => window.scrollTo(0, 0));
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }
+  );
 
   const showDrawer = () => setVisible(true);
   const hideDrawer = () => setVisible(false);
-
+  const user = useSelector((state) => state.UserReducer.UserInfo);
   return (
     <>
       <div className="setting-drwer" onClick={showDrawer}>
@@ -393,9 +397,9 @@ function Header({
             </div>
           </Drawer>
           <div>
-            <span>Xin chào, </span>
-            <strong>{user.userName}</strong>
-            <img style={{maxWidth: 50}} className="rounded " src={user.avatar}/>
+            <span className="d-none d-sm-inline-block">Xin chào, </span>
+            <strong>{user?.userName}</strong>
+            <img style={{ maxWidth: 50 }} className="rounded " src={user?.avatar} />
           </div>
         </Col>
       </Row>

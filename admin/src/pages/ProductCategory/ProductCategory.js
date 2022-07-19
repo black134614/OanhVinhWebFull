@@ -34,7 +34,7 @@ export default function ProductCategory() {
             title: 'Hiển Thị',
             dataIndex: 'status',
             key: 'status',
-            render: status => <Checkbox checked={status}>{status ? 'Hiển thị' : 'Ẩn'}</Checkbox>
+            render: status => <Checkbox disabled checked={status}></Checkbox>
         },
         {
             title: 'Tạo Bởi',
@@ -42,9 +42,9 @@ export default function ProductCategory() {
             dataIndex: 'createBy',
         },
         {
-            title: <Button className='d-inline-flex align-items-center' size='small' icon={<AppstoreAddOutlined />}
+            title: <Button className='d-inline-flex align-items-center btn-primary' size='small' icon={<AppstoreAddOutlined />}
                 onClick={() => { dispatch(getProductCategoryFormAction('Thêm Danh Mục Sản Phẩm Mới', <ProductCategoryForm />)) }}>
-                Thêm Mới
+                <span className='d-none d-lg-inline-block'>Thêm Danh Mục</span>
             </Button>,
             key: 'action',
             dataIndex: ['productCategoryID', 'tittle', 'description', 'status', 'createBy'],
@@ -62,7 +62,6 @@ export default function ProductCategory() {
                             dispatch(setEditProductCategoryFormAction(productCategory));
                             dispatch(getEditProductCategoryFormAction('Chỉnh sửa danh mục sản phẩm ' +record.tittle,<EditProductCategoryForm />));
                         }}>
-                        Chỉnh sửa
                     </Button>
                     <Popconfirm
                         title={renderDeleteTitle(record.tittle)}
@@ -80,7 +79,7 @@ export default function ProductCategory() {
                         cancelText="No"
                     >
                         <Button className='d-inline-flex align-items-center' size='small' type="primary" danger icon={<DeleteOutlined />}>
-                            Xóa
+                           
                         </Button>
                     </Popconfirm>
                 </>
