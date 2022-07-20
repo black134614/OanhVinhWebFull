@@ -101,7 +101,7 @@ function Form(props) {
                 </div>
                 <div className="col-6 mb-3">
                     <p className="font-weight-bold">Avatar</p>
-                    <input className="form-control" value={inputImgValue} type="file" onChange={(e) => { onSelectFile(e) ; dispatch(setInputImgValue(e.target.value)) }} />
+                    <input className="form-control" value={inputImgValue} type="file" onChange={(e) => { onSelectFile(e); dispatch(setInputImgValue(e.target.value)) }} />
                 </div>
                 <div className="col-6 mb-3">
                     {renderImage()}
@@ -183,6 +183,7 @@ const PostForm = withFormik({
             .max(100, 'Từ khóa SEO dưới 100 kí tự!')
     }),
     handleSubmit: (values, { props, setSubmitting, resetForm }) => {
+        const date = new Date();
         let Post = {
             postTitle: values.postName,
             postDetail: values.postDetail,
@@ -193,21 +194,42 @@ const PostForm = withFormik({
             status: values.status,
             createBy: createBy
         }
-        
         if (!avatarParam && props.Post !== null) {
-            Post = { ...Post, postImages: props.Post.postImages };
-            if (props.Post) {
-                Post = { ...Post, PostID: props.Post.postID };
-                props.dispatch(updatePostAPIAction(Post));
-            }
-            else {
-                props.dispatch(addPostAPIAction(Post));
-            }
-            props.dispatch(resetAvatarParam());
+            Post = {
+                ...Post,
+                postImages: props.Post.postImages,
+                PostID: props.Post.postID,
+                createTime: props.Post.createTime,
+                updateTime: date.toISOString()
+            };
+            props.dispatch(updatePostAPIAction(Post));
             resetForm();
+            props.dispatch(resetAvatarParam());
         }
         else {
-            notifiFunction('warning','Vui lòng chọn hình ảnh!');
+            if (!avatarParam) {
+                notifiFunction('warning', 'Vui lòng chọn hình ảnh!');
+            }
+            else {
+                if (props.Post !== null) {
+                    Post = {
+                        ...Post,
+                        PostID: props.Post.postID,
+                        createTime: props.Post.createTime,
+                        updateTime: date.toISOString()
+                    };
+                    props.dispatch(updatePostAPIAction(Post));
+                }
+                else {
+                    Post = {
+                        ...Post,
+                        createTime: date.toISOString()
+                    };
+                    props.dispatch(addPostAPIAction(Post));
+                }
+                resetForm();
+                props.dispatch(resetAvatarParam());
+            }
         }
     },
     displayName: 'Sửa thông tin',

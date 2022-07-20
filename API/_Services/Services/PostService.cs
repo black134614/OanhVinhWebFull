@@ -64,7 +64,7 @@ namespace API._Services.Services
                             .Join(_repositoryAccessor.User.FindAll(),
                             x => x.Post.CreateBy,
                             z => z.UserName,
-                            (x,z) => new{PostConnect = x, User = z})
+                            (x, z) => new { PostConnect = x, User = z })
                             .Select(x => new PostDTO()
                             {
                                 PostID = x.PostConnect.Post.PostID,
@@ -81,7 +81,9 @@ namespace API._Services.Services
                                 Status = x.PostConnect.Post.Status,
                                 UpdateTime = x.PostConnect.Post.UpdateTime.Value.Date,
                                 UserFullName = x.User.FullName
-                            }).ToListAsync();
+                            })
+                            .OrderByDescending(x => x.CreateTime)
+                            .ToListAsync();
             if (!string.IsNullOrEmpty(postParams.PostCategoryID) && !string.IsNullOrEmpty(postParams.PostID))
             {
                 data = data.Where(x => x.PostCategoryID == Convert.ToInt32(postParams.PostCategoryID) && x.PostID == Convert.ToInt32(postParams.PostID)).ToList();

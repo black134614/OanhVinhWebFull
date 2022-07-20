@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Nwo7e7oLF15AWg/v2jjqkSbxQV1Z4tHFly6erRP8y9U=",
+  "Hash": "pnbGs36Jr6rfxqnUUQVo73und6+RkefQnIRBMupdcPo=",
   "Source": "WebOanhVinh",
   "BasePath": "_content/WebOanhVinh",
   "Mode": "Default",
@@ -3330,6 +3330,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sass\\_news.scss"
+    },
+    {
+      "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\sass\\_paging.scss",
+      "SourceId": "WebOanhVinh",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\",
+      "BasePath": "_content/WebOanhVinh",
+      "RelativePath": "sass/_paging.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sass\\_paging.scss"
     },
     {
       "Identity": "C:\\Users\\luanv\\OneDrive\\Desktop\\OanhVinhWebFull\\OanhVinhWeb\\wwwroot\\sass\\_portfolio.scss",

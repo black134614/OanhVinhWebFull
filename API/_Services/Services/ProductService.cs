@@ -74,16 +74,20 @@ namespace API._Services.Services
                             UpdateTime = x.Product.UpdateTime,
                             ProductCategoryName = x.ProductCategory.Tittle,
                             ProductCategoryID = x.ProductCategory.ProductCategoryID
-                        }).ToListAsync();
+                        })
+                        .OrderByDescending(x => x.CreateTime)
+                        .ToListAsync();
 
             if (!string.IsNullOrEmpty(productParams.productCategoryID) && !string.IsNullOrEmpty(productParams.productID))
             {
                 data = data.Where(x => x.ProductCategoryID == Convert.ToInt32(productParams.productCategoryID) && x.ProductID == Convert.ToInt32(productParams.productID)).ToList();
             }
-            else if(!string.IsNullOrEmpty(productParams.productCategoryID)){
+            else if (!string.IsNullOrEmpty(productParams.productCategoryID))
+            {
                 data = data.Where(x => x.ProductCategoryID == Convert.ToInt32(productParams.productCategoryID)).ToList();
             }
-            else if(!string.IsNullOrEmpty(productParams.productID)){
+            else if (!string.IsNullOrEmpty(productParams.productID))
+            {
                 data = data.Where(x => x.ProductID == Convert.ToInt32(productParams.productID)).ToList();
             }
             return data;

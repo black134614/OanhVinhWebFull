@@ -20,7 +20,9 @@ export default (state = initialState, action) => {
                     status: item.status,
                     productCategoryID: item.productCategoryID + '',
                     productCategoryName: item.productCategoryName,
-                    createBy: item.createBy
+                    createBy: item.createBy,
+                    createTime: item.createTime,
+                    updateTime: item.updateTime
                 }
             });
             let firstValue = 0;

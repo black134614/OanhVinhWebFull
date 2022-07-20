@@ -20,7 +20,9 @@ export default (state = initialState, action) => {
                     status: item.status,
                     postCategoryID: item.postCategoryID + '',
                     postCategoryName: item.postCategoryName,
-                    createBy: item.createBy
+                    createBy: item.createBy,
+                    createTime: item.createTime,
+                    updateTime: item.updateTime
                 }
             });
             let firstValue = 0;

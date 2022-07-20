@@ -10,10 +10,18 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.5",
           "Newtonsoft.Json": "13.0.1",
-          "PagedList.Mvc": "4.5.0"
+          "X.PagedList.Mvc.Core": "8.4.3"
         },
         "runtime": {
           "WebOanhVinh.dll": {}
+        }
+      },
+      "JetBrains.Annotations/2022.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "4242.42.42.42",
+            "fileVersion": "2022.1.0.0"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore/6.0.5": {
@@ -98,25 +106,6 @@
           }
         }
       },
-      "PagedList/1.17.0": {
-        "runtime": {
-          "lib/net40/PagedList.dll": {
-            "assemblyVersion": "1.17.0.0",
-            "fileVersion": "1.17.0.0"
-          }
-        }
-      },
-      "PagedList.Mvc/4.5.0": {
-        "dependencies": {
-          "PagedList": "1.17.0"
-        },
-        "runtime": {
-          "lib/net40/PagedList.Mvc.dll": {
-            "assemblyVersion": "4.5.0.0",
-            "fileVersion": "4.5.0.0"
-          }
-        }
-      },
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -127,7 +116,29 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {}
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "X.PagedList/8.4.3": {
+        "dependencies": {
+          "JetBrains.Annotations": "2022.1.0"
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.dll": {
+            "assemblyVersion": "8.4.3.0",
+            "fileVersion": "8.4.3.0"
+          }
+        }
+      },
+      "X.PagedList.Mvc.Core/8.4.3": {
+        "dependencies": {
+          "X.PagedList": "8.4.3"
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.Mvc.Core.dll": {
+            "assemblyVersion": "8.4.3.0",
+            "fileVersion": "8.4.3.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -135,6 +146,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "JetBrains.Annotations/2022.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ASfpoFJxiRsC9Xc4TWuPM41Zb/gl64xwfMOhnOZ3RnVWGYIZchjpWQV5zshJgoc/ZxVtgjaF7b577lURj7E6ig==",
+      "path": "jetbrains.annotations/2022.1.0",
+      "hashPath": "jetbrains.annotations.2022.1.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/6.0.5": {
       "type": "package",
@@ -220,20 +238,6 @@
       "path": "newtonsoft.json/13.0.1",
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
-    "PagedList/1.17.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
-      "path": "pagedlist/1.17.0",
-      "hashPath": "pagedlist.1.17.0.nupkg.sha512"
-    },
-    "PagedList.Mvc/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
-      "path": "pagedlist.mvc/4.5.0",
-      "hashPath": "pagedlist.mvc.4.5.0.nupkg.sha512"
-    },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -254,6 +258,20 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "X.PagedList/8.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wVVbgv++0NmOaUFgNOAky+wt4MdAAwn2Roz/+u+jlEX1s/ELIbbnan70Skhk/um6w5NnM5eC4Kux1GAPjzHOeQ==",
+      "path": "x.pagedlist/8.4.3",
+      "hashPath": "x.pagedlist.8.4.3.nupkg.sha512"
+    },
+    "X.PagedList.Mvc.Core/8.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f1M+6o0AGSUGBuIRiXl9PGfoFbymw8uKjcuA1pJb2XkfginndZg1UR9zgppXW0GMLWCMzCoD5uVGD3SSywSimQ==",
+      "path": "x.pagedlist.mvc.core/8.4.3",
+      "hashPath": "x.pagedlist.mvc.core.8.4.3.nupkg.sha512"
     }
   }
 }

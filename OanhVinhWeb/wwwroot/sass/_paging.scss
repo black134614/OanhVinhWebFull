@@ -1,0 +1,14 @@
+ul.pagination{
+    justify-content: center;
+    align-items: center;
+    li{
+        a, span{
+            margin: 0 5px;
+            padding: 10px 20px;
+            border-radius: 0.25rem;
+        }
+        &.active a, span{
+            background-color: $common_color;
+        }
+    }
+}

@@ -27,7 +27,7 @@ export default function Product() {
         {
             title: 'Tên sản phẩm',
             dataIndex: ['productName', 'productDescription'],
-            sorter: (a, b) => a.productName - b.productName,
+            sorter: (a, b) => a.productName.length - b.productName.length,
             render: (text, record) => (
                 <>
                     {record.productName} <Popover content={record.productDescription} title="Mô tả sản phẩm">
@@ -66,8 +66,9 @@ export default function Product() {
             title: 'Ngày tạo',
             dataIndex: 'createTime',
             key: 'createTime',
-            sorter: (a, b) => a.createTime - b.createTime,
-            render: createTime => dateFormat(Date(createTime), "dd/mm/yyyy")
+            sorter: (a, b) => Date(a.createTime) - Date(b.createTime),
+            render: createTime => dateFormat(createTime, "dd/mm/yyyy")
+
         },
         {
             title: 'Người tạo',
@@ -82,7 +83,7 @@ export default function Product() {
                 <span className='d-none d-lg-inline-block'>Thêm Sản Phẩm</span>
             </Button>,
             key: 'action',
-            dataIndex: ['productID', 'productName', 'productDetail', 'productImages', 'productALTSeo', 'status', 'productCategoryID'],
+            dataIndex: ['productID', 'productName', 'productDetail', 'productImages', 'productALTSeo', 'status', 'productCategoryID', 'createTime', 'updateTime'],
             render: (text, record) => (
                 <>
                     <Button className='d-inline-flex align-items-center me-1' size='small' type='primary' icon={<EditOutlined />}
@@ -94,6 +95,8 @@ export default function Product() {
                                 productImages: record.productImages,
                                 productALTSeo: record.productALTSeo,
                                 status: record.status,
+                                createTime: record.createTime,
+                                updateTime: record.updateTime,
                                 productCategoryID: record.productCategoryID
                             }
                             dispatch(setAvatarParam(record.productImages));

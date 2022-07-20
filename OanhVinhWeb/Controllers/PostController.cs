@@ -2,6 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json;
 using WebOanhVinh.Models;
+using X.PagedList;
 
 namespace WebOanhVinh.Controllers
 {
@@ -16,7 +17,7 @@ namespace WebOanhVinh.Controllers
         [Route("danh-muc-bai-dang")]
         [Route("danh-muc-bai-dang/{mid:int?}/{title?}", Name = "PostListByCategoryID")]
         [Route("post")]
-        public async Task<IActionResult> Index(int? mid, string title)
+        public async Task<IActionResult> Index(int? mid, string title, int? page = 1)
         {
             if (title == null)
             {
@@ -40,7 +41,11 @@ namespace WebOanhVinh.Controllers
                 data = data.Where(x => x.PostCategoryID == mid).ToList();
             }
             ViewBag.CountList = data.Count;
-            return View(data);  
+
+            var pageNumber = page ?? 1;
+            ViewBag.post = data.ToPagedList(pageNumber, 5);
+
+            return View();
         }
 
 
@@ -67,11 +72,14 @@ namespace WebOanhVinh.Controllers
             if (data != null)
             {
                 ViewBag.PostRelated = data.Where((x) => x.PostCategoryID == mid).Take(5).ToList();
-                Post trueData = data.Where(x=>x.PostID == id).FirstOrDefault();
+                Post trueData = data.Where(x => x.PostID == id).FirstOrDefault();
                 return View(trueData);
             }
             ViewBag.PostRelated = new List<Post>();
             return View();
         }
+
+        
     }
+
 }

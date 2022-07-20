@@ -15,13 +15,12 @@ function* getAllProductSaga(){
             notifiFunction('error', 'Lỗi load dữ liệu!');
         }
         else{
-            console.log(data);
             yield put(getAllProductAction(data));
             yield delay(500);
             yield put(hideLoading());
         }
     } catch (error) {
-        console.log(error);
+        notifiFunction('error', 'Lỗi load dữ liệu!');
     }
 }
 export function* theoDoiGetAllProductSaga(){
@@ -42,7 +41,7 @@ function* addProductSaga(action){
             notifiFunction('success', 'Thêm sản phẩm thành công!');
         }
     } catch (error) {
-        console.log(error);
+        notifiFunction('error', 'Lỗi thêm dữ liệu!');
     }
 }
 export function* theoDoiAddProductSaga(){

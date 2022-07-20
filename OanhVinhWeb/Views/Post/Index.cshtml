@@ -1,7 +1,9 @@
-﻿@using PagedList.Mvc; 
-@using PagedList; 
-@using WebOanhVinh.ClassHelpers
+﻿@using WebOanhVinh.ClassHelpers
 @using WebOanhVinh.Models
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+
 @model List<Post>
 <!-- breadcrumb start-->
 <section class="breadcrumb breadcrumb_bg">
@@ -31,7 +33,7 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
-                    @foreach (var item in Model)
+                    @foreach (var item in ViewBag.post)
                     {
                         <article class="blog_item">
                             <div class="blog_item_img">
@@ -40,8 +42,8 @@
                                     @{
                                         if (@item.CreateTime != null)
                                         {
-                                            <h3>@item.CreateTime.Value.Day</h3>
-                                            <p>@item.CreateTime.Value.Month.@item.CreateTime.Value.Year</p>
+                                            <h3>@item.CreateTime.Day</h3>
+                                            <p>@item.CreateTime.Month.@item.CreateTime.Year</p>
                                         }
                                         else
                                         {
@@ -71,8 +73,10 @@
                                 </ul>
                             </div>
                         </article>
-
                     }
+                    <div>
+                        @Html.PagedListPager((IPagedList)ViewBag.post, page => Url.Action("Index", "Post", new {page = page}))
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">

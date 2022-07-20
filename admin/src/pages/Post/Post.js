@@ -67,7 +67,7 @@ export default function Product() {
             dataIndex: 'createTime',
             key: 'createTime',
             sorter: (a, b) => a.createTime - b.createTime,
-            render: createTime => dateFormat(Date(createTime), "dd/mm/yyyy")
+            render: createTime => dateFormat(createTime, "dd/mm/yyyy")
         },
         {
             title: 'Người tạo',
@@ -82,7 +82,7 @@ export default function Product() {
                 <span className='d-none d-lg-inline-block'>Thêm Bài Đăng</span>
             </Button>,
             key: 'action',
-            dataIndex: ['postID', 'postName', 'postDescription', 'postDetail', 'postImages', 'postALTSEO', 'status', 'postCategoryID'],
+            dataIndex: ['postID', 'postName', 'postDescription', 'postDetail', 'postImages', 'postALTSEO', 'status', 'postCategoryID','createTime', 'updateTime'],
             render: (text, record) => (
                 <>
                     <Button className='d-inline-flex align-items-center me-1' size='small' type='primary' icon={<EditOutlined />}
@@ -95,7 +95,9 @@ export default function Product() {
                                 postImages: record.postImages,
                                 postALTSEO: record.postALTSEO,
                                 status: record.status,
-                                postCategoryID: record.postCategoryID
+                                postCategoryID: record.postCategoryID,
+                                createTime: record.createTime,
+                                updateTime: record.updateTime
                             }
                             dispatch(setAvatarParam(record.postImages));
                             dispatch(getPostFormAction('Chỉnh sửa bài đăng', <PostForm Post={Post} />))

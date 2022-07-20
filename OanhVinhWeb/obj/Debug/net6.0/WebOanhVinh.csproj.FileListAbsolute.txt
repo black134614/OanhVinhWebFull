@@ -56,5 +56,7 @@ C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Mic
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.csproj.CopyComplete
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\PagedList.dll
-C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\PagedList.Mvc.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\luanv\OneDrive\Desktop\OanhVinhWebFull\OanhVinhWeb\obj\Debug\net6.0\WebOanhVinh.MvcApplicationPartsAssemblyInfo.cs

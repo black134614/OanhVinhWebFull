@@ -183,6 +183,7 @@ const ProductForm = withFormik({
             .max(100, 'Từ khóa SEO dưới 100 kí tự!')
     }),
     handleSubmit: (values, { props, setSubmitting, resetForm }) => {
+        const date = new Date();
         let product = {
             productName: values.productName,
             productDetail: values.productDetail,
@@ -193,9 +194,15 @@ const ProductForm = withFormik({
             status: values.status,
             createBy: createBy
         }
+        console.log(product);
         if (!avatarParam && props.Product) {
-            product = { ...product, productImages: props.Product.productImages };
-            product = { ...product, productID: props.Product.productID };
+            product = {
+                ...product,
+                productID: props.Product.productID,
+                productImages: props.Product.productImages,
+                createTime: props.Product.createTime,
+                updateTime: date.toISOString()
+            };
             props.dispatch(updateProductAPI(product));
             resetForm();
             props.dispatch(resetAvatarParam());
@@ -205,6 +212,22 @@ const ProductForm = withFormik({
                 notifiFunction('warning', 'Vui lòng chọn hình ảnh!');
             }
             else {
+                if (props.Product !== null) {
+                    product = {
+                        ...product,
+                        productID: props.Product.productID,
+                        createTime: props.Product.createTime,
+                        updateTime: date.toISOString(),
+                    };
+                    props.dispatch(updateProductAPI(product));
+                }
+                else {
+
+                }
+                product = {
+                    ...product,
+                    createTime: date.toISOString()
+                };
                 props.dispatch(addProductAPI(product));
                 resetForm();
                 props.dispatch(resetAvatarParam());
