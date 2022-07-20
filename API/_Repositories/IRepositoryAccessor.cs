@@ -11,7 +11,7 @@ namespace API._Repositories
         IProductRepository Product { get; }
         IPostCategoryRepository PostCategory { get; }
         IPostRepository Posts { get; }
-
+        IOwnerRepository Owner { get; }
         Task<bool> SaveChangesAsync();
     }
 }

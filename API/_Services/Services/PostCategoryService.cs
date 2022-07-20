@@ -63,6 +63,7 @@ namespace API._Services.Services
         public async Task<OperationResult> Update(PostCategoryDTO postCategoryDTO)
         {
             var postCategory = _mapper.Map<PostCategory>(postCategoryDTO);
+            
             if (postCategory != null)
             {
                 _repositoryAccessor.PostCategory.Update(postCategory);
