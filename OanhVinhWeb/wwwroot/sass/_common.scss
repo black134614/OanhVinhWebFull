@@ -8,6 +8,11 @@ body {
     padding: 0;
     margin: 0;
     font-size: 14px;
+    background-image: url("../img/icon/icon-trai-de-oanh-vinh-goc-removebg-blur.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100px;
+    background-position: center center;
 }
 .message_submit_form:focus {
     outline: none;
@@ -318,7 +323,7 @@ ul {
 #toTopBtn {
     position: fixed;
     bottom: -16vh;
-    right: 39px;
+    right: 46px;
     z-index: 98;
     background-color: $common_color_blur;
     width: 20px;
@@ -394,9 +399,78 @@ ul {
                 padding-right: 15px;
             }
         }
-        &:hover{
+        &:hover {
             background-color: $common_color_blur-1;
             border-radius: 0 0.25rem 0.25rem 0;
         }
+    }
+}
+
+//call animation
+.content-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 15vh;
+    right: 39px;
+    z-index: 98;
+    width: 35px;
+    height: 35px;
+    .pulse {
+        height: 35px;
+        width: 35px;
+        background-color: $common_color_blur;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative ;
+        cursor: pointer;
+        i {
+            color: $white-color;
+        }
+        &:hover, &:active &:focus{
+            background-color: $common_color;
+            &:before, &::after{
+                border-color: $common_color;
+            }
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            border: 1px solid $common_color_blur;
+            width: calc(100% + 40px);
+            height: calc(100% + 40px);
+            border-radius: 50%;
+            animation: pulse 1s linear infinite;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            border: 1px solid $common_color_blur;
+            width: calc(100% + 40px);
+            height: calc(100% + 40px);
+            border-radius: 50%;
+            animation: pulse 1s linear infinite;
+            animation-delay: 0.3s;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
     }
 }

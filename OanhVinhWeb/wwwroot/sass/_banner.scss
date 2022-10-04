@@ -7,15 +7,33 @@
     background-repeat: no-repeat;
     background-size: auto;
     background-position: top right;
+    @media #{$xs_mobile} {
+        .owl-carousel {
+            .banner_btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                .btn_2{
+                    padding: 5px 0px 5px 10px;
+                }
+            }
+        }
+    }
     @media #{$small_mobile} {
         height: 480px;
         background-image: none;
         background-color: #f0eed4;
+        
     }
     @media #{$large_mobile} {
-        height: 500px;
+        height: 550px;
         background-image: none;
         background-color: #f0eed4;
+        .banner_btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
     }
     @media #{$tab_device} {
         height: 460px;
@@ -35,7 +53,7 @@
         z-index: 2;
         background: url(../img/banner/banner-de-men.png) bottom right no-repeat;
         right: 19%;
-        background-size: 100%; 
+        background-size: 100%;
         @media #{$small_mobile} {
             display: none;
         }
@@ -119,11 +137,18 @@
                 color: $btn_bg;
             }
         }
+        .banner_btn {
+            a img {
+                display: inline-block;
+                width: auto;
+            }
+        }
         .banner_btn_iner {
             position: relative;
             display: inline-block;
             @include transform_time(0.5s);
             border-right: 1px solid transparent;
+
             &:before {
                 width: 60px;
                 height: 1px;
@@ -222,7 +247,7 @@
 
 /**************** hero part css end ****************/
 
-#banner_part_home{
+#banner_part_home {
     height: 520px;
     position: absolute;
     background-repeat: no-repeat;
@@ -233,13 +258,13 @@
     right: 0;
     width: 100%;
     @media #{$small_mobile} {
-       display: none!important;
+        display: none !important;
     }
     @media #{$large_mobile} {
-        display: none!important;
+        display: none !important;
     }
     @media #{$tab_device} {
-        display: none!important;
+        display: none !important;
     }
     @media #{$medium_device} {
         background-size: auto;

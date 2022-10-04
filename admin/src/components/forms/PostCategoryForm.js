@@ -99,6 +99,7 @@ const PostCategoryForm = withFormik({
         }
         if (!props.PostCategory) {
             props.dispatch(addPostCategoryAPIAction(PostCategoryBuild))
+            console.log('add this post: '+ PostCategoryBuild );
         } else {
             props.dispatch(updatePostCategoryAPIAction({ ...PostCategoryBuild, PostCategoryID: props.PostCategory.postCategoryID }))
         }

@@ -58,15 +58,16 @@
             nav: false,
         });
     }
-    // menu fixed js code
-    $(window).scroll(function () {
-        var window_top = $(window).scrollTop() + 1;
-        if (window_top > 50) {
-            $('.main_menu').addClass('menu_fixed animated fadeInDown');
-        } else {
-            $('.main_menu').removeClass('menu_fixed animated fadeInDown');
-        }
-    });
+    // // menu fixed js code
+
+    // $(window).scroll(function () {
+    //     var window_top = $(window).scrollTop() + 1;
+    //     if (window_top > 50) {
+    //         $('.main_menu').addClass('menu_fixed animated fadeInDown');
+    //     } else {
+    //         $('.main_menu').removeClass('menu_fixed animated fadeInDown');
+    //     }
+    // });
 
     //   $(document).ready(function(){
 
@@ -101,6 +102,7 @@
     //     });
 
     //   });
+
 
 
 
@@ -193,6 +195,8 @@
     }
 
 
+
+
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('#toTopBtn').fadeIn();
@@ -211,28 +215,42 @@
         return false;
     });
 
-
+    let mainCarousel = $('.main-carousel');
+    if (mainCarousel.length) {
+        mainCarousel.owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayHoverPause: true,
+            autoplayTimeout: 5000,
+            nav: false,
+            dots: false,
+            margin: 10,
+            items: 1,
+            animateOut: 'fadeOutRight',
+            animateIn: 'fadeInLeft',
+        });
+    }
 
 }(jQuery));
 
-window.setInterval(function () {
-    var url = getCurrent();
-    //start animation
-    setTimeout(() => {
-        $('#banner_part_home').fadeTo(900, 0.2, function () {
-            $(this).css('background-image', 'url(' + url + ')');
-        }).fadeTo('slow', 1);
-    }, 4000)
+// window.setInterval(function () {
+//     var url = getCurrent();
+//     //start animation
+//     setTimeout(() => {
+//         $('#banner_part_home').fadeTo(900, 0.2, function () {
+//             $(this).css('background-image', 'url(' + url + ')');
+//         }).fadeTo('slow', 1);
+//     }, 4000)
 
-}, 2000);
+// }, 2000);
 // We start with index of 1 because we want to skip the first image, 
 // Else we would be replacing it with the same image.
-var index = 1;
-var arrayOfPartenaires = [
-    "img/banner/trai-de-oanh-vinh-banner-2.png",
-    "img/banner/trai-de-oanh-vinh-banner-3.png",
-    "img/banner/trai-de-oanh-vinh-banner-1.png"
-];
+// var index = 1;
+// var arrayOfPartenaires = [
+//     "img/banner/trai-de-oanh-vinh-banner-2.png",
+//     "img/banner/trai-de-oanh-vinh-banner-3.png",
+//     "img/banner/trai-de-oanh-vinh-banner-1.png"
+// ];
 
 function getCurrent() {
     // We check if the index is higher than the ammount in the array.

@@ -222,15 +222,14 @@ const ProductForm = withFormik({
                     props.dispatch(updateProductAPI(product));
                 }
                 else {
-
+                    product = {
+                        ...product,
+                        createTime: date.toISOString()
+                    };
+                    props.dispatch(addProductAPI(product));
+                    resetForm();
+                    props.dispatch(resetAvatarParam());
                 }
-                product = {
-                    ...product,
-                    createTime: date.toISOString()
-                };
-                props.dispatch(addProductAPI(product));
-                resetForm();
-                props.dispatch(resetAvatarParam());
             }
         }
     },
